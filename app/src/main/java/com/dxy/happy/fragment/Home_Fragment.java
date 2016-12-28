@@ -1,11 +1,11 @@
-package com.dxy.clove.fragment;
+package com.dxy.happy.fragment;
 
 import android.view.View;
 
-import com.dxy.clove.base.BaseFragment;
+import com.dxy.happy.base.BaseFragment;
 
 /**
- * 学术圈
+ * 首页
  * Created by 芮靖林
  * on 2016/12/28 11:58.
  */

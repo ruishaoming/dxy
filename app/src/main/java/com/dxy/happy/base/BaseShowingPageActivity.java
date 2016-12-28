@@ -1,9 +1,9 @@
-package com.dxy.clove.base;
+package com.dxy.happy.base;
 
 import android.os.Bundle;
 import android.view.View;
 
-import com.dxy.clove.view.ShowingPage;
+import com.dxy.happy.view.ShowingPage;
 
 public abstract class BaseShowingPageActivity extends BaseActivity {
 

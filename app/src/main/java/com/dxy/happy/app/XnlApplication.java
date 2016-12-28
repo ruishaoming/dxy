@@ -1,4 +1,4 @@
-package com.dxy.clove.app;
+package com.dxy.happy.app;
 
 import android.app.Application;
 import android.content.Context;
@@ -14,7 +14,7 @@ import java.util.concurrent.Executors;
  * on 2016/12/28 08:27.
  */
 
-public class DxyApplication extends Application {
+public class XnlApplication extends Application {
 
     private static Context context;
     private static Handler handler;

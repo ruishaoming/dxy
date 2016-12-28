@@ -1,8 +1,8 @@
-package com.dxy.clove.base;
+package com.dxy.happy.base;
 
 import android.os.Bundle;
 
-import com.dxy.clove.R;
+import com.xnl.happy.R;
 import com.zhy.autolayout.AutoLayoutActivity;
 
 /**

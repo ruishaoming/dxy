@@ -1,9 +1,10 @@
-package com.dxy.clove.activity;
+package com.dxy.happy.activity;
 
 import android.os.Bundle;
 
-import com.dxy.clove.R;
-import com.dxy.clove.base.BaseActivity;
+import com.dxy.happy.base.BaseActivity;
+import com.xnl.happy.R;
+
 /**
  * MainActivity：项目主界面
  * create:芮靖林

@@ -1,12 +1,12 @@
-package com.dxy.clove.view;
+package com.dxy.happy.view;
 
 import android.content.Context;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 
-import com.dxy.clove.R;
-import com.dxy.clove.utils.CommonUtils;
+import com.dxy.happy.utils.CommonUtils;
+import com.xnl.happy.R;
 
 
 /**

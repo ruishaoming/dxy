@@ -1,4 +1,4 @@
-package com.dxy.clove.utils;
+package com.dxy.happy.utils;
 
 /**
  * Created by 芮靖林
@@ -12,17 +12,17 @@ import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 
-import com.dxy.clove.R;
-import com.dxy.clove.app.DxyApplication;
+import com.dxy.happy.app.XnlApplication;
+import com.xnl.happy.R;
 
 
 public class CommonUtils {
     public static final String TAG = "DXY";
     private static SharedPreferences sharedPreferences;
-    private static Context context = DxyApplication.getContext();
+    private static Context context = XnlApplication.getContext();
 
     public static View inflate(int layoutId) {
-        View view = View.inflate(DxyApplication.getContext(), layoutId, null);
+        View view = View.inflate(XnlApplication.getContext(), layoutId, null);
         return view;
     }
 
@@ -34,7 +34,7 @@ public class CommonUtils {
      */
     public static int dip2px(int dip) {
         //获取像素密度
-        float density = DxyApplication.getContext().getResources().getDisplayMetrics().density;
+        float density = XnlApplication.getContext().getResources().getDisplayMetrics().density;
         //
         int px = (int) (dip * density + 0.5f);
         return px;
@@ -49,7 +49,7 @@ public class CommonUtils {
      */
     public static int px2dip(int px) {
         //获取像素密度
-        float density = DxyApplication.getContext().getResources().getDisplayMetrics().density;
+        float density = XnlApplication.getContext().getResources().getDisplayMetrics().density;
         //
         int dip = (int) (px / density + 0.5f);
         return dip;
@@ -57,17 +57,17 @@ public class CommonUtils {
     }
 
     public static String getDimens(int stringId) {
-        return DxyApplication.getContext().getResources().getString(stringId);
+        return XnlApplication.getContext().getResources().getString(stringId);
     }
 
     public static Drawable getDrawable(int did) {
-        return DxyApplication.getContext().getResources().getDrawable(did
+        return XnlApplication.getContext().getResources().getDrawable(did
         );
     }
 
     public static void saveSp(String flag, String str) {
         if (sharedPreferences == null) {
-            sharedPreferences = DxyApplication.getContext().getSharedPreferences(TAG, DxyApplication.getContext().MODE_PRIVATE);
+            sharedPreferences = XnlApplication.getContext().getSharedPreferences(TAG, XnlApplication.getContext().MODE_PRIVATE);
         }
         SharedPreferences.Editor edit = sharedPreferences.edit();
         edit.putString(flag, str);
@@ -76,14 +76,14 @@ public class CommonUtils {
 
     public static String getSp(String flag) {
         if (sharedPreferences == null) {
-            sharedPreferences = DxyApplication.getContext().getSharedPreferences(TAG, DxyApplication.getContext().MODE_PRIVATE);
+            sharedPreferences = XnlApplication.getContext().getSharedPreferences(TAG, XnlApplication.getContext().MODE_PRIVATE);
         }
         return sharedPreferences.getString(flag, "");
     }
 
     public static boolean getBoolean(String tag) {
         if (sharedPreferences == null) {
-            sharedPreferences = DxyApplication.getContext().getSharedPreferences(TAG, DxyApplication.getContext().MODE_PRIVATE);
+            sharedPreferences = XnlApplication.getContext().getSharedPreferences(TAG, XnlApplication.getContext().MODE_PRIVATE);
         }
         return sharedPreferences.getBoolean(tag, false);
     }
@@ -108,11 +108,11 @@ public class CommonUtils {
 
     public static void runOnUIThread(Runnable runable) {
         //先判断当前属于子线程主线程
-        if (android.os.Process.myTid() == DxyApplication.getMainThreadId()) {
+        if (android.os.Process.myTid() == XnlApplication.getMainThreadId()) {
             runable.run();
         } else {
             //子线程
-            DxyApplication.getHandler().post(runable);
+            XnlApplication.getHandler().post(runable);
         }
     }
 
@@ -122,7 +122,7 @@ public class CommonUtils {
      * @param runnable
      */
     public static void executeRunnalbe(Runnable runnable) {
-        DxyApplication.getThreadPool().execute(runnable);
+        XnlApplication.getThreadPool().execute(runnable);
     }
 
     public static Context getContext() {

@@ -1,4 +1,4 @@
-package com.dxy.clove.base;
+package com.dxy.happy.base;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -7,7 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.dxy.clove.view.ShowingPage;
+import com.dxy.happy.view.ShowingPage;
 
 /**
  * Created by 芮靖林
