@@ -5,6 +5,8 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Process;
 
+import com.dxy.happy.view.VolleySingleton;
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -21,6 +23,7 @@ public class XnlApplication extends Application {
     private static int mainThreadId;
     private static ExecutorService threadPool;
     public static boolean isLogin = false;//判定是否登录
+    public static VolleySingleton inStance;
 
     @Override
     public void onCreate() {
@@ -29,6 +32,8 @@ public class XnlApplication extends Application {
         handler = new Handler();//创建Handle
         mainThreadId = Process.myTid();//得到主线程id
         threadPool = Executors.newFixedThreadPool(5);//创建线程池
+        //使用Volley
+        inStance = VolleySingleton.getInStance();
     }
 
     public static Context getContext() {
