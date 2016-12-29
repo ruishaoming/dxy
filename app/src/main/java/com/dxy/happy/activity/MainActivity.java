@@ -1,11 +1,18 @@
 package com.dxy.happy.activity;
 
+import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.view.KeyEvent;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import com.dxy.happy.base.BaseActivity;
+import com.dxy.happy.factory.FragmentFactory;
+import com.dxy.happy.view.NoScrollViewPager;
 import com.xnl.happy.R;
-
-import java.util.ArrayList;
 
 /**
  * MainActivity：项目主界面

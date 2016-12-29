@@ -36,13 +36,18 @@ public abstract class BaseData {
             getDataFromNet(path, validTime);
         } else {
             ArrayList<DataBean> dataBeen = dao.quaryBaseData(path);
-            //从数据库得到数据  数据库已经保证了同一个路径只有一个数据（已经避免数据重复添加）
-            String data = dataBeen.get(0).getData();
-            if (TextUtils.isEmpty(data)) {
-                getDataFromNet(path, validTime);
-            } else {
-                setResultData(data);
+            if (dataBeen != null)
+            if (dataBeen != null && dataBeen.size() == 1) {
+                String data = dataBeen.get(0).getData();
+
+                if (TextUtils.isEmpty(data)) {
+                    getDataFromNet(path, validTime);
+                } else {
+                    setResultData(data);
+                }
             }
+            //从数据库得到数据  数据库已经保证了同一个路径只有一个数据（已经避免数据重复添加）
+
         }
     }
 
