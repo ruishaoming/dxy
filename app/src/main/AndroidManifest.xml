@@ -26,7 +26,14 @@
             </intent-filter>
         </activity>
         <activity android:name="com.dxy.happy.base.BaseActivity" />
-        <activity android:name="com.dxy.happy.base.BaseShowingPageActivity"></activity>
+        <activity android:name="com.dxy.happy.activity.SettingActivity" />
+        <activity android:name="com.dxy.happy.activity.InviteFriendsActivity" />
+        <activity
+            android:name="com.dxy.happy.activity.HeaderPhotoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Dialog" />
+        <activity android:name="com.dxy.happy.activity.AboutUsActivity" />
+        <activity android:name="com.dxy.happy.activity.ChangePasswordActivity"></activity>
     </application>
 
 </manifest>

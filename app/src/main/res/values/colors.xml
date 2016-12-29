@@ -3,8 +3,11 @@
     <color name="colorPrimary">#fff</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="mine_background">#fff</color>
-    <color name="mine_cardview_background">#D1CECE</color>
+    <color name="mine_item_background">#fff</color>
+    <color name="mine_background">#E3E5E5</color>
     <color name="main_bottom_tv_check">#FDD843</color>
     <color name="main_bottom_tv_normal">#1a1918</color>
+    <color name="setting_exit_btn">#EA0808</color>
+    <color name="change_password_text">#0A6A3E</color>
+
 </resources>
