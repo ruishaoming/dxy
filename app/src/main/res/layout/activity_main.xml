@@ -5,4 +5,62 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <RadioGroup
+        android:id="@+id/main_bottom_rg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/main_rb_home"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:button="@null"
+            android:checked="true"
+            android:drawableTop="@drawable/home_tab_selector"
+            android:gravity="center_horizontal"
+            android:text="首页"
+            android:textColor="@color/main_bottom_tv_check"
+            android:textSize="@dimen/main_activity_bottom_tv" />
+
+        <RadioButton
+            android:id="@+id/main_rb_com"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/forum_tab_selector"
+            android:gravity="center_horizontal"
+            android:text="社区"
+            android:textColor="@color/main_bottom_tv_normal"
+            android:textSize="@dimen/main_activity_bottom_tv" />
+
+        <RadioButton
+            android:id="@+id/main_rb_mine"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/mine_tab_selector"
+            android:gravity="center_horizontal"
+            android:text="我的"
+            android:textColor="@color/main_bottom_tv_normal"
+            android:textSize="@dimen/main_activity_bottom_tv" />
+
+    </RadioGroup>
+
+    <com.dxy.happy.view.NoScrollViewPager
+        android:id="@+id/main_vp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/main_bottom_rg">
+
+    </com.dxy.happy.view.NoScrollViewPager>
 </RelativeLayout>

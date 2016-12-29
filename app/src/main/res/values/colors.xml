@@ -5,4 +5,6 @@
     <color name="colorAccent">#FF4081</color>
     <color name="mine_background">#fff</color>
     <color name="mine_cardview_background">#D1CECE</color>
+    <color name="main_bottom_tv_check">#FDD843</color>
+    <color name="main_bottom_tv_normal">#1a1918</color>
 </resources>
