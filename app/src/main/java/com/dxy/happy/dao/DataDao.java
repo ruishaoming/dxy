@@ -7,8 +7,6 @@ import android.database.sqlite.SQLiteDatabase;
 
 import com.dxy.happy.bean.DataBean;
 
-import java.util.ArrayList;
-
 /**
  * Created by 乔智锋
  * on 2016/12/28 20:36.
@@ -17,6 +15,7 @@ import java.util.ArrayList;
 public class DataDao {
 
     private final MySqliteOpenHelper mySqliteOpenHelper;
+    private DataBean dataBean;
 
     public DataDao(Context context) {
         mySqliteOpenHelper = new MySqliteOpenHelper(context);
@@ -45,9 +44,7 @@ public class DataDao {
         }
     }
 
-    ArrayList<DataBean> list = new ArrayList<>();
-
-    public ArrayList<DataBean> quaryBaseData(String url) {
+    public DataBean quaryBaseData(String url) {
         SQLiteDatabase db = mySqliteOpenHelper.getReadableDatabase();
         Cursor cursor = db.query("basedata", null, "path = ?", new String[]{url}, null, null, null);
 
@@ -55,9 +52,9 @@ public class DataDao {
             String paht = cursor.getString(cursor.getColumnIndex("path"));
             String data = cursor.getString(cursor.getColumnIndex("data"));
             String time = cursor.getString(cursor.getColumnIndex("time"));
-            list.add(new DataBean(paht, data, time));
+            dataBean = new DataBean(paht, data, time);
         }
-        return list;
+        return dataBean;
     }
 
 

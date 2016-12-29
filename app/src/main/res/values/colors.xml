@@ -3,6 +3,8 @@
     <color name="white">#fff</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorRed">#aadc71ff</color>
     <color name="mine_background">#fff</color>
     <color name="mine_cardview_background">#D1CECE</color>
     <color name="main_bottom_tv_check">#FDD843</color>

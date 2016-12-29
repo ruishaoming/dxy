@@ -11,14 +11,8 @@ import android.widget.Toast;
 
 import com.dxy.happy.base.BaseActivity;
 import com.dxy.happy.factory.FragmentFactory;
-import com.dxy.happy.fragment.Community_Fragment;
-import com.dxy.happy.fragment.Home_Fragment;
-import com.dxy.happy.fragment.Mine_Fragment;
-import com.dxy.happy.utils.LogUtils;
 import com.dxy.happy.view.NoScrollViewPager;
 import com.xnl.happy.R;
-
-import java.util.ArrayList;
 
 /**
  * MainActivity：项目主界面
@@ -37,7 +31,6 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
         initViews();
         initViewPager();
-        //
     }
 
     //初始化ViewPager
@@ -53,7 +46,6 @@ public class MainActivity extends BaseActivity {
                 return 3;
             }
         });
-
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
