@@ -60,6 +60,6 @@ public class Community_Forum_Fragment extends BaseFragment {
             }
         };
         listView_forum.setAdapter(commonAdapter);
-        }
+    }
 
 }

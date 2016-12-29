@@ -39,7 +39,7 @@ public class Community_Fragment extends BaseFragment implements RadioGroup.OnChe
         image_email.setOnClickListener(this);
         rg_community.setOnCheckedChangeListener(this);
         view_pager.setCurrentItem(1);
-        view_pager.setAdapter(new FragmentPagerAdapter(getActivity().getSupportFragmentManager()) {
+        view_pager.setAdapter(new FragmentPagerAdapter(getChildFragmentManager()) {
             @Override
             public Fragment getItem(int position) {
                 Fragment fragment = null;
