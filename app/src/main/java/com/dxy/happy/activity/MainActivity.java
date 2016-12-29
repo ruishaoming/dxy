@@ -1,13 +1,11 @@
 package com.dxy.happy.activity;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
 
 import com.dxy.happy.base.BaseActivity;
-import com.dxy.happy.fragment.Home_Fragment;
 import com.xnl.happy.R;
+
+import java.util.ArrayList;
 
 /**
  * MainActivity：项目主界面
@@ -16,22 +14,69 @@ import com.xnl.happy.R;
  */
 public class MainActivity extends BaseActivity {
 
+    public static final String TAG = "TAG";
+    private RadioGroup radioGroup;
+    private NoScrollViewPager vp;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-            ViewPager main_viewpager= (ViewPager) findViewById(R.id.main_viewpager);
-        main_viewpager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
+        initViews();
+        initViewPager();
+    }
+
+    //初始化ViewPager
+    private void initViewPager() {
+        vp.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
             @Override
             public Fragment getItem(int position) {
-                Home_Fragment homeFragment = new Home_Fragment();
-                return homeFragment;
+                return FragmentFactory.getFragment(position);
             }
 
             @Override
             public int getCount() {
-                return 1;
+                return 3;
             }
         });
+
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                for (int i = 0; i < radioGroup.getChildCount(); i++) {
+                    RadioButton rb = (RadioButton) radioGroup.getChildAt(i);
+                    if (rb.getId() == checkedId) {
+                        rb.setTextColor(getResources().getColor(R.color.main_bottom_tv_check));
+                        vp.setCurrentItem(i);
+                    } else {
+                        rb.setTextColor(Color.BLACK);
+                    }
+                }
+            }
+        });
+    }
+
+    //初始化布局
+    private void initViews() {
+        radioGroup = (RadioGroup) findViewById(R.id.main_bottom_rg);
+        vp = (NoScrollViewPager) findViewById(R.id.main_vp);
+    }
+
+    private long waitTime = 1200;
+    private long touchTime = 0;
+
+    //监听程序退出
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (event.getAction() == KeyEvent.ACTION_DOWN && KeyEvent.KEYCODE_BACK == keyCode) {
+            long currentTime = System.currentTimeMillis();
+            if ((currentTime - touchTime) >= waitTime) {
+                Toast.makeText(MainActivity.this, "再按一次退出...", Toast.LENGTH_SHORT).show();
+                touchTime = currentTime;
+            } else {
+                finish();
+            }
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }
