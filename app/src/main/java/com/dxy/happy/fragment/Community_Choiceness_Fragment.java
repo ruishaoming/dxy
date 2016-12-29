@@ -2,10 +2,10 @@ package com.dxy.happy.fragment;
 
 import android.view.View;
 
+import com.dxy.happy.R;
 import com.dxy.happy.base.BaseFragment;
 import com.dxy.happy.utils.CommonUtils;
 import com.dxy.happy.view.ShowingPage;
-import com.dxy.happy.R;
 
 /**
  * Created by 张天成
