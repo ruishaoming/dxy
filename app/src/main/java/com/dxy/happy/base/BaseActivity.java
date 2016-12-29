@@ -16,5 +16,6 @@ public class BaseActivity extends AutoLayoutActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base);
+        getSupportActionBar().hide();
     }
 }

@@ -31,6 +31,7 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
         initViews();
         initViewPager();
+        //
     }
 
     //初始化ViewPager
@@ -46,7 +47,6 @@ public class MainActivity extends BaseActivity {
                 return 3;
             }
         });
-
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {

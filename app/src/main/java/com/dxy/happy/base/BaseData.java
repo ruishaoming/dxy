@@ -9,7 +9,6 @@ import com.dxy.happy.dao.DataDao;
 import com.dxy.happy.view.VolleySingleton;
 
 import java.io.File;
-import java.util.ArrayList;
 
 /**
  * Created by 乔智锋
@@ -45,9 +44,13 @@ public abstract class BaseData {
                 } else {
                     setResultData(data);
                 }
-            }
+            DataBean dataBean = dao.quaryBaseData(path);
             //从数据库得到数据  数据库已经保证了同一个路径只有一个数据（已经避免数据重复添加）
-
+            if (TextUtils.isEmpty(dataBean.getData())) {
+                getDataFromNet(path, validTime);
+            } else {
+                setResultData(dataBean.getData());
+            }
         }
     }
 
