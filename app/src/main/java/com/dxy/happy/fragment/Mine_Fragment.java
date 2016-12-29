@@ -9,10 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
+import com.dxy.happy.R;
 import com.dxy.happy.activity.HeaderPhotoActivity;
 import com.dxy.happy.activity.SettingActivity;
 import com.dxy.happy.utils.CommonUtils;
-import com.xnl.happy.R;
 import com.zhy.autolayout.AutoLinearLayout;
 
 
