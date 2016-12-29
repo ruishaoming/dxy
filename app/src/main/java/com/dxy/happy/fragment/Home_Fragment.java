@@ -4,6 +4,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import com.dxy.happy.R;
 import com.dxy.happy.adapter.Home_Fragment_Main_RecycleViewAdapter;
 import com.dxy.happy.base.BaseData;
 import com.dxy.happy.base.BaseFragment;
@@ -12,7 +13,6 @@ import com.dxy.happy.utils.CommonUtils;
 import com.dxy.happy.utils.URLUtils;
 import com.dxy.happy.view.ShowingPage;
 import com.google.gson.Gson;
-import com.xnl.happy.R;
 
 /**
  * 首页

@@ -11,9 +11,9 @@ import com.dxy.happy.Hoder.Holder_Love_Community;
 import com.dxy.happy.Hoder.Holder_Love_Gas;
 import com.dxy.happy.Hoder.Holder_ViewPager;
 import com.dxy.happy.Hoder.Holder_festival;
+import com.dxy.happy.R;
 import com.dxy.happy.bean.Fragment_ViewPagerBean;
 import com.dxy.happy.utils.CommonUtils;
-import com.xnl.happy.R;
 
 /**
  * Created by 韩永光

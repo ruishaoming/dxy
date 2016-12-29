@@ -1,14 +1,15 @@
 package com.dxy.happy.fragment;
 
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.dxy.happy.R;
 import com.dxy.happy.base.BaseFragment;
 import com.dxy.happy.utils.CommonUtils;
 import com.dxy.happy.view.ShowingPage;
-import com.xnl.happy.R;
 import com.zhy.adapter.abslistview.CommonAdapter;
 import com.zhy.adapter.abslistview.ViewHolder;
 

@@ -12,8 +12,8 @@ import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 
+import com.dxy.happy.R;
 import com.dxy.happy.app.XnlApplication;
-import com.xnl.happy.R;
 
 
 public class CommonUtils {
