@@ -16,15 +16,19 @@
             android:name="design_height"
             android:value="1280" />
 
-        <activity android:name="com.dxy.happy.activity.MainActivity">
+        <activity android:name="com.dxy.happy.activity.MainActivity" />
+        <activity android:name="com.dxy.happy.base.BaseActivity" />
+        <activity android:name="com.dxy.happy.base.BaseShowingPageActivity" />
+        <activity android:name="com.dxy.happy.activity.LaunchActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.dxy.happy.base.BaseActivity" />
-        <activity android:name="com.dxy.happy.base.BaseShowingPageActivity"></activity>
+        <activity android:name="com.dxy.happy.activity.LoginActivity" />
+        <activity android:name="com.dxy.happy.activity.ForgetActivity" />
+        <activity android:name="com.dxy.happy.activity.ZhuceActivity"></activity>
     </application>
 
 </manifest>
