@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.xnl.happy">
+    package="com.dxy.happy">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
@@ -30,8 +30,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.dxy.happy.base.BaseActivity" />
-        <activity android:name="com.dxy.happy.base.BaseShowingPageActivity"></activity>
+        <activity android:name=".base.BaseActivity" />
     </application>
 
 </manifest>

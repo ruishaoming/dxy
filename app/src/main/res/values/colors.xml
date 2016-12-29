@@ -2,6 +2,7 @@
 <resources>
     <color name="white">#fff</color>
     <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimary">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorBlack">#000000</color>
     <color name="colorRed">#aadc71ff</color>
@@ -13,8 +14,4 @@
     <color name="gray">#c0c0c0</color>
     <color name="black">#000000</color>
     <color name="search_backcolor">#eeeeee</color>
-    <color name="mine_background">#fff</color>
-    <color name="mine_cardview_background">#D1CECE</color>
-    <color name="main_bottom_tv_check">#FDD843</color>
-    <color name="main_bottom_tv_normal">#1a1918</color>
 </resources>
