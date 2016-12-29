@@ -53,7 +53,6 @@ public class CommonUtils {
         //
         int dip = (int) (px / density + 0.5f);
         return dip;
-
     }
 
     public static String getDimens(int stringId) {
