@@ -6,7 +6,7 @@ import android.view.View;
 
 import com.dxy.happy.adapter.Home_Fragment_ViewPagerAdapter;
 import com.dxy.happy.bean.Fragment_ViewPagerBean;
-import com.xnl.happy.R;
+import com.dxy.happy.R;
 
 import java.util.List;
 

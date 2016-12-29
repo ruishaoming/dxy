@@ -7,7 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.xnl.happy.R;
+import com.dxy.happy.R;
 
 
 /**

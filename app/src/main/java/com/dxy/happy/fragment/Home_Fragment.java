@@ -12,7 +12,7 @@ import com.dxy.happy.utils.CommonUtils;
 import com.dxy.happy.utils.URLUtils;
 import com.dxy.happy.view.ShowingPage;
 import com.google.gson.Gson;
-import com.xnl.happy.R;
+import com.dxy.happy.R;
 
 /**
  * 首页

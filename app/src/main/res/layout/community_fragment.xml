@@ -2,16 +2,17 @@
 <com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    >
+    android:background="@color/white">
+
     <RadioGroup
         android:id="@+id/rg_community"
         android:layout_width="450px"
-        android:orientation="horizontal"
-        android:layout_marginRight="30px"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_margin="10px"
-        android:layout_height="wrap_content">
+        android:layout_marginRight="30px"
+        android:orientation="horizontal">
+
         <RadioButton
             android:id="@+id/rb_Forum"
             android:layout_width="0px"
@@ -31,9 +32,9 @@
             android:layout_weight="1"
             android:background="@drawable/community_redio"
             android:button="@null"
-            android:text="精选"
             android:checked="true"
             android:gravity="center"
+            android:text="精选"
             android:textColor="@drawable/community_rediocolor"
             android:textSize="20sp" />
 
@@ -49,18 +50,19 @@
             android:textColor="@drawable/community_rediocolor"
             android:textSize="20sp" />
     </RadioGroup>
+
     <ImageView
         android:id="@+id/image_email"
         android:layout_width="55px"
         android:layout_height="55px"
-        android:src="@mipmap/home_notice_new"
-        android:layout_toRightOf="@+id/rg_community"
         android:layout_margin="12px"
-        />
+        android:layout_toRightOf="@+id/rg_community"
+        android:src="@mipmap/home_notice_new" />
+
     <android.support.v4.view.ViewPager
-        android:layout_below="@+id/rg_community"
         android:id="@+id/viewPager_community"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rg_community" />
 
 </com.zhy.autolayout.AutoRelativeLayout>

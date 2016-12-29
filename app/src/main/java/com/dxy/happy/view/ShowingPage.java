@@ -6,7 +6,7 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 
 import com.dxy.happy.utils.CommonUtils;
-import com.xnl.happy.R;
+import com.dxy.happy.R;
 
 
 /**

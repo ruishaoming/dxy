@@ -12,12 +12,13 @@ import android.widget.Toast;
 import com.dxy.happy.base.BaseActivity;
 import com.dxy.happy.factory.FragmentFactory;
 import com.dxy.happy.view.NoScrollViewPager;
-import com.xnl.happy.R;
+import com.dxy.happy.R;
 
 /**
  * MainActivity：项目主界面
  * create:芮靖林
  * on：201612/28
+ * //..
  */
 public class MainActivity extends BaseActivity {
 

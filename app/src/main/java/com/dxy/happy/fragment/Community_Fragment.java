@@ -11,7 +11,7 @@ import android.widget.RadioGroup;
 import com.dxy.happy.base.BaseFragment;
 import com.dxy.happy.utils.CommonUtils;
 import com.dxy.happy.view.ShowingPage;
-import com.xnl.happy.R;
+import com.dxy.happy.R;
 
 /**
  * 社区
