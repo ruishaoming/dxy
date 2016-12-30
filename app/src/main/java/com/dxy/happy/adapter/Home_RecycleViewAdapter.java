@@ -5,21 +5,22 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.dxy.happy.Hoder.BaseHolder;
-import com.dxy.happy.Hoder.Holder_Know;
-import com.dxy.happy.Hoder.Holder_Love_Community;
-import com.dxy.happy.Hoder.Holder_Love_Gas;
-import com.dxy.happy.Hoder.Holder_ViewPager;
-import com.dxy.happy.Hoder.Holder_festival;
 import com.dxy.happy.R;
 import com.dxy.happy.bean.Fragment_ViewPagerBean;
+import com.dxy.happy.hoder.BaseHolder;
+import com.dxy.happy.hoder.Holder_Know;
+import com.dxy.happy.hoder.Holder_Love_Community;
+import com.dxy.happy.hoder.Holder_Love_Gas;
+import com.dxy.happy.hoder.Holder_ViewPager;
+import com.dxy.happy.hoder.Holder_festival;
 import com.dxy.happy.utils.CommonUtils;
+
 
 /**
  * Created by 韩永光
  * on 2016/12/29 16:18.
  */
-public class Home_Fragment_Main_RecycleViewAdapter extends RecyclerView.Adapter<BaseHolder> {
+public class Home_RecycleViewAdapter extends RecyclerView.Adapter<BaseHolder> {
     int Type = -1;
     int Type0 = 0;
     int Type1 = 1;
@@ -29,7 +30,7 @@ public class Home_Fragment_Main_RecycleViewAdapter extends RecyclerView.Adapter<
     private final Context context;
     private final Fragment_ViewPagerBean fragment_viewPagerBean;
 
-    public Home_Fragment_Main_RecycleViewAdapter(Context context, Fragment_ViewPagerBean fragment_viewPagerBean) {
+    public Home_RecycleViewAdapter(Context context, Fragment_ViewPagerBean fragment_viewPagerBean) {
         this.context = context;
         this.fragment_viewPagerBean = fragment_viewPagerBean;
     }
