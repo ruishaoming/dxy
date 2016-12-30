@@ -5,29 +5,36 @@ import android.support.v4.view.PagerAdapter;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.dxy.happy.bean.Fragment_ViewPagerBean;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by 韩永光
  * on 2016/12/29 14:49.
  */
-public class Home_Fragment_ViewPagerAdapter extends PagerAdapter {
+public class Home_ViewPagerAdapter extends PagerAdapter {
 
     private final Context context;
     private final List<Fragment_ViewPagerBean.DataBean> vpList;
+    private final ArrayList<String> imglist=new ArrayList<>();
 
-    public Home_Fragment_ViewPagerAdapter(Context context, List<Fragment_ViewPagerBean.DataBean> vpList) {
+    public Home_ViewPagerAdapter(Context context, List<Fragment_ViewPagerBean.DataBean> vpList) {
         this.context =context;
         this.vpList =vpList;
+        for (int i = 0; i <vpList.size() ; i++) {
+            imglist.add(vpList.get(i).getImg());
+        }
+
     }
 
     @Override
     public int getCount() {
-        return vpList.size();
+        return Integer.MAX_VALUE;
     }
 
     @Override
@@ -36,9 +43,15 @@ public class Home_Fragment_ViewPagerAdapter extends PagerAdapter {
     }
 
     @Override
-    public Object instantiateItem(ViewGroup container, int position) {
+    public Object instantiateItem(ViewGroup container, final int position) {
         ImageView img=new ImageView(context);
-        Glide.with(context).load(vpList.get(position).getImg()).into(img);
+        Glide.with(context).load(vpList.get(position%vpList.size()).getImg()).into(img);
+        img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context, "----"+position, Toast.LENGTH_SHORT).show();
+            }
+        });
         container.addView(img);
         return img;
     }
@@ -47,4 +60,5 @@ public class Home_Fragment_ViewPagerAdapter extends PagerAdapter {
     public void destroyItem(ViewGroup container, int position, Object object) {
         container.removeView((View) object);
     }
+
 }
