@@ -15,7 +15,7 @@ import java.util.List;
  * Created by 韩永光
  * on 2016/12/29 14:49.
  */
-public class Home_Fragment_ViewPagerAdapter extends PagerAdapter {
+public class Home_Fragment_ViewPagerAdapter extends PagerAdapter implements View.OnClickListener {
 
     private final Context context;
     private final List<Fragment_ViewPagerBean.DataBean> vpList;
@@ -39,6 +39,7 @@ public class Home_Fragment_ViewPagerAdapter extends PagerAdapter {
     public Object instantiateItem(ViewGroup container, int position) {
         ImageView img=new ImageView(context);
         Glide.with(context).load(vpList.get(position).getImg()).into(img);
+        img.setOnClickListener(this);//图片的点击
         container.addView(img);
         return img;
     }
@@ -46,5 +47,10 @@ public class Home_Fragment_ViewPagerAdapter extends PagerAdapter {
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
         container.removeView((View) object);
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 }
