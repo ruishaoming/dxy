@@ -2,23 +2,43 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/home_framgment_framelayout"
-        android:clipChildren="false"
-        android:layout_centerInParent="true"
-        android:background="@color/colorRed"
-        >
-        <android.support.v4.view.ViewPager
-            android:id="@+id/home_fragment_viewpager"
-            android:layout_width="match_parent"
-            android:layout_marginLeft="@dimen/layout_margin_middle"
-            android:layout_marginRight="@dimen/layout_margin_middle"
-            android:clipChildren="false"
-            android:layout_height="@dimen/home_framgment_framelayout"
-            android:layout_gravity="center"
-            >
-        </android.support.v4.view.ViewPager>
 
-    </FrameLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+            android:background="@mipmap/home_article_mask_bg"
+        android:layout_height="@dimen/home_framgment_framelayout">
+
+        <FrameLayout
+            android:id="@+id/ff"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:clipChildren="false"
+            android:paddingBottom="20px">
+
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/home_fragment_viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/layout_margin_middle"
+                android:layout_marginRight="@dimen/layout_margin_middle"
+                android:clipChildren="false"></android.support.v4.view.ViewPager>
+
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/home_fragment_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="30px"
+            android:layout_alignBottom="@+id/ff"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal">
+
+
+        </LinearLayout>
+    </RelativeLayout>
+
 </LinearLayout>

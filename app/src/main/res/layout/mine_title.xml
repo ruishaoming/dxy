@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="20px"
+    android:background="@color/mine_item_background">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/mine_return_back"
+        android:src="@mipmap/return_back"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/mine_title_text"
+        android:textSize="@dimen/mine_text"
+        android:text="123"
+       android:layout_centerHorizontal="true"
+        android:layout_marginTop="25px"
+        android:textColor="@color/main_bottom_tv_normal"/>
+<TextView
+    android:id="@+id/mine_feedback_commit"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentRight="true"
+    android:text="123"
+    android:layout_marginTop="25px"
+    android:textSize="@dimen/mine_text"
+    android:layout_marginRight="20px"
+    android:visibility="gone"/>
+    <ImageView
+        android:id="@+id/mine_mypost_img"
+        android:layout_width="70px"
+        android:layout_height="70px"
+        android:src="@mipmap/forum_post_btn"
+        android:layout_alignParentRight="true"
+        android:visibility="gone"/>
+</com.zhy.autolayout.AutoRelativeLayout>
