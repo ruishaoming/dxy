@@ -4,7 +4,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import com.xnl.happy.R;
+import com.dxy.happy.R;
+
 
 public class HeaderPhotoActivity extends AppCompatActivity implements View.OnClickListener {
 

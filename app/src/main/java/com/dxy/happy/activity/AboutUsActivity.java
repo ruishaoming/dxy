@@ -5,8 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
+import com.dxy.happy.R;
 import com.dxy.happy.utils.CommonUtils;
-import com.xnl.happy.R;
 
 public class AboutUsActivity extends AppCompatActivity implements View.OnClickListener {
 

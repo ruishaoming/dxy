@@ -2,9 +2,9 @@
 <resources>
     <color name="white">#fff</color>
     <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimary">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="mine_item_background">#fff</color>
-    <color name="mine_background">#E3E5E5</color>
     <color name="colorBlack">#000000</color>
     <color name="colorRed">#aadc71ff</color>
     <color name="mine_background">#fff</color>

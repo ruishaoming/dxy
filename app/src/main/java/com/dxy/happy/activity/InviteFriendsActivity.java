@@ -6,8 +6,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.dxy.happy.R;
 import com.dxy.happy.utils.CommonUtils;
-import com.xnl.happy.R;
 
 
 public class InviteFriendsActivity extends AppCompatActivity implements View.OnClickListener {

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/mine_background"
+    android:background="@color/gray"
     >
 <include layout="@layout/mine_title"></include>
     <com.zhy.autolayout.AutoRelativeLayout
