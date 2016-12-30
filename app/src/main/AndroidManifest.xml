@@ -31,7 +31,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".base.BaseActivity" />
-        <activity android:name="com.dxy.happy.base.BaseActivity" />
     </application>
 
 </manifest>
