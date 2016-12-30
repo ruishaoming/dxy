@@ -15,7 +15,7 @@
     <ImageView
         android:id="@+id/launch_btn"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="70dp"
+        android:layout_marginBottom="80dp"
        android:layout_centerHorizontal="true"
         android:background="@mipmap/btn"
         android:layout_width="100dp"

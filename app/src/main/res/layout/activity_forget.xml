@@ -11,10 +11,12 @@
     android:layout_marginTop="80dp"
     android:background="#ffffff"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="45dp">
     <EditText
+        android:layout_marginTop="15dp"
         android:layout_marginLeft="20dp"
         android:layout_width="wrap_content"
+        android:background="#ffffff"
         android:layout_height="wrap_content"
         android:hint="请输入您用于注册的手机号"/>
 </LinearLayout>
@@ -26,6 +28,7 @@
             android:id="@+id/yanzheng"
             android:layout_marginLeft="20dp"
             android:layout_width="250dp"
+            android:background="#ffffff"
             android:layout_height="wrap_content"
             android:hint="请输入验证码"/>
         <Button
@@ -43,16 +46,23 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <EditText
+            android:id="@+id/for_pwd"
+            android:layout_marginTop="15dp"
             android:layout_marginLeft="10dp"
             android:layout_width="300dp"
+            android:background="#ffffff"
             android:layout_height="wrap_content"
             android:hint="设置密码"
             />
-        <ImageView
-
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@mipmap/login_password_invisible"/>
+        <CheckBox
+            android:password="true"
+            android:id="@+id/login_eye"
+            android:layout_gravity="right"
+            android:checked="false"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:button="@drawable/change"
+            />
     </LinearLayout>
     <Button
         android:layout_marginTop="40dp"

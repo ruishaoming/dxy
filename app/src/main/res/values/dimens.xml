@@ -9,4 +9,5 @@
     <dimen name="home_framgment_viewpager">220px</dimen>
     <dimen name="main_activity_bottom_tv">25px</dimen>
     <dimen name="mine_text">40px</dimen>
+    <dimen name="fab_margin">16dp</dimen>
 </resources>

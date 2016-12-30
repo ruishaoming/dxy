@@ -4,13 +4,13 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.dxy.happy.R;
 import com.dxy.happy.adapter.LaunchAdapter;
-import com.xnl.happy.R;
+import com.dxy.happy.base.BaseActivity;
 
 import java.util.ArrayList;
 
@@ -20,7 +20,7 @@ import java.util.ArrayList;
  * update: 2016/12/28
  */
 
-public class LaunchActivity extends AppCompatActivity implements View.OnClickListener {
+public class LaunchActivity extends BaseActivity implements View.OnClickListener {
     private ViewPager viewPager;
     private ArrayList<ImageView> list=new ArrayList<>();
     private LinearLayout linearLayout;
@@ -143,12 +143,13 @@ public class LaunchActivity extends AppCompatActivity implements View.OnClickLis
     private void jump() {
         Intent intent=new Intent(LaunchActivity.this,LoginActivity.class);
         startActivity(intent);
-        finish();
+       finish();
     }
 
     @Override
     public void onClick(View v) {
         Intent intent1=new Intent(LaunchActivity.this,LoginActivity.class);
         startActivity(intent1);
+        finish();
     }
 }
