@@ -56,6 +56,14 @@ public class DataDao {
         }
         return dataBean;
     }
+    /*public Userbean addUserBean()
+    {
+        SQLiteDatabase db=mySqliteOpenHelper.getWritableDatabase();
+
+        db.insert("logindata",)
+
+        return null;
+    }*/
 
 
 }
