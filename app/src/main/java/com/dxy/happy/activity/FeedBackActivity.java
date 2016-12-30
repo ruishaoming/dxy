@@ -31,6 +31,8 @@ public class FeedBackActivity extends AppCompatActivity implements View.OnClickL
             case R.id.mine_return_back:
                 CommonUtils.finishActivity(FeedBackActivity.this);
                 break;
+            case R.id.mine_feedback_commit:
+                break;
         }
 
     }
