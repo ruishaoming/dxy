@@ -5,7 +5,6 @@ import android.support.v4.view.PagerAdapter;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.dxy.happy.bean.Fragment_ViewPagerBean;
@@ -47,7 +46,7 @@ public class Home_ViewPagerAdapter extends PagerAdapter implements View.OnClickL
         ImageView img=new ImageView(context);
         Glide.with(context).load(vpList.get(position%vpList.size()).getImg()).into(img);
 
-        Glide.with(context).load(vpList.get(position).getImg()).into(img);
+        Glide.with(context).load(vpList.get(position%vpList.size()).getImg()).into(img);
         img.setOnClickListener(this);//图片的点击
         container.addView(img);
         return img;
