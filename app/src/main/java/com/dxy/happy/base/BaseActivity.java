@@ -2,7 +2,7 @@ package com.dxy.happy.base;
 
 import android.os.Bundle;
 
-import com.xnl.happy.R;
+import com.dxy.happy.R;
 import com.zhy.autolayout.AutoLayoutActivity;
 
 /**

@@ -2,15 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical">
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#f00">
+    android:orientation="vertical"
+    android:background="@color/mine_background">
+
 
     <com.zhy.autolayout.AutoRelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="500px"
+        android:layout_height="430px"
         android:background="@mipmap/profile_bg">
 
         <ImageView
@@ -22,7 +20,7 @@
             android:src="@mipmap/header_photo" />
 
         <LinearLayout
-            android:id="@+id/mine_line"
+            android:id="@+id/mine_line_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/mine_header_photo"
@@ -43,9 +41,10 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/mine_line_attention"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/mine_line"
+            android:layout_below="@+id/mine_line_name"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20px"
             android:orientation="vertical">
@@ -66,12 +65,13 @@
     </com.zhy.autolayout.AutoRelativeLayout>
 
     <com.zhy.autolayout.AutoRelativeLayout
-        android:layout_width="730px"
+        android:id="@+id/mine_rela_basedata"
+        android:layout_width="750px"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20px"
-        android:background="@color/mine_background"
-        android:padding="10px">
+        android:background="@color/mine_item_background"
+        android:padding="20px">
 
         <ImageView
             android:id="@+id/mine_title_profile"
@@ -86,6 +86,7 @@
             android:layout_marginTop="8px"
             android:layout_toRightOf="@+id/mine_title_profile"
             android:text="基本资料"
+            android:textColor="@color/main_bottom_tv_normal"
             android:textSize="@dimen/mine_text" />
 
         <ImageView
@@ -106,28 +107,32 @@
     </com.zhy.autolayout.AutoRelativeLayout>
 
     <com.zhy.autolayout.AutoLinearLayout
-        android:layout_width="730px"
+        android:id="@+id/mine_info"
+        android:layout_width="750px"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="5px"
-        android:background="@color/mine_background"
-        android:padding="20px">
+        android:layout_marginTop="2px"
+        android:background="@color/mine_item_background"
+        android:padding="20px"
+        android:visibility="gone">
 
 
     </com.zhy.autolayout.AutoLinearLayout>
 
     <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/mine_rela_mypost"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30px"
-        android:background="@color/mine_background"
-        android:padding="10px">
+        android:layout_marginTop="20px"
+        android:background="@color/mine_item_background"
+        android:padding="20px">
 
         <ImageView
             android:id="@+id/mine_title_post"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/me_title_post" />
+            android:src="@mipmap/me_title_post"
+            android:layout_marginLeft="18px"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -135,6 +140,7 @@
             android:layout_marginLeft="20px"
             android:layout_marginTop="10px"
             android:layout_toRightOf="@+id/mine_title_post"
+            android:textColor="@color/main_bottom_tv_normal"
             android:text="我的帖子"
             android:textSize="@dimen/mine_text" />
         <ImageView
@@ -142,50 +148,24 @@
             android:layout_height="wrap_content"
             android:src="@mipmap/next_indicator"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="20px"/>
+            android:layout_marginRight="15px"
+            android:layout_marginTop="10px"/>
 
     </com.zhy.autolayout.AutoRelativeLayout>
     <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/mine_rela_feedback"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30px"
-        android:background="@color/mine_background"
-        android:padding="10px">
-
-        <ImageView
-            android:id="@+id/mine_setting"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/me_setting" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20px"
-            android:layout_marginTop="10px"
-            android:layout_toRightOf="@+id/mine_setting"
-            android:text="意见反馈"
-            android:textSize="@dimen/mine_text" />
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/next_indicator"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="20px"/>
-
-    </com.zhy.autolayout.AutoRelativeLayout>
-    <com.zhy.autolayout.AutoRelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30px"
-        android:background="@color/mine_background"
-        android:padding="5px">
+        android:layout_marginTop="20px"
+        android:background="@color/mine_item_background"
+        android:padding="20px">
 
         <ImageView
             android:id="@+id/mine_title_feedback"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/me_title_feedback" />
+            android:src="@mipmap/me_title_feedback"
+            android:layout_marginLeft="18px"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -193,6 +173,40 @@
             android:layout_marginLeft="20px"
             android:layout_marginTop="10px"
             android:layout_toRightOf="@+id/mine_title_feedback"
+            android:textColor="@color/main_bottom_tv_normal"
+            android:text="意见反馈"
+            android:textSize="@dimen/mine_text" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/next_indicator"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15px"
+            android:layout_marginTop="10px"/>
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/mine_rela_setting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2px"
+        android:background="@color/mine_item_background"
+        android:padding="20px">
+
+        <ImageView
+            android:id="@+id/mine_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/me_setting"
+            android:layout_marginLeft="18px"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20px"
+            android:layout_marginTop="10px"
+            android:layout_toRightOf="@+id/mine_setting"
+            android:textColor="@color/main_bottom_tv_normal"
             android:text="设置"
             android:textSize="@dimen/mine_text" />
         <ImageView
@@ -200,7 +214,8 @@
             android:layout_height="wrap_content"
             android:src="@mipmap/next_indicator"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="20px"/>
+            android:layout_marginRight="15px"
+            android:layout_marginTop="10px"/>
 
     </com.zhy.autolayout.AutoRelativeLayout>
 </LinearLayout>

@@ -35,9 +35,7 @@ public abstract class BaseData {
             getDataFromNet(path, validTime);
         } else {
             DataBean dataBeen = dao.quaryBaseData(path);
-
             String data = dataBeen.getData();
-
             if (TextUtils.isEmpty(data)) {
                 getDataFromNet(path, validTime);
             } else {

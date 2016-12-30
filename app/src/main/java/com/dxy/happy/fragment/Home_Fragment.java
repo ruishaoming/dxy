@@ -5,7 +5,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.dxy.happy.adapter.Home_RecycleViewAdapter;
+import com.dxy.happy.adapter.Home_Fragment_Main_RecycleViewAdapter;
 import com.dxy.happy.base.BaseData;
 import com.dxy.happy.base.BaseFragment;
 import com.dxy.happy.bean.Fragment_ViewPagerBean;
@@ -39,8 +39,6 @@ public class Home_Fragment extends BaseFragment {
         View view = CommonUtils.inflate(R.layout.home_fragment);
         //初始化控件
         initView(view);
-        //SwipeRefreshLayout的刷新加载设置
-       // swipe_ly
         return view;
     }
 
@@ -54,13 +52,13 @@ public class Home_Fragment extends BaseFragment {
                 initRecycleView(fragment_viewPagerBean);
 
             }
-        }.getData(URLUtils.url_viewPager, BaseData.NORMALTIME);
+        }.getData(URLUtils.url_viewPager, BaseData.NOTIME);
     }
 
     private void initRecycleView(final Fragment_ViewPagerBean fragment_viewPagerBean) {
         //设置适配器
         home_fragment_recycleview.setLayoutManager(new LinearLayoutManager(getContext()));
-        Home_RecycleViewAdapter adapter=new Home_RecycleViewAdapter(getContext(),fragment_viewPagerBean);
+        Home_Fragment_Main_RecycleViewAdapter adapter=new Home_Fragment_Main_RecycleViewAdapter(getContext(),fragment_viewPagerBean);
         home_fragment_recycleview.setAdapter(adapter);
     }
 

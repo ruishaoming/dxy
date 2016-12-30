@@ -9,10 +9,10 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.dxy.happy.R;
 import com.dxy.happy.base.BaseActivity;
 import com.dxy.happy.factory.FragmentFactory;
 import com.dxy.happy.view.NoScrollViewPager;
-import com.xnl.happy.R;
 
 /**
  * MainActivity：项目主界面
@@ -31,7 +31,6 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
         initViews();
         initViewPager();
-        //
     }
 
     //初始化ViewPager
