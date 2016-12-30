@@ -1,16 +1,16 @@
 package com.dxy.happy.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.dxy.happy.R;
+import com.dxy.happy.base.BaseActivity;
 import com.dxy.happy.utils.CommonUtils;
 
 
-public class InviteFriendsActivity extends AppCompatActivity implements View.OnClickListener {
+public class InviteFriendsActivity extends BaseActivity implements View.OnClickListener {
 
     private ImageView mine_return_back;
     private TextView mine_title_text;

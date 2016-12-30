@@ -1,16 +1,18 @@
 package com.dxy.happy.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
 import com.dxy.happy.R;
+import com.dxy.happy.base.BaseActivity;
 import com.dxy.happy.utils.CommonUtils;
 
-public class AboutUsActivity extends AppCompatActivity implements View.OnClickListener {
+public class AboutUsActivity extends BaseActivity implements View.OnClickListener {
 
     private TextView mine_title_text;
+    String url = "http://www.yulin520.com/a2a/h/i/yulin/agreement";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +34,9 @@ public class AboutUsActivity extends AppCompatActivity implements View.OnClickLi
                 CommonUtils.finishActivity(AboutUsActivity.this);
                 break;
             case R.id.about_us_user_agreement:
+                Intent intent = new Intent(AboutUsActivity.this,AgreementActivity.class);
+                intent.putExtra("webUrl",url);
+                startActivity(intent);
                 break;
         }
     }
