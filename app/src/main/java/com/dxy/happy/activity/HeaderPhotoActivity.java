@@ -15,13 +15,13 @@ public class HeaderPhotoActivity extends AppCompatActivity implements View.OnCli
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_header_photo);
         findViewById(R.id.mine_dialog_photo).setOnClickListener(this);
-       findViewById(R.id.mine_dialog_picture).setOnClickListener(this);
+        findViewById(R.id.mine_dialog_picture).setOnClickListener(this);
 
     }
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.mine_dialog_photo:
                 break;
             case R.id.mine_dialog_picture:

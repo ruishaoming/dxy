@@ -18,4 +18,5 @@
     <color name="gray">#c0c0c0</color>
     <color name="black">#000000</color>
     <color name="search_backcolor">#eeeeee</color>
+    <color name="home_media_bg">#A1A1A1</color>
 </resources>
