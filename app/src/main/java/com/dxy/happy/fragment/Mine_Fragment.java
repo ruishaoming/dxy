@@ -10,7 +10,10 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.dxy.happy.R;
+import com.dxy.happy.activity.BasicInformationActivity;
+import com.dxy.happy.activity.FeedBackActivity;
 import com.dxy.happy.activity.HeaderPhotoActivity;
+import com.dxy.happy.activity.MyPostActivity;
 import com.dxy.happy.activity.SettingActivity;
 import com.dxy.happy.utils.CommonUtils;
 import com.zhy.autolayout.AutoLinearLayout;
@@ -61,12 +64,15 @@ public class Mine_Fragment extends Fragment implements View.OnClickListener {
                 break;
             //基本资料
             case R.id.mine_rela_basedata:
+                CommonUtils.startActivity(getActivity(), BasicInformationActivity.class);
                 break;
             //我的帖子
             case R.id.mine_rela_mypost:
+                CommonUtils.startActivity(getActivity(), MyPostActivity.class);
                 break;
             //意见反馈
             case R.id.mine_rela_feedback:
+                CommonUtils.startActivity(getActivity(), FeedBackActivity.class);
                 break;
             //设置
             case R.id.mine_rela_setting:
