@@ -1,17 +1,23 @@
 package com.dxy.happy.fragment;
 
+import android.content.Intent;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.view.View;
+import android.widget.TextView;
 
 import com.dxy.happy.R;
+import com.dxy.happy.activity.MediaActivity;
 import com.dxy.happy.adapter.Home_RecycleViewAdapter;
+import com.dxy.happy.app.XnlApplication;
 import com.dxy.happy.base.BaseData;
 import com.dxy.happy.base.BaseFragment;
 import com.dxy.happy.utils.CommonUtils;
 import com.dxy.happy.utils.URLUtils;
 import com.dxy.happy.view.ShowingPage;
+import com.zhy.autolayout.AutoLinearLayout;
 
 import java.util.ArrayList;
 
@@ -21,25 +27,17 @@ import java.util.ArrayList;
  * on 2016/12/28 11:58.
  */
 
-public class Home_Fragment extends BaseFragment  implements View.OnClickListener {
+public class Home_Fragment extends BaseFragment implements View.OnClickListener{
     private MyBaseData myBaseData;
     private RecyclerView home_fragment_recycleview;
     private SwipeRefreshLayout swipe_ly;
     private Home_RecycleViewAdapter adapter;
+    private AutoLinearLayout media;
+    private TextView media_title;
     ArrayList<String> urlList = new ArrayList<>();
     String url[] = {URLUtils.url_viewPager, URLUtils.url_festival, URLUtils.url_loveCommunity_alone
             , URLUtils.url_know, URLUtils.url_loveGas};
 
-    private AutoLinearLayout media;
-    private TextView media_title;
-
-    @Override
-    protected void onLoad() {
-        Home_Fragment.this.showCurrentPage(ShowingPage.StateType.STATE_LOAD_SUCCESS);
-
-        //请求数据
-        initGetData();
-    }
 
     @Override
     protected View createSuccessView() {
@@ -47,6 +45,13 @@ public class Home_Fragment extends BaseFragment  implements View.OnClickListener
         //初始化控件
         initView(view);
         return view;
+    }
+
+    @Override
+    protected void onLoad() {
+        Home_Fragment.this.showCurrentPage(ShowingPage.StateType.STATE_LOAD_SUCCESS);
+        //SwipeRefreshLayout刷新加载
+        initSwipeRefreshLayout();
     }
 
     @Override
@@ -60,33 +65,6 @@ public class Home_Fragment extends BaseFragment  implements View.OnClickListener
         } else {
             media.setVisibility(View.GONE);
         }
-    }
-
-    @Override
-    protected void onLoad() {
-        Home_Fragment.this.showCurrentPage(ShowingPage.StateType.STATE_LOAD_SUCCESS);
-        //SwipeRefreshLayout刷新加载
-        initSwipeRefreshLayout();
-
-    }
-
-    private void initView(View view) {
-        home_fragment_recycleview = (RecyclerView) view.findViewById(R.id.home_fragment_recycleview);
-        swipe_ly = (SwipeRefreshLayout) view.findViewById(R.id.swipe_ly);
-        media = (AutoLinearLayout) view.findViewById(R.id.home_fragment_media);
-        media_title = (TextView) view.findViewById(R.id.home_fragment_media_title);
-        media.setOnClickListener(this);
-    }
-
-    private void initGetData() {
-        new BaseData() {
-            @Override
-            public void setResultData(String reresponse) {
-                Fragment_ViewPagerBean fragment_viewPagerBean = new Gson().fromJson(reresponse, Fragment_ViewPagerBean.class);
-                //展示数据
-                initRecycleView(fragment_viewPagerBean);
-            }
-        }.getData(URLUtils.url_viewPager, BaseData.NOTIME);
     }
 
     private void initSwipeRefreshLayout() {
@@ -143,7 +121,6 @@ public class Home_Fragment extends BaseFragment  implements View.OnClickListener
                 break;
         }
     }
-
 
     class MyBaseData extends BaseData {
 

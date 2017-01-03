@@ -39,6 +39,7 @@
         android:id="@+id/home_fragment_media"
         android:layout_width="match_parent"
         android:layout_height="80px"
+        android:visibility="gone"
         android:background="@color/home_media_bg">
 
         <TextView
