@@ -45,8 +45,6 @@ public class Home_ViewPagerAdapter extends PagerAdapter implements View.OnClickL
     public Object instantiateItem(ViewGroup container, final int position) {
         ImageView img=new ImageView(context);
         Glide.with(context).load(vpList.get(position%vpList.size()).getImg()).into(img);
-
-        Glide.with(context).load(vpList.get(position%vpList.size()).getImg()).into(img);
         img.setOnClickListener(this);//图片的点击
         container.addView(img);
         return img;
