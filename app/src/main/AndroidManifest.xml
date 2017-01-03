@@ -2,9 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.dxy.happy">
 
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
 
     <application
         android:name="com.dxy.happy.app.XnlApplication"
@@ -30,6 +32,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".activity.LoginActivity" android:launchMode="singleTask"  />
+        <activity android:name=".activity.ForgetActivity" />
+        <activity android:name=".activity.ZhuceActivity" />
+        <activity android:name=".activity.XieYiActivity" />
+        <activity
+            android:name=".activity.Main2Activity"
+            android:label="@string/title_activity_main2"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name="com.dxy.happy.base.BaseActivity" />
         <activity android:name=".activity.SettingActivity"></activity>
         <activity android:name=".activity.AboutUsActivity"></activity>
@@ -37,6 +48,12 @@
         <activity android:name=".activity.HeaderPhotoActivity"
             android:theme="@style/Theme.AppCompat.Dialog" ></activity>
         <activity android:name=".activity.InviteFriendsActivity"></activity>
+        <activity android:name=".base.BaseActivity" />
+        <activity
+        <activity android:name=".activity.AgreementActivity" />
+        <activity android:name=".activity.BasicInformationActivity" />
+        <activity android:name=".activity.MyPostActivity" />
+        <activity android:name=".activity.FeedBackActivity"></activity>
     </application>
 
 </manifest>

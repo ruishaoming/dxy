@@ -1,16 +1,16 @@
 package com.dxy.happy.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import com.dxy.happy.R;
+import com.dxy.happy.base.BaseActivity;
 import com.dxy.happy.utils.CommonUtils;
 
 
-public class ChangePasswordActivity extends AppCompatActivity implements View.OnClickListener {
+public class ChangePasswordActivity extends BaseActivity implements View.OnClickListener {
 
     private TextView mine_title_text;
     private TextView mine_feedback_commit;
