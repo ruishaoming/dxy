@@ -2,6 +2,7 @@ package com.dxy.happy.base;
 
 import android.os.Bundle;
 import android.view.KeyEvent;
+import android.view.Window;
 
 import com.dxy.happy.R;
 import com.zhy.autolayout.AutoLayoutActivity;

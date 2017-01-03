@@ -65,20 +65,12 @@ public class MediaActivity extends BaseShowingPageActivity implements View.OnCli
         return rootView;
     }
 
+    //初始化控件
     private void initViews() {
         iv_bg = (ImageView) rootView.findViewById(R.id.media_iv);
         webView = (WebView) rootView.findViewById(R.id.media_webView);
         iv_bg.setOnClickListener(this);
         media = (Fragment_ViewPagerBean.DataBean) getIntent().getSerializableExtra("media");
-        Glide.with(this).load(media.getImg()).into(iv_bg);
-        iv_bg.setScaleType(ImageView.ScaleType.FIT_XY);
-        webView.loadUrl(media.getDetailsUrl());
-        webView.setWebViewClient(new WebViewClient() {
-            public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                view.loadUrl(url);
-                return true;
-            }
-        });
     }
 
     @Override
@@ -91,6 +83,15 @@ public class MediaActivity extends BaseShowingPageActivity implements View.OnCli
                     @Override
                     public void run() {
                         initMediaService();
+                        Glide.with(MediaActivity.this).load(media.getImg()).into(iv_bg);
+                        iv_bg.setScaleType(ImageView.ScaleType.FIT_XY);
+                        webView.loadUrl(media.getDetailsUrl());
+                        webView.setWebViewClient(new WebViewClient() {
+                            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                                view.loadUrl(url);
+                                return true;
+                            }
+                        });
                     }
                 });
             }

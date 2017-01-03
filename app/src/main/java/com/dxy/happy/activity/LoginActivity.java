@@ -18,11 +18,11 @@ import com.dxy.happy.base.BaseActivity;
 
 /**
  * autour: 吕卓钊
- * date: 2016/12/29 16:50 
+ * date: 2016/12/29 16:50
  * update: 2016/12/29
  */
 
-public class LoginActivity extends BaseActivity implements View.OnClickListener{
+public class LoginActivity extends BaseActivity implements View.OnClickListener {
 
     private TextView forget;
     private Button btn;
@@ -33,7 +33,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
     private EditText pwd;
     private String pwd1;
     private CheckBox img;
-    private Boolean Flag=true;
+    private Boolean Flag = true;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,11 +62,10 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 
-                if (!isChecked)
-                {
+                if (!isChecked) {
 
-                    pwd.setInputType(InputType.TYPE_CLASS_TEXT|InputType.TYPE_TEXT_VARIATION_PASSWORD);
-                }else {
+                    pwd.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                } else {
                     pwd.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD);
                 }
             }
@@ -75,18 +75,16 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
         //设置密码为不可见
 
 
-
     }
 
     @Override
     public void onClick(View v) {
-        switch (v.getId())
-        {
+        switch (v.getId()) {
             case R.id.forget:
                 intentclass(ForgetActivity.class);
                 break;
             case R.id.btn_login:
-                    intentclass(MainActivity.class);
+                intentclass(MainActivity.class);
                 break;
             case R.id.weixin:
                 break;
@@ -98,10 +96,10 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
         }
 
     }
+
     //跳转页面
-    public  void  intentclass(Class v)
-    {
-        Intent intent=new Intent(LoginActivity.this,v);
+    public void intentclass(Class v) {
+        Intent intent = new Intent(LoginActivity.this, v);
         startActivity(intent);
     }
 
