@@ -7,17 +7,24 @@ public class URLUtils {
 
 //    首页轮播图：
 public static String url_viewPager="http://www.yulin520.com/a2a/broadcast/files?sign=7442C54B6DAFB81CEB01588164F3CCA8&ts=1482907765&pageSize=9&page=1";
-//    助攻节日：http://www.yulin520.com/a2a/festival/next?sign=5D6B618EA7D05C14090FCCF82C566526&ts=1482907765
+//    助攻节日：
+public static String url_festival="http://www.yulin520.com/a2a/festival/next?sign=5D6B618EA7D05C14090FCCF82C566526&ts=1482907765";
 //
 //    点击助攻节日：http://www.yulin520.com/a2a/h/i/app/next_festival
 //
-//    恋爱期 恋乎社区：http://www.yulin520.com/a2a/forum/recommend/withIndexImg?sign=CFB612BCCC0E98F08157E01017F8AA49&pageSize=12&emotionStage=2&ts=1482908782&page=1
-//    单身期 恋乎社区：http://www.yulin520.com/a2a/forum/recommend/withIndexImgsign=2ED307930C123871704A9C84C46CFC5F&pageSize=12&emotionStage=1&ts=1482907765&page=1
+//    恋爱期 恋乎社区：
+public static String url_loveCommunity_alone="http://www.yulin520.com/a2a/forum/recommend/withIndexImg?sign=CFB612BCCC0E98F08157E01017F8AA49&pageSize=12&emotionStage=2&ts=1482908782&page=1";
+//    单身期 恋乎社区：
+public static String url_loveCommunity_loving= "http://www.yulin520.com/a2a/forum/recommend/withIndexImg?sign=2ED307930C123871704A9C84C46CFC5F&pageSize=12&emotionStage=1&ts=1482907765&page=1";
 //
-//    冷暖共知：http://www.yulin520.com/a2a/news/dissertation?sign=C49E4703030EB2FF11E0E7377FB88709&pageSize=1&queryData=&ts=1482907765&page=1
-//    恋爱氧气：http://www.yulin520.com/a2a/news/sd/list?sign=816863C6854591D9E607BE273A05CE65&ts=1482907765&pageSize=6&page=1
+//    冷暖共知：
+public static String url_know= "http://www.yulin520.com/a2a/news/dissertation?sign=C49E4703030EB2FF11E0E7377FB88709&pageSize=1&queryData=&ts=1482907765&page=1";
+//    恋爱氧气：
+ public static String url_loveGas="http://www.yulin520.com/a2a/news/sd/list?sign=816863C6854591D9E607BE273A05CE65&ts=1482907765&pageSize=6&page=1";
 //
-//    点击查看更多：http://www.yulin520.com/a2a/news/sd/list?sign=4508DEDF231D4E571E987BBE7C6CAB28&ts=1145666944&pageSize=10&page=1     {上拉加载刷新----修改page的值}
+//    点击查看更多：
+ public static String url_more="http://www.yulin520.com/a2a/news/sd/list?sign=4508DEDF231D4E571E987BBE7C6CAB28&ts=1145666944&pageSize=10&page=1";
+//     {上拉加载刷新----修改page的值}
 //
 //    社区
 //

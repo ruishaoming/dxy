@@ -1,6 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.zhy.autolayout.AutoLinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+
+            android:layout_width="4px"
+            android:layout_height="@dimen/activity_horizontal_text"
+            android:layout_marginLeft="@dimen/layout_margin_small"
+            android:background="@color/main_bottom_tv_check" />
+
+        <TextView
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10px"
+            android:text="恋乎社区" />
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager_lc"
+        android:layout_width="match_parent"
+        android:layout_height="300px">
+
+    </android.support.v4.view.ViewPager>
+
 
 </LinearLayout>
