@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20px"
+    android:id="@+id/choose_career_item">
+    <TextView
+        android:id="@+id/choose_career_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="123"
+        android:textSize="@dimen/mine_text"
+        android:textColor="@color/black"
+        />
+    <com.dxy.happy.view.MyListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/choose_career_lv">
+
+    </com.dxy.happy.view.MyListView>
+
+</LinearLayout>

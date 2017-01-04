@@ -25,6 +25,7 @@
         android:layout_marginTop="20px">
 
     <EditText
+        android:id="@+id/feed_back_et_sugesst"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="20px"
@@ -40,6 +41,7 @@
         android:padding="20px"
         android:textSize="@dimen/feed_back_tv"/>
     <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/feedback_rela1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
@@ -50,8 +52,10 @@
             android:text="1.程序有问题，告诉程序哥哥"
             android:textSize="@dimen/feed_back_tv"
             android:textColor="@color/black"
-            android:layout_centerVertical="true"/>
+            android:layout_centerVertical="true"
+            android:padding="10px"/>
         <ImageView
+            android:id="@+id/feedback_iv1"
             android:layout_width="50px"
             android:layout_height="50px"
             android:src="@mipmap/selected"
@@ -59,6 +63,7 @@
 
     </com.zhy.autolayout.AutoRelativeLayout>
     <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/feedback_rela2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
@@ -70,8 +75,10 @@
             android:text="2.产品有问题，告诉产品妹妹"
             android:textSize="@dimen/feed_back_tv"
             android:textColor="@color/black"
-            android:layout_centerVertical="true"/>
+            android:layout_centerVertical="true"
+            android:padding="10px"/>
         <ImageView
+            android:id="@+id/feedback_iv2"
             android:layout_width="50px"
             android:layout_height="50px"
             android:src="@mipmap/selected"
@@ -84,15 +91,18 @@
         android:layout_height="wrap_content"
         android:background="@color/white"
         android:layout_marginTop="2px"
-        android:padding="20px">
+        android:padding="20px"
+        android:id="@+id/feedback_rela3">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="3.界面不够美，告诉设计妹妹"
             android:textColor="@color/black"
             android:textSize="@dimen/feed_back_tv"
-            android:layout_centerVertical="true"/>
+            android:layout_centerVertical="true"
+            android:padding="10px"/>
         <ImageView
+            android:id="@+id/feedback_iv3"
             android:layout_width="50px"
             android:layout_height="50px"
             android:src="@mipmap/selected"
@@ -105,15 +115,18 @@
         android:layout_height="wrap_content"
         android:background="@color/white"
         android:layout_marginTop="2px"
-        android:padding="20px">
+        android:padding="20px"
+        android:id="@+id/feedback_rela4">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="4.内容吸引力不够，告诉主编姐姐"
             android:textColor="@color/black"
             android:textSize="@dimen/feed_back_tv"
-            android:layout_centerVertical="true"/>
+            android:layout_centerVertical="true"
+            android:padding="10px"/>
         <ImageView
+            android:id="@+id/feedback_iv4"
             android:layout_width="50px"
             android:layout_height="50px"
             android:src="@mipmap/selected"
@@ -126,15 +139,18 @@
         android:layout_height="wrap_content"
         android:background="@color/white"
         android:layout_marginTop="2px"
-        android:padding="20px">
+        android:padding="20px"
+        android:id="@+id/feedback_rela5">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="5.点赞/吐槽/idea,告诉boss大大"
             android:textColor="@color/black"
             android:textSize="@dimen/feed_back_tv"
-            android:layout_centerVertical="true"/>
+            android:layout_centerVertical="true"
+            android:padding="10px"/>
         <ImageView
+            android:id="@+id/feedback_iv5"
             android:layout_width="50px"
             android:layout_height="50px"
             android:src="@mipmap/selected"
@@ -153,7 +169,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="60px"
+        android:padding="40px"
         android:layout_marginTop="30px"
         android:background="@color/white">
 
@@ -164,6 +180,7 @@
             android:textSize="@dimen/feed_back_tv"
             android:textColor="@color/black"/>
         <EditText
+            android:id="@+id/feed_back_et_phone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="请输入手机号/QQ/微信号"
