@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <RelativeLayout
+    <com.zhy.autolayout.AutoRelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -33,13 +33,36 @@
             android:layout_centerHorizontal="true"
             android:layout_margin="15px"
             android:src="@mipmap/home_notice_new_pressed" />
+    </com.zhy.autolayout.AutoRelativeLayout>
 
-    </RelativeLayout>
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/home_fragment_recycleview"
+    <com.zhy.autolayout.AutoLinearLayout
+        android:id="@+id/home_fragment_media"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+        android:layout_height="80px"
+        android:visibility="gone"
+        android:background="@color/home_media_bg">
+
+        <TextView
+            android:id="@+id/home_fragment_media_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:textColor="@color/white"
+            android:textSize="@dimen/home_media_tv_size" />
+    </com.zhy.autolayout.AutoLinearLayout>
+
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:id="@+id/swipe_ly"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/home_fragment_recycleview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+    </android.support.v4.widget.SwipeRefreshLayout>
+
 
 
 </LinearLayout>

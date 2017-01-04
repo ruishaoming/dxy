@@ -4,14 +4,21 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorPrimary">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="mine_item_background">#fff</color>
     <color name="colorBlack">#000000</color>
     <color name="colorRed">#aadc71ff</color>
     <color name="mine_background">#fff</color>
     <color name="mine_cardview_background">#D1CECE</color>
     <color name="main_bottom_tv_check">#FDD843</color>
     <color name="main_bottom_tv_normal">#1a1918</color>
+    <color name="setting_exit_btn">#EA0808</color>
+    <color name="change_password_text">#0A6A3E</color>
+
     <color name="yellow">#FFD700</color>
     <color name="gray">#c0c0c0</color>
     <color name="black">#000000</color>
     <color name="search_backcolor">#eeeeee</color>
+    <color name="home_media_bg">#A1A1A1</color>
+    <color name="item_gray">#FAFAFA</color>
+    <color name="textview_gray">#4e4a4a</color>
 </resources>

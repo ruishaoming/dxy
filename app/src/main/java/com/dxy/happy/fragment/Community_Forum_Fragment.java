@@ -35,7 +35,7 @@ public class Community_Forum_Fragment extends BaseFragment {
     private ArrayList<Integer> list_id;
     @Override
     protected void onLoad() {
-            this.showCurrentPage(ShowingPage.StateType.STATE_LOAD_SUCCESS);
+        this.showCurrentPage(ShowingPage.StateType.STATE_LOAD_SUCCESS);
     }
 
     @Override

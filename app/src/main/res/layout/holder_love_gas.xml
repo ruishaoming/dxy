@@ -1,6 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="4px"
+            android:layout_height="@dimen/activity_horizontal_text"
+            android:layout_marginLeft="@dimen/layout_margin_small"
+            android:background="@color/main_bottom_tv_check" />
+
+        <TextView
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10px"
+            android:text="恋爱氧气" />
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <com.dxy.happy.view.MyListView
+        android:id="@+id/lv1_love_gas"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></com.dxy.happy.view.MyListView>
+
+    <TextView
+        android:textColor="@color/main_bottom_tv_check"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="点击查看更多" />
 
 </LinearLayout>

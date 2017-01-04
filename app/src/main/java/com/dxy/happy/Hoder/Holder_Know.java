@@ -3,6 +3,8 @@ package com.dxy.happy.Hoder;
 import android.content.Context;
 import android.view.View;
 
+import com.dxy.happy.Hoder.BaseHolder;
+
 /**
  * Created by 韩永光
  * on 2016/12/28 22:12.
