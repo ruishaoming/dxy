@@ -110,7 +110,7 @@ public class CommunityAllAdapter extends RecyclerView.Adapter<CommunityAllAdapte
             holder.community_time.setText(sdf.format(d));
         }
         if (!TextUtils.isEmpty(list.get(position).getReplyTimes() + "")) {
-            holder.community_number.setText("0");
+            holder.community_number.setText(list.get(position).getReplyTimes()+"");
         }
         if (list.get(position).getTitle() != null) {
             holder.community_title.setText(list.get(position).getTitle());
@@ -170,6 +170,13 @@ public class CommunityAllAdapter extends RecyclerView.Adapter<CommunityAllAdapte
     @Override
     public int getItemCount() {
         return list.size();
+    }
+
+    //条目不在屏幕范围之内
+    @Override
+    public void onViewDetachedFromWindow(CommunityAllHolder holder) {
+        super.onViewDetachedFromWindow(holder);
+        holder.all_autoll.clearAnimation();
     }
 
 

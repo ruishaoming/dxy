@@ -26,43 +26,14 @@
             android:name="design_height"
             android:value="1280" />
 
-        <activity
-            android:name="com.dxy.happy.activity.MainActivity"
-            android:launchMode="singleTop">
-
-        </activity>
-        <activity android:name=".activity.LaunchActivity">
+        <activity android:name="com.dxy.happy.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".activity.LoginActivity"
-            android:launchMode="singleTask" />
-        <activity android:name=".activity.ForgetActivity" />
-        <activity android:name=".activity.ZhuceActivity" />
-        <activity android:name=".activity.XieYiActivity" />
-
-        <activity android:name="com.dxy.happy.base.BaseActivity" />
-        <activity
-            android:name=".activity.HeaderPhotoActivity"
-            android:theme="@style/Theme.AppCompat.Dialog"></activity>
-        <activity android:name=".activity.InviteFriendsActivity"></activity>
-        <activity android:name=".activity.AgreementActivity" />
-        <activity android:name=".activity.BasicInformationActivity" />
-        <activity android:name=".activity.MyPostActivity" />
-        <activity android:name=".activity.FeedBackActivity"></activity>
-        <activity android:name=".activity.SettingActivity" />
-        <activity android:name=".activity.AboutUsActivity" />
-        <activity android:name=".activity.ChangePasswordActivity" />
-        <activity android:name=".activity.MediaActivity" />
-
-        <service
-            android:name=".service.MediaService"
-            android:enabled="true"
-            android:exported="true"></service>
+        <activity android:name=".base.BaseActivity" />
     </application>
 
 </manifest>
