@@ -5,7 +5,7 @@ import android.support.v4.view.ViewPager;
 import android.view.View;
 
 import com.dxy.happy.R;
-import com.dxy.happy.adapter.Home_Fragment_ViewPagerAdapter;
+import com.dxy.happy.adapter.Home_ViewPagerAdapter;
 import com.dxy.happy.bean.Fragment_ViewPagerBean;
 
 import java.util.List;
@@ -27,7 +27,7 @@ public class Holder_ViewPager extends BaseHolder {
     @Override
     public void getHolder(Context context, Object o) {
         List<Fragment_ViewPagerBean.DataBean> vpList = (List<Fragment_ViewPagerBean.DataBean>) o;
-        Home_Fragment_ViewPagerAdapter adapter=new Home_Fragment_ViewPagerAdapter(context,vpList);
+        Home_ViewPagerAdapter adapter=new Home_ViewPagerAdapter(context,vpList);
         home_fragment_viewpager.setAdapter(adapter);
     }
 }

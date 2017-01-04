@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.v4.view.PagerAdapter;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import java.util.ArrayList;
@@ -14,14 +15,16 @@ import java.util.ArrayList;
  */
 public class LaunchAdapter extends PagerAdapter {
 
-    private final ImageView iv;
+
+    private final Button button;
     private Context context;
     private ArrayList<ImageView> list=new ArrayList<>();
 
-    public LaunchAdapter(Context context, ArrayList<ImageView> list, ImageView iv) {
+    public LaunchAdapter(Context context, ArrayList<ImageView> list, Button button) {
         this.context = context;
         this.list = list;
-        this.iv=iv;
+        this.button=button;
+
     }
 
     @Override
@@ -42,9 +45,9 @@ public class LaunchAdapter extends PagerAdapter {
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
         if (position==3){
-            iv.setVisibility(View.VISIBLE);
+            button.setVisibility(View.VISIBLE);
         }else {
-            iv.setVisibility(View.GONE);
+            button.setVisibility(View.GONE);
         }
              container.addView(list.get(position));
           return list.get(position);
