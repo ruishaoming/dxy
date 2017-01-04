@@ -1,34 +1,31 @@
 package com.dxy.happy.adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.dxy.happy.activity.MediaActivity;
 import com.dxy.happy.bean.Fragment_ViewPagerBean;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by 韩永光
  * on 2016/12/29 14:49.
  */
-public class Home_ViewPagerAdapter extends PagerAdapter implements View.OnClickListener {
+public class Home_ViewPagerAdapter extends PagerAdapter{
 
     private final Context context;
     private final List<Fragment_ViewPagerBean.DataBean> vpList;
-    private final ArrayList<String> imglist=new ArrayList<>();
 
     public Home_ViewPagerAdapter(Context context, List<Fragment_ViewPagerBean.DataBean> vpList) {
         this.context =context;
         this.vpList =vpList;
-        for (int i = 0; i <vpList.size() ; i++) {
-            imglist.add(vpList.get(i).getImg());
-        }
-
     }
 
     @Override
@@ -46,8 +43,16 @@ public class Home_ViewPagerAdapter extends PagerAdapter implements View.OnClickL
         ImageView img=new ImageView(context);
         Glide.with(context).load(vpList.get(position%vpList.size()).getImg()).into(img);
 
-        Glide.with(context).load(vpList.get(position%vpList.size()).getImg()).into(img);
-        img.setOnClickListener(this);//图片的点击
+        img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                CommonUtils.startActivity(conte);
+                Intent intent = new Intent(context, MediaActivity.class);
+                intent.putExtra("media",vpList.get(position%vpList.size()));
+                context.startActivity(intent);
+//                context.overridePendingTransition(R.animator.xin_right, R.animator.xout_left);
+            }
+        });//图片的点击
         container.addView(img);
         return img;
     }
@@ -57,9 +62,4 @@ public class Home_ViewPagerAdapter extends PagerAdapter implements View.OnClickL
         container.removeView((View) object);
     }
 
-
-    @Override
-    public void onClick(View v) {
-
-    }
 }

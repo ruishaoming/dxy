@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.dxy.happy">
-
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <!--<uses-permission android:name="MediaStore.ACTION_IMAGE_CAPTURE"/>-->
 
     <application
-        android:name=".app.XnlApplication"
+        android:name="com.dxy.happy.app.XnlApplication"
         android:allowBackup="true"
         android:icon="@mipmap/logo_header"
         android:label="@string/app_name"
@@ -32,19 +34,30 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".activity.LoginActivity"
-            android:launchMode="singleTask" />
+
+        <activity android:name=".activity.LoginActivity" android:launchMode="singleTask"  />
         <activity android:name=".activity.ForgetActivity" />
         <activity android:name=".activity.ZhuceActivity" />
         <activity android:name=".activity.XieYiActivity" />
+
+        <activity android:name="com.dxy.happy.base.BaseActivity" />
+        <activity
+            android:name=".activity.HeaderPhotoActivity"
+            android:theme="@style/Theme.AppCompat.Dialog"></activity>
+        <activity android:name=".activity.InviteFriendsActivity"></activity>
+        <activity android:name=".activity.AgreementActivity" />
+        <activity android:name=".activity.BasicInformationActivity" />
+        <activity android:name=".activity.MyPostActivity" />
+        <activity android:name=".activity.FeedBackActivity"></activity>
         <activity android:name=".activity.SettingActivity" />
         <activity android:name=".activity.AboutUsActivity" />
         <activity android:name=".activity.ChangePasswordActivity" />
-        <activity
-            android:name=".activity.HeaderPhotoActivity"
-            android:theme="@style/Theme.AppCompat.Dialog" />
-        <activity android:name=".activity.InviteFriendsActivity" />
+        <activity android:name=".activity.MediaActivity" />
+
+        <service
+            android:name=".service.MediaService"
+            android:enabled="true"
+            android:exported="true"></service>
         <activity android:name=".activity.AnimActivity" />
     </application>
 

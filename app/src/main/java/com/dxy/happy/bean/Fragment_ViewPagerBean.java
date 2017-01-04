@@ -1,12 +1,13 @@
 package com.dxy.happy.bean;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by 韩永光
  * on 2016/12/29 10:40.
  */
-public class Fragment_ViewPagerBean {
+public class Fragment_ViewPagerBean implements Serializable{
 
     /**
      * code : 1
@@ -72,7 +73,7 @@ public class Fragment_ViewPagerBean {
         this.data = data;
     }
 
-    public static class DataBean {
+    public static class DataBean implements Serializable{
         /**
          * title : 当女朋友想要口红，她其实是想要.....
          * remark :

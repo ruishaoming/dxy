@@ -24,6 +24,7 @@ public class XnlApplication extends Application {
     private static ExecutorService threadPool;
     public static boolean isLogin = false;//判定是否登录
     public static VolleySingleton inStance;
+    public static boolean mediaIsPalying = false;
 
     @Override
     public void onCreate() {
