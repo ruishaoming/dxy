@@ -7,28 +7,27 @@
     <RadioGroup
         android:id="@+id/rg_community"
         android:layout_width="450px"
-        android:layout_height="wrap_content"
+        android:layout_height="100px"
         android:layout_centerHorizontal="true"
-        android:layout_margin="10px"
         android:layout_marginRight="30px"
         android:orientation="horizontal">
 
         <RadioButton
             android:id="@+id/rb_Forum"
             android:layout_width="0px"
-            android:layout_height="60px"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/community_redio"
             android:button="@null"
             android:gravity="center"
             android:text="版块"
             android:textColor="@drawable/community_rediocolor"
-            android:textSize="20sp" />
+            android:textSize="15sp" />
 
         <RadioButton
             android:id="@+id/rb_Choiceness"
             android:layout_width="0px"
-            android:layout_height="60px"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/community_redio"
             android:button="@null"
@@ -36,26 +35,26 @@
             android:gravity="center"
             android:text="精选"
             android:textColor="@drawable/community_rediocolor"
-            android:textSize="20sp" />
+            android:textSize="15sp" />
 
         <RadioButton
             android:id="@+id/rb_All"
             android:layout_width="0px"
-            android:layout_height="60px"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/community_redio"
             android:button="@null"
             android:gravity="center"
             android:text="全部"
             android:textColor="@drawable/community_rediocolor"
-            android:textSize="20sp" />
+            android:textSize="15sp" />
     </RadioGroup>
 
     <ImageView
         android:id="@+id/image_email"
         android:layout_width="55px"
         android:layout_height="55px"
-        android:layout_margin="12px"
+        android:layout_margin="20px"
         android:layout_toRightOf="@+id/rg_community"
         android:src="@mipmap/home_notice_new" />
 

@@ -38,7 +38,6 @@ public class Community_Fragment extends BaseFragment implements RadioGroup.OnChe
         image_email = (ImageView) rootView.findViewById(R.id.image_email);
         image_email.setOnClickListener(this);
         rg_community.setOnCheckedChangeListener(this);
-        view_pager.setCurrentItem(1);
         view_pager.setAdapter(new FragmentPagerAdapter(getChildFragmentManager()) {
             @Override
             public Fragment getItem(int position) {
@@ -63,7 +62,9 @@ public class Community_Fragment extends BaseFragment implements RadioGroup.OnChe
                 return 3;
             }
         });
+
         view_pager.setOnPageChangeListener(this);
+
         return rootView;
     }
 
@@ -77,6 +78,7 @@ public class Community_Fragment extends BaseFragment implements RadioGroup.OnChe
     public void onCheckedChanged(RadioGroup group, int checkedId) {
         for (int i = 0; i < 3; i++) {
             if (rg_community.getChildAt(i).getId() == checkedId) {
+
                 view_pager.setCurrentItem(i);
             }
 
@@ -94,6 +96,7 @@ public class Community_Fragment extends BaseFragment implements RadioGroup.OnChe
             RadioButton rb = (RadioButton) rg_community.getChildAt(i);
             if (i == position) {
                 rb.setChecked(true);
+
             } else {
                 rb.setChecked(false);
             }
