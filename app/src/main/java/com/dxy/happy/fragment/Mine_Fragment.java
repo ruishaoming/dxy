@@ -16,6 +16,7 @@ import com.dxy.happy.activity.HeaderPhotoActivity;
 import com.dxy.happy.activity.MyPostActivity;
 import com.dxy.happy.activity.SettingActivity;
 import com.dxy.happy.utils.CommonUtils;
+import com.dxy.happy.utils.LogUtils;
 import com.zhy.autolayout.AutoLinearLayout;
 
 
@@ -27,6 +28,7 @@ import com.zhy.autolayout.AutoLinearLayout;
 
 public class Mine_Fragment extends Fragment implements View.OnClickListener {
 
+    private static final String TAG = "TAG";
     private View rootView;
     private AutoLinearLayout mine_info;
     private LinearLayout mine_line_name;
@@ -78,8 +80,11 @@ public class Mine_Fragment extends Fragment implements View.OnClickListener {
             case R.id.mine_rela_setting:
                 CommonUtils.startActivity(getActivity(), SettingActivity.class);
                 break;
-
-
         }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
     }
 }

@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -22,12 +23,11 @@ import java.util.ArrayList;
 
 public class LaunchActivity extends BaseActivity implements View.OnClickListener {
     private ViewPager viewPager;
-    private ArrayList<ImageView> list=new ArrayList<>();
+    private ArrayList<ImageView> list = new ArrayList<>();
     private LinearLayout linearLayout;
     private boolean isFirstIn;
     ImageView imageView;
-    private ImageView btn;
-
+    private Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,33 +48,32 @@ public class LaunchActivity extends BaseActivity implements View.OnClickListener
             jump();
         }
 
-
-
-
-
     }
-/**
- * autour: 吕卓钊
- * date: 2016/12/29 11:17
- * update: 2016/12/29
- * 数据源
- */
 
+    /**
+     * autour: 吕卓钊
+     * date: 2016/12/29 11:17
+     * update: 2016/12/29
+     * 数据源
+     */
     private void initdata() {
-        ImageView img1=new ImageView(LaunchActivity.this);
+        ImageView img1 = new ImageView(LaunchActivity.this);
         img1.setImageResource(R.mipmap.introductory1_xhdpi);
         img1.setScaleType(ImageView.ScaleType.FIT_XY);
-        ImageView img2=new ImageView(LaunchActivity.this);
+        ImageView img2 = new ImageView(LaunchActivity.this);
         img2.setImageResource(R.mipmap.introductory2_xhdpi);
         img2.setScaleType(ImageView.ScaleType.FIT_XY);
-        ImageView img3=new ImageView(LaunchActivity.this);
+        ImageView img3 = new ImageView(LaunchActivity.this);
         img3.setImageResource(R.mipmap.introductory3_xhdpi);
         img3.setScaleType(ImageView.ScaleType.FIT_XY);
-        ImageView img4=new ImageView(LaunchActivity.this);
+        ImageView img4 = new ImageView(LaunchActivity.this);
         img4.setImageResource(R.mipmap.introductory4_xhdpi_meitu_1);
         img4.setScaleType(ImageView.ScaleType.FIT_XY);
-        list.add(img1); list.add(img2); list.add(img3); list.add(img4);
-        viewPager.setAdapter(new LaunchAdapter(LaunchActivity.this,list,btn));
+        list.add(img1);
+        list.add(img2);
+        list.add(img3);
+        list.add(img4);
+        viewPager.setAdapter(new LaunchAdapter(LaunchActivity.this, list,button));
     }
 
     //注册监听，当pager变化，切换圆点颜色
@@ -83,18 +82,15 @@ public class LaunchActivity extends BaseActivity implements View.OnClickListener
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
             }
 
             @Override
             public void onPageSelected(int position) {
                 switchPoint(position);
-
             }
 
             @Override
             public void onPageScrollStateChanged(int state) {
-
             }
         });
     }
@@ -112,10 +108,8 @@ public class LaunchActivity extends BaseActivity implements View.OnClickListener
 
     }
 
-
     //添加圆点
     private void addPoints() {
-
         for (int i = 0; i < list.size(); i++) {
             ImageView imgPoint = new ImageView(this);
             imgPoint.setImageResource(R.mipmap.abc_btn_radio_to_on_mtrl_000);
@@ -129,27 +123,29 @@ public class LaunchActivity extends BaseActivity implements View.OnClickListener
         }
     }
 
-
     private void initview() {
         viewPager = (ViewPager) findViewById(R.id.launch_vp);
         linearLayout = (LinearLayout) findViewById(R.id.linearLayout_points);
-        btn = (ImageView) findViewById(R.id.launch_btn);
-        btn.setOnClickListener(this);
-
-
+        button = (Button) findViewById(R.id.launch_btn);
+        button.setOnClickListener(this);
     }
 
-
     private void jump() {
-        Intent intent=new Intent(LaunchActivity.this,LoginActivity.class);
+        Intent intent = new Intent(LaunchActivity.this, LoginActivity.class);
         startActivity(intent);
-       finish();
+        finish();
     }
 
     @Override
     public void onClick(View v) {
-        Intent intent1=new Intent(LaunchActivity.this,LoginActivity.class);
-        startActivity(intent1);
-        finish();
+        switch (v.getId())
+        {
+            case R.id.launch_btn:
+                Intent intent1 = new Intent(LaunchActivity.this, LoginActivity.class);
+                startActivity(intent1);
+                finish();
+                break;
+        }
+
     }
 }

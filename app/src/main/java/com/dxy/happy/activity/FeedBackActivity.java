@@ -9,9 +9,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dxy.happy.R;
+import com.dxy.happy.base.BaseActivity;
 import com.dxy.happy.utils.CommonUtils;
 
-public class FeedBackActivity extends AppCompatActivity implements View.OnClickListener {
+public class FeedBackActivity extends BaseActivity implements View.OnClickListener {
 
     private TextView mine_title_text;
     private TextView mine_feedback_commit;

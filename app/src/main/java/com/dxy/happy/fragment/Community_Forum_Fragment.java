@@ -1,6 +1,5 @@
 package com.dxy.happy.fragment;
 
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -22,7 +21,11 @@ import java.util.ArrayList;
 public class Community_Forum_Fragment extends BaseFragment {
 
     private ListView listView_forum;
-    int[] image_Forum=new int[]{R.mipmap.forum_section_first_logo,R.mipmap.forum_section_second_logo,R.mipmap.forum_section_third_logo,R.mipmap.forum_section_four_logo,R.mipmap.forum_section_five_logo};
+    int[] image_Forum=new int[]{R.mipmap.forum_section_first_logo,
+            R.mipmap.forum_section_second_logo,
+            R.mipmap.forum_section_third_logo,
+            R.mipmap.forum_section_four_logo,
+            R.mipmap.forum_section_five_logo};
     private ArrayList<String> list_text_tetile;
 
 
@@ -35,7 +38,9 @@ public class Community_Forum_Fragment extends BaseFragment {
     protected View createSuccessView() {
         View view= CommonUtils.inflate(R.layout.community_forum_fragment_);
         listView_forum = (ListView) view.findViewById(R.id.listView_Forum);
+        //初始化数据
         initInte();
+        //设置
         initData();
         return view;
     }
