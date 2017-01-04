@@ -6,6 +6,7 @@ import com.android.volley.VolleyError;
 import com.dxy.happy.app.XnlApplication;
 import com.dxy.happy.bean.DataBean;
 import com.dxy.happy.dao.DataDao;
+import com.dxy.happy.utils.LogUtils;
 import com.dxy.happy.view.VolleySingleton;
 
 import java.io.File;
@@ -35,18 +36,11 @@ public abstract class BaseData {
             getDataFromNet(path, validTime);
         } else {
             DataBean dataBeen = dao.quaryBaseData(path);
-            String data = dataBeen.getData();
-            if (TextUtils.isEmpty(data)) {
+            LogUtils.i("TAG","从数据库取数据");
+            if (dataBeen == null || TextUtils.isEmpty(dataBeen.getData())) {
                 getDataFromNet(path, validTime);
             } else {
-                setResultData(data);
-            }
-            DataBean dataBean = dao.quaryBaseData(path);
-            //从数据库得到数据  数据库已经保证了同一个路径只有一个数据（已经避免数据重复添加）
-            if (TextUtils.isEmpty(dataBean.getData())) {
-                getDataFromNet(path, validTime);
-            } else {
-                setResultData(dataBean.getData());
+                setResultData(dataBeen.getData());
             }
         }
     }
@@ -56,9 +50,11 @@ public abstract class BaseData {
             @Override
             public void onResponse(String reresponse) {
                 //抽象返回的结果
+                if (validTime != 0) {
+                    //写入数据库
+                    writeDataToDb(reresponse, path, (int) (System.currentTimeMillis() + validTime));
+                }
                 setResultData(reresponse);
-                //写入数据库
-                writeDataToDb(reresponse, path, (int) (System.currentTimeMillis() + validTime));
             }
 
             @Override

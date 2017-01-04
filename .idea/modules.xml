@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/XiaoNingLe.iml" filepath="$PROJECT_DIR$/XiaoNingLe.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/china.iml" filepath="$PROJECT_DIR$/china.iml" />
       <module fileurl="file://$PROJECT_DIR$/dxy.iml" filepath="$PROJECT_DIR$/dxy.iml" />
       <module fileurl="file://$PROJECT_DIR$/xnl.iml" filepath="$PROJECT_DIR$/xnl.iml" />
     </modules>

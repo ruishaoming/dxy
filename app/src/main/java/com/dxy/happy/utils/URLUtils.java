@@ -5,8 +5,12 @@ package com.dxy.happy.utils;
  */
 public class URLUtils {
 
-//    首页轮播图：
-public static String url_viewPager="http://www.yulin520.com/a2a/broadcast/files?sign=7442C54B6DAFB81CEB01588164F3CCA8&ts=1482907765&pageSize=9&page=1";
+    //    首页轮播图：
+    public static String url_viewPager = "http://www.yulin520.com/a2a/broadcast/files?sign=7442C54B6DAFB81CEB01588164F3CCA8&ts=1482907765&pageSize=9&page=1";
+    public static String url_all = "http://www.yulin520.com/a2a/forum/allTypeList?sign=0A1CA7FA70FD4F4B1E141438594A4C10&pageSize=10&sort=2&ts=1482920553&forumType=0&page=";
+    //2.精选：
+    public static String url_choiceness = "http://www.yulin520.com/a2a/forum/recommend/withIndexImg?sign=68BE23CAA3502537893B6039FC795E4B&pageSize=10&emotionStage=1&ts=1483358602&page=";
+
 //    助攻节日：http://www.yulin520.com/a2a/festival/next?sign=5D6B618EA7D05C14090FCCF82C566526&ts=1482907765
 //
 //    点击助攻节日：http://www.yulin520.com/a2a/h/i/app/next_festival
@@ -22,8 +26,6 @@ public static String url_viewPager="http://www.yulin520.com/a2a/broadcast/files?
 //    社区
 //
 //    1.板块自己布局
-//    2.精选：http://www.yulin520.com/a2a/forum/allTypeList?sign=1ED39AA49B6594114FB04896D4716775&pageSize=10&sort=2&ts=1482920354&page=1&forumType=0
-//            3.全部：http://www.yulin520.com/a2a/forum/allTypeList?sign=0A1CA7FA70FD4F4B1E141438594A4C10&pageSize=10&sort=2&ts=1482920553&page=1&forumType=0{上拉加载刷新----修改page的值}
 //
 //    你的月亮我的心   置顶：http://www.yulin520.com/a2a/forum/typeTop?sign=565F990AE10D44353542163CF14F024F&pageSize=10&sort=1&ts=1482920713&page=1&forumType=10
 //    内容：http://www.yulin520.com/a2a/forum/typeList?sign=565F990AE10D44353542163CF14F024F&pageSize=10&sort=1&ts=1482920713&page=1&forumType=10{上拉加载刷新----修改page的值}
