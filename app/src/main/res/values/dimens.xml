@@ -4,10 +4,13 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="activity_horizontal_text">40px</dimen>
     <dimen name="layout_margin_small">15px</dimen>
-    <dimen name="layout_margin_middle">120px</dimen>
-    <dimen name="home_framgment_framelayout">300px</dimen>
+    <dimen name="layout_margin_middle">150px</dimen>
+    <dimen name="home_framgment_framelayout">320px</dimen>
     <dimen name="home_framgment_viewpager">220px</dimen>
     <dimen name="main_activity_bottom_tv">25px</dimen>
     <dimen name="recyclerview_botom_">10px</dimen>
+    <dimen name="feed_back_tv">35px</dimen>
     <dimen name="mine_text">40px</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="home_media_tv_size">35px</dimen>
 </resources>

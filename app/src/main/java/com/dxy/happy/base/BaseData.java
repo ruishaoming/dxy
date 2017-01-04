@@ -36,7 +36,6 @@ public abstract class BaseData {
             getDataFromNet(path, validTime);
         } else {
             DataBean dataBeen = dao.quaryBaseData(path);
-            LogUtils.i("TAG","从数据库取数据");
             if (dataBeen == null || TextUtils.isEmpty(dataBeen.getData())) {
                 getDataFromNet(path, validTime);
             } else {
