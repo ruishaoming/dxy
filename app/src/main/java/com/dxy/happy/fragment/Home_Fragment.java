@@ -1,11 +1,13 @@
 package com.dxy.happy.fragment;
 
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.dxy.happy.R;
@@ -37,6 +39,7 @@ public class Home_Fragment extends BaseFragment implements View.OnClickListener{
     ArrayList<String> urlList = new ArrayList<>();
     String url[] = {URLUtils.url_viewPager, URLUtils.url_festival, URLUtils.url_loveCommunity_alone
             , URLUtils.url_know, URLUtils.url_loveGas};
+    private ImageView media_anim;
 
 
     @Override
@@ -61,6 +64,9 @@ public class Home_Fragment extends BaseFragment implements View.OnClickListener{
             media.setVisibility(View.VISIBLE);
             if (!TextUtils.isEmpty(MediaActivity.media.getTitle())) {
                 media_title.setText(MediaActivity.media.getTitle());
+                media_anim.setImageResource(R.drawable.home_fragment_mediaplay_animation);
+                AnimationDrawable animationDrawable = (AnimationDrawable) media_anim.getDrawable();
+                animationDrawable.start();
             }
         } else {
             media.setVisibility(View.GONE);
@@ -106,6 +112,7 @@ public class Home_Fragment extends BaseFragment implements View.OnClickListener{
         swipe_ly = (SwipeRefreshLayout) view.findViewById(R.id.swipe_ly);
         media = (AutoLinearLayout) view.findViewById(R.id.home_fragment_media);
         media_title = (TextView) view.findViewById(R.id.home_fragment_media_title);
+        media_anim = (ImageView) view.findViewById(R.id.home_fragment_media_anim);
         media.setOnClickListener(this);
     }
 
