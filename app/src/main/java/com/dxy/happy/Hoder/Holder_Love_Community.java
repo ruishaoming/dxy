@@ -1,22 +1,27 @@
 package com.dxy.happy.Hoder;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.bumptech.glide.Glide;
 import com.dxy.happy.R;
+import com.dxy.happy.activity.HomeCommunityActivity;
 import com.dxy.happy.bean.Fragment_LoveCommunityBean;
 import com.dxy.happy.utils.CommonUtils;
 import com.google.gson.Gson;
 import com.zhy.adapter.abslistview.CommonAdapter;
 import com.zhy.adapter.abslistview.ViewHolder;
 
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by 韩永光
@@ -37,6 +42,12 @@ public class Holder_Love_Community extends BaseHolder {
 
     @Override
     public void getHolder(final Context context, final Object o) {
+//        itemView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(context, "!~!~!~!~!~", Toast.LENGTH_SHORT).show();
+//            }
+//        });
         String o1 = (String) o;
         final Fragment_LoveCommunityBean fragment_loveCommunityBean = new Gson().fromJson(o1, Fragment_LoveCommunityBean.class);
         arrayList1 = new ArrayList<>();
@@ -86,6 +97,19 @@ public class Holder_Love_Community extends BaseHolder {
                 };
                 listview_lc.setAdapter(commonAdapter);
                 container.addView(view);
+                listview_lc.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        //天成接收的详情页 集合bean和ID
+                        Intent intent=new Intent(context, HomeCommunityActivity.class);
+                        int id1 = fragment_loveCommunityBean.getData().get(position).getId();
+                        intent.putExtra("id",id1);
+                        List<Fragment_LoveCommunityBean.DataBean> data = fragment_loveCommunityBean.getData();
+                        intent.putExtra("data", (Serializable) data);
+
+                        context.startActivity(intent);
+                    }
+                });
                 return view;
             }
 

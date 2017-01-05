@@ -1,11 +1,13 @@
 package com.dxy.happy.Hoder;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.View;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.dxy.happy.R;
+import com.dxy.happy.activity.KnowActivity;
 import com.dxy.happy.bean.Fragment_KnowBean;
 import com.google.gson.Gson;
 
@@ -23,14 +25,16 @@ public class Holder_Know extends BaseHolder {
     }
 
     @Override
-    public void getHolder(Context context, Object o) {
+    public void getHolder(final Context context, Object o) {
         String o1 = (String) o;
-        Fragment_KnowBean fragment_knowBean = new Gson().fromJson(o1, Fragment_KnowBean.class);
+        final Fragment_KnowBean fragment_knowBean = new Gson().fromJson(o1, Fragment_KnowBean.class);
         Glide.with(context).load(fragment_knowBean.getData().get(0).getImg()).into(img_know);
         img_know.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+              Intent intent=new Intent(context, KnowActivity.class);
+                intent.putExtra("url",fragment_knowBean.getData().get(0).getUrl());
+                context.startActivity(intent);
             }
         });
     }

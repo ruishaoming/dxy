@@ -1,11 +1,17 @@
 package com.dxy.happy.fragment;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.TextView;
 
 import com.dxy.happy.R;
+import com.dxy.happy.activity.DialogActivity;
 import com.dxy.happy.adapter.Home_RecycleViewAdapter;
 import com.dxy.happy.base.BaseData;
 import com.dxy.happy.base.BaseFragment;
@@ -29,6 +35,7 @@ public class Home_Fragment extends BaseFragment {
     ArrayList<String> urlList = new ArrayList<>();
     String url[] = {URLUtils.url_viewPager, URLUtils.url_festival, URLUtils.url_loveCommunity_alone
             , URLUtils.url_know, URLUtils.url_loveGas};
+    private TextView tv_home_love;
 
 
     @Override
@@ -36,7 +43,46 @@ public class Home_Fragment extends BaseFragment {
         View view = CommonUtils.inflate(R.layout.home_fragment);
         //初始化控件
         initView(view);
+        //进入程序 判断上次在应用中的状态
+        final String flag = CommonUtils.getSp("flag");
+        if(flag.equals("")){
+            tv_home_love.setText(flag);
+        }
+
+        tv_home_love.setText("恋爱期");
+
+        tv_home_love.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getContext(), DialogActivity.class);
+                String s = tv_home_love.getText().toString().trim();
+                intent.putExtra("aaa",s);
+                startActivity(intent);
+
+            }
+        });
+        //广播设置
+        IntentFilter filter = new IntentFilter(DialogActivity.action);
+        getActivity().registerReceiver(broadcastReceiver, filter);
         return view;
+    }
+    //广播设置
+    BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            // TODO Auto-generated method stub
+            String tag = intent.getExtras().getString("tag");
+            CommonUtils.saveSp("flag",tag);
+           tv_home_love.setText(tag);
+        }
+    };
+    //广播设置 在Fragment的生命周期中解绑广播
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        getActivity().unregisterReceiver(broadcastReceiver);
     }
 
     @Override
@@ -85,6 +131,7 @@ public class Home_Fragment extends BaseFragment {
     private void initView(View view) {
         home_fragment_recycleview = (RecyclerView) view.findViewById(R.id.home_fragment_recycleview);
         swipe_ly = (SwipeRefreshLayout) view.findViewById(R.id.swipe_ly);
+        tv_home_love = (TextView) view.findViewById(R.id.tv_home_love);
     }
 
 
@@ -106,4 +153,7 @@ public class Home_Fragment extends BaseFragment {
             });
         }
     }
+
+
+
 }

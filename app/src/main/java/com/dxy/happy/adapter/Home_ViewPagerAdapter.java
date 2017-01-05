@@ -25,9 +25,7 @@ public class Home_ViewPagerAdapter extends PagerAdapter implements View.OnClickL
     public Home_ViewPagerAdapter(Context context, List<Fragment_ViewPagerBean.DataBean> vpList) {
         this.context =context;
         this.vpList =vpList;
-        for (int i = 0; i <vpList.size() ; i++) {
-            imglist.add(vpList.get(i).getImg());
-        }
+
 
     }
 
