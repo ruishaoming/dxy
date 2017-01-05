@@ -1,13 +1,20 @@
 package com.dxy.happy.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.dxy.happy.R;
 import com.dxy.happy.base.BaseActivity;
 import com.dxy.happy.utils.CommonUtils;
+import com.umeng.socialize.ShareAction;
+import com.umeng.socialize.UMShareAPI;
+import com.umeng.socialize.UMShareListener;
+import com.umeng.socialize.bean.SHARE_MEDIA;
 
 
 public class InviteFriendsActivity extends BaseActivity implements View.OnClickListener {
@@ -36,8 +43,14 @@ public class InviteFriendsActivity extends BaseActivity implements View.OnClickL
                 CommonUtils.finishActivity(InviteFriendsActivity.this);
                 break;
             case R.id.invite_rela_qq_space:
+
+
                 break;
             case R.id.invite_qq:
+                new ShareAction(InviteFriendsActivity.this).setPlatform(SHARE_MEDIA.QQ)
+                        .withText("hello")
+                        .setCallback(umShareListener)
+                        .share();
                 break;
             case R.id.invite_rela_wechat:
                 break;
@@ -48,4 +61,33 @@ public class InviteFriendsActivity extends BaseActivity implements View.OnClickL
 
         }
     }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        UMShareAPI.get(this).onActivityResult(requestCode, resultCode, data);
+
+    }
+    private UMShareListener umShareListener = new UMShareListener() {
+        @Override
+        public void onResult(SHARE_MEDIA platform) {
+            Log.d("plat","platform"+platform);
+
+            Toast.makeText(InviteFriendsActivity.this, platform + " 分享成功啦", Toast.LENGTH_SHORT).show();
+
+        }
+
+        @Override
+        public void onError(SHARE_MEDIA platform, Throwable t) {
+            Toast.makeText(InviteFriendsActivity.this,platform + " 分享失败啦", Toast.LENGTH_SHORT).show();
+            if(t!=null){
+                Log.d("throw","throw:"+t.getMessage());
+            }
+        }
+
+        @Override
+        public void onCancel(SHARE_MEDIA platform) {
+            Toast.makeText(InviteFriendsActivity.this,platform + " 分享取消了", Toast.LENGTH_SHORT).show();
+        }
+    };
+
 }

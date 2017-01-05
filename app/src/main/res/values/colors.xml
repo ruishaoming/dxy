@@ -21,4 +21,6 @@
     <color name="home_media_bg">#A1A1A1</color>
     <color name="home_media_gray">#77000000</color>
     <color name="media_seekbar_bg">#90000000</color>
+    <color name="item_gray">#FAFAFA</color>
+    <color name="textview_gray">#4e4a4a</color>
 </resources>

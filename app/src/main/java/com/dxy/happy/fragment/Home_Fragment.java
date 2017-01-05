@@ -1,6 +1,9 @@
 package com.dxy.happy.fragment;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.graphics.drawable.AnimationDrawable;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
@@ -11,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.dxy.happy.R;
+import com.dxy.happy.activity.DialogActivity;
 import com.dxy.happy.activity.MediaActivity;
 import com.dxy.happy.adapter.Home_RecycleViewAdapter;
 import com.dxy.happy.app.XnlApplication;
@@ -29,17 +33,18 @@ import java.util.ArrayList;
  * on 2016/12/28 11:58.
  */
 
-public class Home_Fragment extends BaseFragment implements View.OnClickListener{
+public class Home_Fragment extends BaseFragment implements View.OnClickListener {
     private MyBaseData myBaseData;
     private RecyclerView home_fragment_recycleview;
     private SwipeRefreshLayout swipe_ly;
     private Home_RecycleViewAdapter adapter;
-    private AutoLinearLayout media;
-    private TextView media_title;
     ArrayList<String> urlList = new ArrayList<>();
     String url[] = {URLUtils.url_viewPager, URLUtils.url_festival, URLUtils.url_loveCommunity_alone
             , URLUtils.url_know, URLUtils.url_loveGas};
+    private TextView tv_home_love;
     private ImageView media_anim;
+    private AutoLinearLayout media;
+    private TextView media_title;
 
 
     @Override
@@ -47,7 +52,46 @@ public class Home_Fragment extends BaseFragment implements View.OnClickListener{
         View view = CommonUtils.inflate(R.layout.home_fragment);
         //初始化控件
         initView(view);
+        //进入程序 判断上次在应用中的状态
+        final String flag = CommonUtils.getSp("flag");
+        if(flag.equals("")){
+            tv_home_love.setText(flag);
+        }
+
+        tv_home_love.setText("恋爱期");
+
+        tv_home_love.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getContext(), DialogActivity.class);
+                String s = tv_home_love.getText().toString().trim();
+                intent.putExtra("aaa",s);
+                startActivity(intent);
+
+            }
+        });
+        //广播设置
+        IntentFilter filter = new IntentFilter(DialogActivity.action);
+        getActivity().registerReceiver(broadcastReceiver, filter);
         return view;
+    }
+    //广播设置
+    BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            // TODO Auto-generated method stub
+            String tag = intent.getExtras().getString("tag");
+            CommonUtils.saveSp("flag",tag);
+            tv_home_love.setText(tag);
+        }
+    };
+    //广播设置 在Fragment的生命周期中解绑广播
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        getActivity().unregisterReceiver(broadcastReceiver);
     }
 
     @Override
@@ -129,6 +173,7 @@ public class Home_Fragment extends BaseFragment implements View.OnClickListener{
         }
     }
 
+
     class MyBaseData extends BaseData {
 
         @Override
@@ -147,4 +192,7 @@ public class Home_Fragment extends BaseFragment implements View.OnClickListener{
             });
         }
     }
+
+
+
 }

@@ -11,6 +11,7 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.dxy.happy.R;
 import com.dxy.happy.base.BaseActivity;
@@ -22,28 +23,21 @@ import com.dxy.happy.base.BaseActivity;
  * update: 2016/12/29
  */
 
-public class LoginActivity extends BaseActivity implements View.OnClickListener {
+public class LoginActivity extends BaseActivity implements View.OnClickListener{
 
     private TextView forget;
     private Button btn;
     private ImageView wixin;
     private TextView zhuce;
     private EditText phone;
-    private String phone1;
     private EditText pwd;
-    private String pwd1;
     private CheckBox img;
-    private Boolean Flag = true;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
         initview();
-
     }
-
     private void initview() {
         forget = (TextView) findViewById(R.id.forget);
         forget.setOnClickListener(this);
@@ -61,45 +55,42 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         img.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-
-                if (!isChecked) {
-
-                    pwd.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
-                } else {
+                if (!isChecked)
+                {
+                    pwd.setInputType(InputType.TYPE_CLASS_TEXT|InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                }else {
                     pwd.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD);
                 }
             }
         });
-
-
-        //设置密码为不可见
-
-
     }
-
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
+        switch (v.getId())
+        {
             case R.id.forget:
                 intentclass(ForgetActivity.class);
                 break;
             case R.id.btn_login:
-                intentclass(MainActivity.class);
+                if(phone.getText().toString().trim().length()<11
+                        || pwd.getText().toString().trim().length()==0)
+                {
+                    Toast.makeText(LoginActivity.this,"手机号码或密码格式不正确",Toast.LENGTH_SHORT).show();
+                }else {
+                    intentclass(AnimActivity.class);
+                }
                 break;
             case R.id.weixin:
                 break;
             case R.id.zhuce:
                 intentclass(ZhuceActivity.class);
                 break;
-
-
         }
-
     }
-
     //跳转页面
-    public void intentclass(Class v) {
-        Intent intent = new Intent(LoginActivity.this, v);
+    public  void  intentclass(Class v)
+    {
+        Intent intent=new Intent(LoginActivity.this,v);
         startActivity(intent);
     }
 

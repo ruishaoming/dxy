@@ -83,8 +83,12 @@ public class Home_lg_ListViewAdapter extends BaseAdapter {
                 TextView lg_author = (TextView) view.findViewById(R.id.lg_author);
                 ImageView lg_img = (ImageView) view.findViewById(R.id.lg_img);
                 lg_title.setText(fragment_loveGasBean.getData().get(position).getTitle());
+                if (fragment_loveGasBean.getData().get(position).getContentIntr().length() > 30) {
 
-                contentIntr.setText(fragment_loveGasBean.getData().get(position).getContentIntr().substring(0, 30));
+                    contentIntr.setText(fragment_loveGasBean.getData().get(position).getContentIntr().substring(0, 30));
+                } else {
+                    contentIntr.setText(fragment_loveGasBean.getData().get(position).getContentIntr());
+                }
                 Glide.with(context).load(fragment_loveGasBean.getData().get(position).getImg()).into(lg_img);
                 lg_author.setText(fragment_loveGasBean.getData().get(position).getReporterName());
                 break;

@@ -31,6 +31,7 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
         findViewById(R.id.setting_about_us).setOnClickListener(this);
         findViewById(R.id.setting_version_updating).setOnClickListener(this);
         findViewById(R.id.setting_clear_cache).setOnClickListener(this);
+        findViewById(R.id.setting_exit).setOnClickListener(this);
         tv_cache_size = (TextView) findViewById(R.id.tv_cache_size);
         getCacheData();
     }
@@ -74,6 +75,9 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
+                break;
+            case R.id.setting_exit:
+
                 break;
 
         }
