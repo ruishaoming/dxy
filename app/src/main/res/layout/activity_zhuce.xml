@@ -9,27 +9,29 @@
     tools:context="com.dxy.happy.activity.ZhuceActivity">
 
     <RelativeLayout
+        android:layout_marginTop="30px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <ImageView
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="40dp"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
+            android:layout_marginTop="50px"
+            android:layout_width="200px"
+            android:layout_height="200px"
             android:src="@mipmap/logo" />
     </RelativeLayout>
 
     <LinearLayout
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40px"
         android:background="#ffffff"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="100px"
         android:orientation="horizontal">
         <EditText
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="20dp"
+            android:id="@+id/phone"
+            android:layout_marginTop="30px"
+            android:layout_marginLeft="20px"
             android:layout_width="wrap_content"
-            android:textSize="15dp"
+            android:textSize="30px"
             android:background="#ffffff"
             android:layout_height="wrap_content"
             android:hint="请输入用于注册的手机号"/>
@@ -38,38 +40,41 @@
     <LinearLayout
         android:background="#ffffff"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="100px">
         <EditText
             android:background="#ffffff"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="5px"
             android:id="@+id/yanzheng"
-            android:textSize="15dp"
-            android:layout_marginLeft="20dp"
-            android:layout_width="250dp"
+            android:textSize="30px"
+            android:layout_marginLeft="20px"
+            android:layout_width="250px"
             android:layout_height="wrap_content"
             android:hint="请输入验证码"/>
         <Button
-            android:layout_marginTop="5dp"
+            android:id="@+id/yanzhengma"
+            android:layout_marginTop="5px"
             android:layout_alignRight="@id/yanzheng"
+            android:layout_marginLeft="280px"
             android:background="#ffda44"
-            android:layout_width="70dp"
-            android:layout_height="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30px"
             android:layout_alignParentTop="true"
             android:text="获取验证码"/>
     </LinearLayout>
 
     <LinearLayout
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="50px"
         android:background="#ffffff"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="100px"
         android:orientation="horizontal">
         <EditText
             android:id="@+id/zhuce_pwd"
-            android:layout_marginTop="8dp"
-            android:layout_marginLeft="20dp"
-            android:layout_width="290dp"
-            android:textSize="15dp"
+            android:layout_marginTop="30px"
+            android:layout_marginLeft="20px"
+            android:layout_width="290px"
+            android:textSize="30px"
             android:background="#ffffff"
             android:layout_height="wrap_content"
             android:hint="设置密码"
@@ -79,65 +84,75 @@
             android:id="@+id/login_eye"
             android:layout_gravity="right"
             android:checked="false"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_marginLeft="300px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:button="@drawable/change1"
             />
     </LinearLayout>
     <TextView
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30px"
+        android:layout_marginLeft="20px"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="30px"
         android:text="请输入6--16英文字母或者数字"/>
     <LinearLayout
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40px"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <CheckBox
-           android:layout_marginLeft="30dp"
+           android:layout_marginLeft="30px"
             android:layout_gravity="right"
             android:checked="false"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:button="@drawable/item"
             />
         <TextView
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="15px"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="30px"
             android:text="我已经阅读并同意"/>
         <TextView
             android:id="@+id/content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="15px"
             android:textColor="#000000"
+            android:textSize="30px"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="小柠乐用户协议"/>
     </LinearLayout>
     <Button
+        android:layout_marginTop="20px"
+        android:id="@+id/zhuce"
         android:layout_gravity="center"
-        android:layout_width="300dp"
+        android:layout_width="550px"
         android:background="#ffda44"
         android:layout_height="wrap_content"
         android:text="注册"/>
     <LinearLayout
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="200px"
         android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
         <TextView
+            android:textSize="30px"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="已有账号"/>
+            android:text="已有账号，"
+            android:id="@+id/textView" />
+
         <TextView
             android:textColor="#000000"
             android:id="@+id/denglu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:text="登录!"/>
+            android:textSize="50px"
+            android:text="去登录!"/>
     </LinearLayout>
 </LinearLayout>

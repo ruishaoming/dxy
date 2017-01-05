@@ -6,6 +6,7 @@ import com.android.volley.VolleyError;
 import com.dxy.happy.app.XnlApplication;
 import com.dxy.happy.bean.DataBean;
 import com.dxy.happy.dao.DataDao;
+import com.dxy.happy.utils.LogUtils;
 import com.dxy.happy.view.VolleySingleton;
 
 import java.io.File;
@@ -48,9 +49,11 @@ public abstract class BaseData {
             @Override
             public void onResponse(String reresponse) {
                 //抽象返回的结果
+                if (validTime != 0) {
+                    //写入数据库
+                    writeDataToDb(reresponse, path, (int) (System.currentTimeMillis() + validTime));
+                }
                 setResultData(reresponse);
-                //写入数据库
-                writeDataToDb(reresponse, path, (int) (System.currentTimeMillis() + validTime));
             }
 
             @Override

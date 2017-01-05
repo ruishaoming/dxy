@@ -74,7 +74,7 @@ public class Home_Fragment extends BaseFragment {
             // TODO Auto-generated method stub
             String tag = intent.getExtras().getString("tag");
             CommonUtils.saveSp("flag",tag);
-           tv_home_love.setText(tag);
+            tv_home_love.setText(tag);
         }
     };
     //广播设置 在Fragment的生命周期中解绑广播

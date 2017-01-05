@@ -32,8 +32,6 @@ public class Holder_ViewPager extends BaseHolder {
         super(itemView);
         home_fragment_viewpager = (ViewPager) itemView.findViewById(R.id.home_fragment_viewpager);
         home_fragment_ll = (LinearLayout) itemView.findViewById(R.id.home_fragment_ll);
-
-
     }
 
     @Override
@@ -108,7 +106,6 @@ public class Holder_ViewPager extends BaseHolder {
                     float scaleFactor = Math.max(MIN_SCALE, 1 - Math.abs(position));
                     if (position < 0) {
                         float scaleX = 1 + 0.3f * position;
-                        Log.d("google_lenve_fb", "transformPage: scaleX:" + scaleX);
                         page.setScaleX(scaleX);
                         page.setScaleY(scaleX);
                     } else {

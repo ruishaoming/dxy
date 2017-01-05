@@ -32,7 +32,7 @@ public class Holder_Know extends BaseHolder {
         img_know.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              Intent intent=new Intent(context, KnowActivity.class);
+                Intent intent=new Intent(context, KnowActivity.class);
                 intent.putExtra("url",fragment_knowBean.getData().get(0).getUrl());
                 context.startActivity(intent);
             }

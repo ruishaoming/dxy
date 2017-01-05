@@ -39,7 +39,7 @@ public class Holder_festival extends BaseHolder {
     public void getHolder(final Context context, Object o) {
         String o1 = (String) o;
         final Fragment_FestivalBean fragment_festivalBean = new Gson().fromJson(o1, Fragment_FestivalBean.class);
-       Glide.with(context).load(fragment_festivalBean.getData().getImg()).into(img_festival);
+        Glide.with(context).load(fragment_festivalBean.getData().getImg()).into(img_festival);
         //popupwindow设置
         initPop(context, fragment_festivalBean);
         tv_festival.setOnClickListener(new View.OnClickListener() {

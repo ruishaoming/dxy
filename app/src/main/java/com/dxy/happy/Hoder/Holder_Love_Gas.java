@@ -49,7 +49,7 @@ public class Holder_Love_Gas extends BaseHolder {
                     url = fragment_loveGasBean.getData().get(position-2).getUrl();
                 }
                 else{
-                     url = fragment_loveGasBean.getData().get(position).getUrl();
+                    url = fragment_loveGasBean.getData().get(position).getUrl();
                 }
                 if(position!=0&&position!=4){
 
