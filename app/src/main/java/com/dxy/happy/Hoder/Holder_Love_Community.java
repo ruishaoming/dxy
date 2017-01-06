@@ -107,7 +107,7 @@ public class Holder_Love_Community extends BaseHolder {
                         List<Fragment_LoveCommunityBean.DataBean> data = fragment_loveCommunityBean.getData();
 
                         intent.putExtra("data",  data.get(position));
-
+//
                         context.startActivity(intent);
                     }
                 });
