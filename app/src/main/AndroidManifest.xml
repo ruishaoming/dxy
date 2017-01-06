@@ -51,14 +51,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".base.BaseActivity" />
         <activity android:name=".activity.Forum_Activity"></activity>
 
         <activity android:name=".activity.LoginActivity" android:launchMode="singleTask"  />
         <activity android:name=".activity.ForgetActivity" />
         <activity android:name=".activity.ZhuceActivity" />
         <activity android:name=".activity.XieYiActivity" />
-        <activity android:name="com.dxy.happy.base.BaseActivity" />
         <activity android:name=".activity.SettingActivity"></activity>
         <activity android:name=".activity.AboutUsActivity"></activity>
         <activity android:name=".activity.ChangePasswordActivity"></activity>
