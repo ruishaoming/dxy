@@ -1,15 +1,19 @@
 package com.dxy.happy.Hoder;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.dxy.happy.R;
+import com.dxy.happy.activity.HomeMoreActivity;
 import com.dxy.happy.activity.LoveGasActivity;
 import com.dxy.happy.adapter.Home_lg_ListViewAdapter;
 import com.dxy.happy.bean.Fragment_LoveGasBean;
+import com.dxy.happy.utils.CommonUtils;
 import com.google.gson.Gson;
 
 /**
@@ -21,11 +25,13 @@ public class Holder_Love_Gas extends BaseHolder {
     private final ListView lv1_love_gas;
     private Home_lg_ListViewAdapter adapter;
     private String url;
+    private final TextView tv_findmore;
 
     public Holder_Love_Gas(View itemView) {
         super(itemView);
 
         lv1_love_gas = (ListView) itemView.findViewById(R.id.lv1_love_gas);
+        tv_findmore = (TextView) itemView.findViewById(R.id.tv_findmore);
     }
 
     @Override
@@ -38,6 +44,19 @@ public class Holder_Love_Gas extends BaseHolder {
         }else {
             adapter.notifyDataSetChanged();
         }
+        //listview点击事件
+        initListView(context, fragment_loveGasBean);
+        tv_findmore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CommonUtils.startActivity((Activity) context, HomeMoreActivity.class);
+            }
+        });
+
+
+    }
+
+    private void initListView(final Context context, final Fragment_LoveGasBean fragment_loveGasBean) {
         lv1_love_gas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -59,7 +78,5 @@ public class Holder_Love_Gas extends BaseHolder {
                 }
             }
         });
-
-
     }
 }

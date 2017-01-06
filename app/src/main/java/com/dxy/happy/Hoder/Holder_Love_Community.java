@@ -19,7 +19,6 @@ import com.google.gson.Gson;
 import com.zhy.adapter.abslistview.CommonAdapter;
 import com.zhy.adapter.abslistview.ViewHolder;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -103,9 +102,11 @@ public class Holder_Love_Community extends BaseHolder {
                         //天成接收的详情页 集合bean和ID
                         Intent intent=new Intent(context, HomeCommunityActivity.class);
                         int id1 = fragment_loveCommunityBean.getData().get(position).getId();
+
                         intent.putExtra("id",id1);
                         List<Fragment_LoveCommunityBean.DataBean> data = fragment_loveCommunityBean.getData();
-                        intent.putExtra("data", (Serializable) data);
+
+                        intent.putExtra("data",  data.get(position));
 
                         context.startActivity(intent);
                     }
