@@ -13,6 +13,7 @@ import android.widget.ListView;
 import com.bumptech.glide.Glide;
 import com.dxy.happy.R;
 import com.dxy.happy.activity.HomeCommunityActivity;
+import com.dxy.happy.base.BaseData;
 import com.dxy.happy.bean.Fragment_LoveCommunityBean;
 import com.dxy.happy.utils.CommonUtils;
 import com.google.gson.Gson;
@@ -47,8 +48,18 @@ public class Holder_Love_Community extends BaseHolder {
 //                Toast.makeText(context, "!~!~!~!~!~", Toast.LENGTH_SHORT).show();
 //            }
 //        });
-        String o1 = (String) o;
-        final Fragment_LoveCommunityBean fragment_loveCommunityBean = new Gson().fromJson(o1, Fragment_LoveCommunityBean.class);
+        String url = (String) o;
+        new BaseData() {
+            @Override
+            public void setResultData(String reresponse) {
+                initData(reresponse, context);
+            }
+        }.getData(url,BaseData.NORMALTIME);
+
+    }
+
+    private void initData(String reresponse, final Context context) {
+        final Fragment_LoveCommunityBean fragment_loveCommunityBean = new Gson().fromJson(reresponse, Fragment_LoveCommunityBean.class);
         arrayList1 = new ArrayList<>();
         arrayList2 = new ArrayList<>();
         arrayList3 = new ArrayList<>();
@@ -119,6 +130,5 @@ public class Holder_Love_Community extends BaseHolder {
                 container.removeView((View) object);
             }
         });
-
     }
 }

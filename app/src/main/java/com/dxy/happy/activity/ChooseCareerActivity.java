@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.dxy.happy.R;
 import com.dxy.happy.adapter.MyChooseCareerAdapter;
+import com.dxy.happy.base.BaseActivity;
 import com.dxy.happy.bean.ChooseCareerBean;
 import com.dxy.happy.interfaces.OnItemClickListener;
 import com.dxy.happy.utils.CommonUtils;
@@ -22,7 +23,7 @@ import com.squareup.okhttp.Response;
 
 import java.io.IOException;
 
-public class ChooseCareerActivity extends AppCompatActivity implements View.OnClickListener {
+public class ChooseCareerActivity extends BaseActivity implements View.OnClickListener {
 
     private TextView mine_title_text;
     private TextView mine_feedback_commit;

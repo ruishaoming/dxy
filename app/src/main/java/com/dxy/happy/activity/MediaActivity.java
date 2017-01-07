@@ -1,5 +1,6 @@
 package com.dxy.happy.activity;
 
+import android.app.IntentService;
 import android.app.Service;
 import android.content.ComponentName;
 import android.content.Intent;
@@ -101,7 +102,6 @@ public class MediaActivity extends BaseShowingPageActivity implements View.OnCli
         return formatter.format(durtion);
     }
 
-
     @Override
     protected void onLoad() {
         this.showCurrentPage(ShowingPage.StateType.STATE_LOAD_SUCCESS);
@@ -111,19 +111,33 @@ public class MediaActivity extends BaseShowingPageActivity implements View.OnCli
     protected View createSuccessView() {
         rootView = CommonUtils.inflate(R.layout.activity_media);
         initViews();
-        initMediaService();
-        Glide.with(MediaActivity.this).load(media.getImg()).into(iv_bg);
-        iv_bg.setScaleType(ImageView.ScaleType.FIT_XY);
-        webView.loadUrl(media.getDetailsUrl());//加载WebView
-        webView.setWebViewClient(new WebViewClient() {
-            public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                view.loadUrl(url);
-                return true;
-            }
-        });
-        setIvAnim();
-        mediaSettinds();
+        initData();
         return rootView;
+    }
+
+    private void initData() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                MediaActivity.this.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        initMediaService();
+                        Glide.with(MediaActivity.this).load(media.getImg()).into(iv_bg);
+                        iv_bg.setScaleType(ImageView.ScaleType.FIT_XY);
+                        webView.loadUrl(media.getDetailsUrl());//加载WebView
+                        webView.setWebViewClient(new WebViewClient() {
+                            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                                view.loadUrl(url);
+                                return true;
+                            }
+                        });
+                        setIvAnim();
+                        mediaSettinds();
+                    }
+                });
+            }
+        }).start();
     }
 
     //初始化控件

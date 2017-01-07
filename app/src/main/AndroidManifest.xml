@@ -42,7 +42,9 @@
             android:name="design_height"
             android:value="1280" />
 
-        <activity android:name=".activity.MainActivity" />
+        <activity android:name=".activity.MainActivity" >
+
+        </activity>
         <activity android:name=".base.BaseActivity" />
         <activity android:name=".activity.LaunchActivity">
             <intent-filter>
