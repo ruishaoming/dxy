@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.Toast;
 
 import com.dxy.happy.R;
@@ -28,11 +29,10 @@ public class HeaderPhotoActivity extends AutoLayoutActivity implements View.OnCl
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_header_photo);
-
         findViewById(R.id.mine_dialog_photo).setOnClickListener(this);
         findViewById(R.id.mine_dialog_picture).setOnClickListener(this);
-
     }
 
     @Override

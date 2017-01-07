@@ -28,6 +28,7 @@
         android:layout_height="match_parent"></com.dxy.happy.view.MyListView>
 
     <TextView
+        android:id="@+id/tv_findmore"
         android:textColor="@color/main_bottom_tv_check"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

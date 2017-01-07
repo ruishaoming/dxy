@@ -7,8 +7,9 @@ import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 
 import com.dxy.happy.R;
+import com.dxy.happy.base.BaseActivity;
 
-public class AnimActivity extends AppCompatActivity {
+public class AnimActivity extends BaseActivity {
     int  time=3;
     Handler handler=new Handler(){
         @Override

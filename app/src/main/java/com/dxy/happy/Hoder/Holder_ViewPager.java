@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 
 import com.dxy.happy.R;
 import com.dxy.happy.adapter.Home_ViewPagerAdapter;
+import com.dxy.happy.base.BaseData;
 import com.dxy.happy.bean.Fragment_ViewPagerBean;
 import com.google.gson.Gson;
 
@@ -36,8 +37,17 @@ public class Holder_ViewPager extends BaseHolder {
 
     @Override
     public void getHolder(final Context context, Object o) {
-        String o1 = (String) o;
-        Fragment_ViewPagerBean fragment_viewPagerBean = new Gson().fromJson(o1, Fragment_ViewPagerBean.class);
+        String url = (String) o;
+        new BaseData() {
+            @Override
+            public void setResultData(String reresponse) {
+                initVpData(reresponse,context);
+            }
+        }.getData(url, BaseData.NORMALTIME);
+    }
+
+    private void initVpData(String reresponse, Context context) {
+        Fragment_ViewPagerBean fragment_viewPagerBean = new Gson().fromJson(reresponse, Fragment_ViewPagerBean.class);
         Home_ViewPagerAdapter adapter = new Home_ViewPagerAdapter(context, fragment_viewPagerBean.getData());
         //设置pager间 间距
         home_fragment_viewpager.setPageMargin(10);
@@ -88,7 +98,6 @@ public class Holder_ViewPager extends BaseHolder {
 
             }
         });
-
     }
 
     private void setViewPagerAnimtion() {

@@ -12,8 +12,9 @@ import android.widget.ListView;
 
 import com.bumptech.glide.Glide;
 import com.dxy.happy.R;
-import com.dxy.happy.activity.Froum_Xq_Activity;
-import com.dxy.happy.bean.ForumTop_Bean;
+import com.dxy.happy.activity.HomeCommunityActivity;
+import com.dxy.happy.base.BaseData;
+import com.dxy.happy.bean.Fragment_LoveCommunityBean;
 import com.dxy.happy.utils.CommonUtils;
 import com.google.gson.Gson;
 import com.zhy.adapter.abslistview.CommonAdapter;
@@ -29,10 +30,10 @@ import java.util.List;
 public class Holder_Love_Community extends BaseHolder {
 
     private final ViewPager viewpager_lc;
-    private ArrayList<ForumTop_Bean.DataBean> arrayList1;
-    private ArrayList<ForumTop_Bean.DataBean> arrayList2;
-    private ArrayList<ForumTop_Bean.DataBean> arrayList3;
-    private ArrayList<ForumTop_Bean.DataBean> arrayList4;
+    private ArrayList<Fragment_LoveCommunityBean.DataBean> arrayList1;
+    private ArrayList<Fragment_LoveCommunityBean.DataBean> arrayList2;
+    private ArrayList<Fragment_LoveCommunityBean.DataBean> arrayList3;
+    private ArrayList<Fragment_LoveCommunityBean.DataBean> arrayList4;
 
     public Holder_Love_Community(View itemView) {
         super(itemView);
@@ -47,8 +48,18 @@ public class Holder_Love_Community extends BaseHolder {
 //                Toast.makeText(context, "!~!~!~!~!~", Toast.LENGTH_SHORT).show();
 //            }
 //        });
-        String o1 = (String) o;
-        final ForumTop_Bean fragment_loveCommunityBean = new Gson().fromJson(o1, ForumTop_Bean.class);
+        String url = (String) o;
+        new BaseData() {
+            @Override
+            public void setResultData(String reresponse) {
+                initData(reresponse, context);
+            }
+        }.getData(url,BaseData.NORMALTIME);
+
+    }
+
+    private void initData(String reresponse, final Context context) {
+        final Fragment_LoveCommunityBean fragment_loveCommunityBean = new Gson().fromJson(reresponse, Fragment_LoveCommunityBean.class);
         arrayList1 = new ArrayList<>();
         arrayList2 = new ArrayList<>();
         arrayList3 = new ArrayList<>();
@@ -64,7 +75,7 @@ public class Holder_Love_Community extends BaseHolder {
                 arrayList4.add(fragment_loveCommunityBean.getData().get(i));
             }
         }
-        final ArrayList<ArrayList<ForumTop_Bean.DataBean>> listAll = new ArrayList<>();
+        final ArrayList<ArrayList<Fragment_LoveCommunityBean.DataBean>> listAll = new ArrayList<>();
         listAll.add(arrayList1);
         listAll.add(arrayList2);
         listAll.add(arrayList3);
@@ -86,9 +97,9 @@ public class Holder_Love_Community extends BaseHolder {
 
                 ListView listview_lc = (ListView) view.findViewById(R.id.listview_lc);
 
-                CommonAdapter<ForumTop_Bean.DataBean> commonAdapter = new CommonAdapter<ForumTop_Bean.DataBean>(context, R.layout.item_listview_lc, listAll.get(dataposition)) {
+                CommonAdapter<Fragment_LoveCommunityBean.DataBean> commonAdapter = new CommonAdapter<Fragment_LoveCommunityBean.DataBean>(context, R.layout.item_listview_lc, listAll.get(dataposition)) {
                     @Override
-                    protected void convert(ViewHolder viewHolder, ForumTop_Bean.DataBean item, int position) {
+                    protected void convert(ViewHolder viewHolder, Fragment_LoveCommunityBean.DataBean item, int position) {
                         viewHolder.setText(R.id.tv_lc, item.getTitle());
                         ImageView img_lc = viewHolder.getView(R.id.img_lc);
                         Glide.with(context).load(item.getImg()).into(img_lc);
@@ -100,10 +111,14 @@ public class Holder_Love_Community extends BaseHolder {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         //天成接收的详情页 集合bean和ID
-                        Intent intent=new Intent(context, Froum_Xq_Activity.class);
+                        Intent intent=new Intent(context, HomeCommunityActivity.class);
                         int id1 = fragment_loveCommunityBean.getData().get(position).getId();
-                        List<ForumTop_Bean.DataBean> data = fragment_loveCommunityBean.getData();
-                        intent.putExtra("data2",  data.get(position));
+
+                        intent.putExtra("id",id1);
+                        List<Fragment_LoveCommunityBean.DataBean> data = fragment_loveCommunityBean.getData();
+
+                        intent.putExtra("data",  data.get(position));
+//
                         context.startActivity(intent);
                     }
                 });
@@ -115,6 +130,5 @@ public class Holder_Love_Community extends BaseHolder {
                 container.removeView((View) object);
             }
         });
-
     }
 }

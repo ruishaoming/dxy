@@ -76,7 +76,6 @@ public class Home_lg_ListViewAdapter extends BaseAdapter {
                 } else
                     position -= 2;
 
-                Log.i("kkkkkk", "getView: ......" + position);
                 view = CommonUtils.inflate(R.layout.lg_type2);
                 TextView lg_title = (TextView) view.findViewById(R.id.lg_title);
                 TextView contentIntr = (TextView) view.findViewById(R.id.lg_contentIntr);

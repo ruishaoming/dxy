@@ -11,6 +11,7 @@ import android.widget.CheckBox;
 import com.dxy.happy.R;
 
 public class DialogActivity extends AppCompatActivity implements View.OnClickListener {
+
     //广播的设置
     public static final String action = "aaa";
     private CheckBox home_cb1;

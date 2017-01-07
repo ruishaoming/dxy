@@ -6,7 +6,6 @@ import com.android.volley.VolleyError;
 import com.dxy.happy.app.XnlApplication;
 import com.dxy.happy.bean.DataBean;
 import com.dxy.happy.dao.DataDao;
-import com.dxy.happy.utils.LogUtils;
 import com.dxy.happy.view.VolleySingleton;
 
 import java.io.File;
@@ -42,6 +41,7 @@ public abstract class BaseData {
                 setResultData(dataBeen.getData());
             }
         }
+
     }
 
     public void getDataFromNet(final String path, final int validTime) {

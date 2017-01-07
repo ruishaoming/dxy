@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.dxy.happy.R;
 import com.dxy.happy.activity.HomeFestivalActivity;
+import com.dxy.happy.base.BaseData;
 import com.dxy.happy.bean.Fragment_FestivalBean;
 import com.dxy.happy.utils.CommonUtils;
 import com.google.gson.Gson;
@@ -37,8 +38,18 @@ public class Holder_festival extends BaseHolder {
 
     @Override
     public void getHolder(final Context context, Object o) {
-        String o1 = (String) o;
-        final Fragment_FestivalBean fragment_festivalBean = new Gson().fromJson(o1, Fragment_FestivalBean.class);
+        String url = (String) o;
+        new BaseData() {
+            @Override
+            public void setResultData(String reresponse) {
+                initData(reresponse, context);
+            }
+        }.getData(url,BaseData.NORMALTIME);
+
+    }
+
+    private void initData(String reresponse, final Context context) {
+        final Fragment_FestivalBean fragment_festivalBean = new Gson().fromJson(reresponse, Fragment_FestivalBean.class);
         Glide.with(context).load(fragment_festivalBean.getData().getImg()).into(img_festival);
         //popupwindow设置
         initPop(context, fragment_festivalBean);
@@ -74,6 +85,5 @@ public class Holder_festival extends BaseHolder {
             }
         });
     }
-
 
 }

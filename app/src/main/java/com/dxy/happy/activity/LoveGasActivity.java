@@ -5,8 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.webkit.WebView;
 
 import com.dxy.happy.R;
+import com.dxy.happy.base.BaseActivity;
 
-public class LoveGasActivity extends AppCompatActivity {
+public class LoveGasActivity extends BaseActivity {
 
     private WebView home_lovegas_webview;
 

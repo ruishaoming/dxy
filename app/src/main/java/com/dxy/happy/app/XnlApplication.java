@@ -31,7 +31,9 @@ public class XnlApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        UMShareAPI.get(this);
         context = getApplicationContext();
+        PlatformConfig.setQQZone("100424468", "c7394704798a158208a74ab60104f0ba");
         handler = new Handler();//创建Handle
         mainThreadId = Process.myTid();//得到主线程id
         threadPool = Executors.newFixedThreadPool(5);//创建线程池
