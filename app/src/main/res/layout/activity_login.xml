@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <com.dxy.happy.utils.RoundImageView
-
+            android:id="@+id/touxiang"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="50px"
             android:layout_width="200px"
@@ -103,6 +103,7 @@
     android:layout_height="wrap_content"
     android:text="使用其他社交账号登录"/>
     <ImageView
+
         android:layout_marginTop="20px"
         android:id="@+id/weixin"
         android:layout_gravity="center"
