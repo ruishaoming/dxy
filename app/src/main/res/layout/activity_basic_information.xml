@@ -10,7 +10,7 @@
     <com.zhy.autolayout.AutoRelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/basic_information_icon"
+        android:id="@+id/basic_information_rela_icon"
         android:layout_marginTop="30px"
         android:background="@color/white"
         android:padding="30px">
@@ -30,6 +30,7 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"/>
         <ImageView
+            android:id="@+id/basic_information_icon"
             android:layout_width="140px"
             android:layout_height="140px"
             android:src="@mipmap/header_photo"
@@ -38,6 +39,7 @@
     </com.zhy.autolayout.AutoRelativeLayout>
 
     <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/basic_information_rela_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="30px"
@@ -64,6 +66,7 @@
             android:layout_marginRight="20px"/>
     </com.zhy.autolayout.AutoRelativeLayout>
     <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/basic_information_rela__birthday"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="30px"
@@ -113,6 +116,7 @@
     </com.zhy.autolayout.AutoRelativeLayout>
 
     <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/basic_information_rela_profession"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="30px"
@@ -141,6 +145,7 @@
     </com.zhy.autolayout.AutoRelativeLayout>
 
     <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/basic_information_rela_relationship_status"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="30px"

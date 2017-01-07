@@ -151,7 +151,7 @@
     </com.zhy.autolayout.AutoRelativeLayout>
 
     <Button
-
+        android:id="@+id/setting_exit"
         android:layout_width="720px"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"

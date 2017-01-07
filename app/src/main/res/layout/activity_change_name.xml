@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_change_name"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/mine_cardview_background">
+    <include layout="@layout/mine_title"></include>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40px"
+        android:text="一个好的昵称能吸引异性的注意哦"
+        android:textSize="@dimen/mine_text"/>
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="150px"
+        android:background="@color/white"
+        android:padding="10px"
+        android:layout_marginTop="40px">
+    <EditText
+        android:id="@+id/change_name_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        />
+    </com.zhy.autolayout.AutoRelativeLayout>
+</LinearLayout>

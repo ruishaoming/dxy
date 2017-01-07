@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/gray"
+    android:background="@color/mine_cardview_background"
     >
 <include layout="@layout/mine_title"></include>
     <com.zhy.autolayout.AutoRelativeLayout
@@ -51,7 +51,7 @@
         android:layout_height="wrap_content"
         android:text="小柠乐用户协议"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="450px"
+        android:layout_marginTop="300px"
         android:textColor="@color/main_bottom_tv_normal"/>
 
     <TextView

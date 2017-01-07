@@ -1,12 +1,13 @@
 package com.dxy.happy.bean;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by 韩永光
  * on 2016/12/29 10:41.
  */
-public class Fragment_LoveCommunityBean {
+public class Fragment_LoveCommunityBean implements Serializable{
 
 
     /**
@@ -73,7 +74,7 @@ public class Fragment_LoveCommunityBean {
         this.data = data;
     }
 
-    public static class DataBean {
+    public static class DataBean implements Serializable{
         /**
          * headImg : http://photo-60481.oss-cn-shenzhen.aliyuncs.com/%E5%B0%8F%E5%AE%87%E7%9A%84%E5%A4%B4%E5%83%8F%E7%AC%AC%E4%BA%8C%E6%B3%A2/456.jpg
          * nice : 11

@@ -5,8 +5,8 @@ import android.util.AttributeSet;
 import android.widget.ListView;
 
 /**
- * Created by 韩永光
- * on 2017/1/3 19:31.
+ * Created by 张天成
+ * on 2017/1/2 18:34.
  */
 public class MyListView extends ListView {
     public MyListView(Context context) {
@@ -21,9 +21,9 @@ public class MyListView extends ListView {
         super(context, attrs, defStyleAttr);
     }
 
-    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        int expandSpec = MeasureSpec.makeMeasureSpec(Integer.MAX_VALUE >> 2,
-                MeasureSpec.AT_MOST);
-        super.onMeasure(widthMeasureSpec, expandSpec);
+    public void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        int mExpandSpec = MeasureSpec.makeMeasureSpec(Integer.MAX_VALUE >> 2, MeasureSpec.AT_MOST);
+        super.onMeasure(widthMeasureSpec, mExpandSpec);
     }
+
 }

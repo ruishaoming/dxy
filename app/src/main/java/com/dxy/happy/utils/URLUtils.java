@@ -34,6 +34,14 @@ public class URLUtils {
 //    社区
 //
 //    1.板块自己布局
+//    首页轮播图：
+    public static String url_top="http://www.yulin520.com/a2a/forum/typeTop?sign=565F990AE10D44353542163CF14F024F&pageSize=10&sort=1&ts=1482920713&page=1&forumType=";
+    public static String url_list="http://www.yulin520.com/a2a/forum/typeList?sign=565F990AE10D44353542163CF14F024F&pageSize=10&sort=1&ts=1482920713&forumType=";
+   public static String xiangqing="http://www.yulin520.com/a2a/forumReply/detailedShow?pageSize=10&id=10441&sign=8783406554DDD2920DC61FAC5F6A7811&sort=1&ts=1768501243&page=1";
+
+
+//    助攻节日：http://www.yulin520.com/a2a/festival/next?sign=5D6B618EA7D05C14090FCCF82C566526&ts=1482907765
+//
 //
 //    你的月亮我的心   置顶：http://www.yulin520.com/a2a/forum/typeTop?sign=565F990AE10D44353542163CF14F024F&pageSize=10&sort=1&ts=1482920713&page=1&forumType=10
 //    内容：http://www.yulin520.com/a2a/forum/typeList?sign=565F990AE10D44353542163CF14F024F&pageSize=10&sort=1&ts=1482920713&page=1&forumType=10{上拉加载刷新----修改page的值}

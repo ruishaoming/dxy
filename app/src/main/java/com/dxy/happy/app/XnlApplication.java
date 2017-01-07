@@ -39,6 +39,8 @@ public class XnlApplication extends Application {
         threadPool = Executors.newFixedThreadPool(5);//创建线程池
         //使用Volley
         inStance = VolleySingleton.getInStance();
+        PlatformConfig.setQQZone("100424468", "c7394704798a158208a74ab60104f0ba");
+        UMShareAPI.get(this);
     }
 
     public static Context getContext() {
