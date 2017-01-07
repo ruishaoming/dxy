@@ -8,15 +8,6 @@ import java.util.List;
  */
 public class HomeCommunityBean {
 
-    /**
-     * code : 1
-     * success : true
-     * height : 0
-     * width : 0
-     * message : null
-     * data : [{"createTime":1482389782000,"yulin":"93364","floor":"1楼","floorReplyTimes":0,"forumId":10441,"frmList":[],"phone":"","headImg":"http://photo-60481.oss-cn-shenzhen.aliyuncs.com/%E6%99%93%E4%B8%BD%E5%A4%B4%E5%83%8F3/123.jpg","userRole":null,"imgs":[],"userId":7751,"userName":"琉璃心i","id":26277,"host":0,"content":"异地恋除了冷爆力该怎么办呢"},{"createTime":1482523995000,"yulin":"97240","floor":"2楼","floorReplyTimes":0,"forumId":10441,"frmList":[],"phone":"安卓手机","headImg":"http://wx.qlogo.cn/mmopen/ajNVdqHZLLCcT1nhk4Ziaxbj4yPrExNeWFvww6wAaACmCljzM6gCcnibbVTG2icH98cgK6AYus0iayUUNvGhRHmTOg/0","userRole":null,"imgs":[],"userId":8847,"userName":"呜啦啦想要阳光雏菊青草香香*","id":26304,"host":0,"content":"因为爱过啊，做不到对陌生人那样云淡风轻。"}]
-     */
-
     private int code;
     private boolean success;
     private int height;

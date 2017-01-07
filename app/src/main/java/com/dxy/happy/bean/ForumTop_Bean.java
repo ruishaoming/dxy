@@ -1,12 +1,13 @@
 package com.dxy.happy.bean;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by 张天成
  * on 2016/12/30 16:53.
  */
-public class ForumTop_Bean {
+public class ForumTop_Bean implements Serializable{
 
     private int code;
     private int height;
@@ -63,7 +64,7 @@ public class ForumTop_Bean {
         this.data = data;
     }
 
-    public static class DataBean {
+    public static class DataBean implements Serializable{
         /**
          * frList : null
          * recommend : 0
@@ -368,7 +369,7 @@ public class ForumTop_Bean {
             this.imgs = imgs;
         }
 
-        public static class ImgsBean {
+        public static class ImgsBean implements Serializable{
             /**
              * originalImg : http://img1.yulin520.com/yulinEvents/7VYQMKYMBIK0OH7G4U8S.jpeg
              * miniImg : http://img1.yulin520.com/yulinEvents/7VYQMKYMBIK0OH7G4U8S.jpeg@250w_250h_100Q_1o

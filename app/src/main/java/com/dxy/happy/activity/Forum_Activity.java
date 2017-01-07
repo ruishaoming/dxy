@@ -11,12 +11,14 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.dxy.happy.R;
 import com.dxy.happy.adapter.ForumTop_Adapter;
 import com.dxy.happy.base.BaseActivity;
 import com.dxy.happy.base.BaseData;
 import com.dxy.happy.bean.ForumTop_Bean;
+import com.dxy.happy.interfaces.OnItemClickListener;
 import com.dxy.happy.listen.OnLoadMoreListener;
 import com.dxy.happy.utils.URLUtils;
 import com.google.gson.Gson;
@@ -24,7 +26,7 @@ import com.google.gson.Gson;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Forum_Activity extends BaseActivity implements View.OnClickListener, SwipeRefreshLayout.OnRefreshListener {
+public class Forum_Activity extends BaseActivity implements SwipeRefreshLayout.OnRefreshListener, View.OnClickListener {
 
     private RecyclerView recyclerView;
     private ForumTop_Bean top_bean;
@@ -44,7 +46,7 @@ public class Forum_Activity extends BaseActivity implements View.OnClickListener
                 //初始化请求
                 case 3:
                     //展示数据
-                    if (top_bean!=null&&top_bean.getData() != null && bean_list != null) {
+                    if (top_bean != null && top_bean.getData() != null && bean_list != null) {
                         if (adapter == null) {
                             adapter = new ForumTop_Adapter(Forum_Activity.this, top_bean.getData(), listAll);
                             recyclerView.setAdapter(adapter);
@@ -61,7 +63,18 @@ public class Forum_Activity extends BaseActivity implements View.OnClickListener
                                     loadMoreData();
                                 }
                             }
-                        });}
+                        });
+
+                        adapter.setOnClickListener(new OnItemClickListener() {
+                            @Override
+                            public void onItemClick(int position) {
+                                Intent in=new Intent(Forum_Activity.this,Froum_Xq_Activity.class);
+                                in.putExtra("data2",listAll.get(position));
+                                startActivity(in);
+                            }
+                        });
+
+                    }
                     isLoading = true;
                     swipeRefreshLayout.setRefreshing(false);
                     break;
@@ -69,6 +82,8 @@ public class Forum_Activity extends BaseActivity implements View.OnClickListener
             //停止刷新
         }
     };
+    private ImageView imageView_back;
+    private TextView backe2;
 
     public void loadMoreData() {
         new Thread() {
@@ -93,8 +108,8 @@ public class Forum_Activity extends BaseActivity implements View.OnClickListener
         setContentView(R.layout.activity_forum_);
         //找到控件
         ImageView imageView = (ImageView) findViewById(R.id.image_title2);
-        ImageView imageView_back = (ImageView) findViewById(R.id.forum_back);
-        TextView backe2 = (TextView) findViewById(R.id.forum_back2);
+        imageView_back = (ImageView) findViewById(R.id.forum_back);
+        backe2 = (TextView) findViewById(R.id.forum_back2);
         TextView title2 = (TextView) findViewById(R.id.text_title2);
         TextView text_count2 = (TextView) findViewById(R.id.text_count2);
         recyclerView = (RecyclerView) findViewById(R.id.forum_RecyclerView);
@@ -154,7 +169,8 @@ public class Forum_Activity extends BaseActivity implements View.OnClickListener
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.forum_back:
-                finish();
+               // finish();
+                Toast.makeText(this, "点击了", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.forum_back2:
                 finish();

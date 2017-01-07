@@ -54,8 +54,8 @@ public class Holder_NoImage extends BaseHolder {
         }
         Date d = new Date(data.getTopTime());//"yyyy-MM-dd hh:mm:ss"
         SimpleDateFormat sdf = new SimpleDateFormat("MM月dd日 hh:mm");
-        text_count.setText(data.getReplyTimes()+"");
         text_time.setText(sdf.format(d));
+        text_count.setText(data.getReplyTimes()+"");
         line_image.removeAllViews();
         if (data.getImgs() != null && data.getImgs().size() > 0) {
             LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(150, 150);

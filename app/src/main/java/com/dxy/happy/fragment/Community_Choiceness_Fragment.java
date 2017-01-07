@@ -1,5 +1,6 @@
 package com.dxy.happy.fragment;
 
+import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,10 +10,12 @@ import android.view.View;
 import com.cjj.MaterialRefreshLayout;
 import com.cjj.MaterialRefreshListener;
 import com.dxy.happy.R;
+import com.dxy.happy.activity.Froum_Xq_Activity;
 import com.dxy.happy.adapter.CommunityAllAdapter;
 import com.dxy.happy.base.BaseData;
 import com.dxy.happy.base.BaseFragment;
-import com.dxy.happy.bean.CommunityAllBean;
+import com.dxy.happy.bean.ForumTop_Bean;
+import com.dxy.happy.interfaces.OnItemClickListener;
 import com.dxy.happy.utils.CommonUtils;
 import com.dxy.happy.utils.URLUtils;
 import com.dxy.happy.view.ShowingPage;
@@ -32,14 +35,14 @@ public class Community_Choiceness_Fragment extends BaseFragment {
     private boolean isRefrshLoadMore = false;
     private int numbre = 0;
     private CommunityAllAdapter communityAllAdapter;
-    private ArrayList<CommunityAllBean.DataEntity> listAll = new ArrayList<>();
+    private ArrayList<ForumTop_Bean.DataBean> listAll = new ArrayList<>();
     Handler handler = new Handler() {
 
         @Override
         public void handleMessage(final Message msg) {
             super.handleMessage(msg);
             if (msg.what == 0) {
-                List<CommunityAllBean.DataEntity> dataList = (List<CommunityAllBean.DataEntity>) msg.obj;
+                List<ForumTop_Bean.DataBean> dataList = (List<ForumTop_Bean.DataBean>) msg.obj;
                 if (communityAllAdapter == null) {
                     communityAllAdapter = new CommunityAllAdapter(dataList, getActivity());
                     //设置适配器
@@ -48,6 +51,14 @@ public class Community_Choiceness_Fragment extends BaseFragment {
                     communityAllAdapter.notifyDataSetChanged();
                 }
             }
+            communityAllAdapter.setOnClickListener(new OnItemClickListener() {
+                @Override
+                public void onItemClick(int position) {
+                    Intent in=new Intent(getActivity(),Froum_Xq_Activity.class);
+                    in.putExtra("data2",listAll.get(position));
+                    startActivity(in);
+                }
+            });
         }
     };
 
@@ -126,12 +137,12 @@ public class Community_Choiceness_Fragment extends BaseFragment {
 
     private void initData(int time, int page) {
         new BaseData() {
-            private List<CommunityAllBean.DataEntity> data;
+            private List<ForumTop_Bean.DataBean> data;
 
             @Override
             public void setResultData(String reresponse) {
                 Gson gson = new Gson();
-                CommunityAllBean communityAllBean = gson.fromJson(reresponse, CommunityAllBean.class);
+                ForumTop_Bean communityAllBean = gson.fromJson(reresponse, ForumTop_Bean.class);
                 //清楚第一次后数据清空
                 if (data != null) {
                     data.clear();

@@ -1,34 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/activity_home_community"
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <LinearLayout
+    <com.zhy.autolayout.AutoRelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <TextView
-            android:layout_margin="15px"
-            android:drawableLeft="@mipmap/return_back"
-            android:textSize="60px"
-            android:textColor="@color/black"
-            android:text="帖子详情"
-            android:layout_width="0px"
-            android:layout_weight="7"
-            android:layout_height="wrap_content" />
-        <ImageView
-            android:layout_gravity="center"
-            android:layout_margin="15px"
-            android:background="@mipmap/community_detail_navbar_menu_pressed"
-            android:layout_width="0px"
-            android:layout_weight="1"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-    <TextView
-        android:background="@color/gray"
-        android:layout_width="match_parent"
-        android:layout_height="4px" />
 
-</LinearLayout>
+        <ImageView
+            android:id="@+id/forum_back_xq"
+            android:layout_width="50px"
+            android:layout_height="50px"
+            android:layout_margin="10px"
+            android:src="@mipmap/return_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="12px"
+            android:layout_toRightOf="@+id/forum_back_xq"
+            android:text="帖子详情"
+            android:textSize="18sp" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_margin="10px"
+            android:background="@drawable/forum_image" />
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="@color/colorPrimary" />
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/image_tou_xq"
+            android:layout_width="80px"
+            android:layout_height="80px"
+            android:layout_margin="80px"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/year_xq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40px"
+            android:layout_toRightOf="@+id/image_tou_xq"
+            android:text="我来自1999@"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/time_xq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/year_xq"
+            android:layout_marginLeft="10px"
+            android:layout_toRightOf="@+id/image_tou_xq"
+            android:text="今天 17:23" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15px"
+            android:layout_toRightOf="@+id/year_xq"
+            android:src="@mipmap/community_detail_label" />
+
+        <ImageButton
+            android:id="@+id/xinxi_xq"
+            android:layout_width="50px"
+            android:layout_height="50px"
+            android:layout_alignParentRight="true"
+            android:layout_margin="30px"
+            android:background="@drawable/xinxi" />
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="IE和覅我好覅文化氛围防护无法水电费" />
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="50px"
+            android:src="@mipmap/trans_circle" />
+
+        <CheckBox
+            android:layout_width="100px"
+            android:layout_height="100px"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="80px"
+            android:background="@drawable/finger"
+            android:button="@null" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="180px"
+            android:text="50"
+            android:textSize="15sp" />
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gray"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="10px"
+            android:text="回帖" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10px"
+            android:text="(4)" />
+    </com.zhy.autolayout.AutoLinearLayout>
+</com.zhy.autolayout.AutoLinearLayout>
