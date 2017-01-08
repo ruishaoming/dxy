@@ -53,11 +53,7 @@
         </activity>
         <activity android:name=".base.BaseActivity" />
         <activity android:name=".activity.LaunchActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <activity android:name=".activity.Forum_Activity"></activity>
@@ -110,7 +106,13 @@
             android:name=".service.MediaService"
             android:enabled="true"
             android:exported="true"></service>
-        <activity android:name=".activity.AnimActivity" />
+        <activity android:name=".activity.AnimActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".activity.HomeMoreActivity"></activity>
     </application>
 
