@@ -13,7 +13,8 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.dxy.happy.R;
-import com.dxy.happy.bean.CommunityAllBean;
+import com.dxy.happy.bean.ForumTop_Bean;
+import com.dxy.happy.interfaces.OnItemClickListener;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -24,8 +25,9 @@ import java.util.List;
  * on 2016/12/30 17:05.
  */
 public class CommunityAllAdapter extends RecyclerView.Adapter<CommunityAllAdapter.CommunityAllHolder> {
-    List<CommunityAllBean.DataEntity> list;
+    List<ForumTop_Bean.DataBean> list;
     Context context;
+    private OnItemClickListener onClickListener;
     private static final int TYPE_NORMAL = 0;
     private static final int TYPE_NOEIMG = 1;
     private static final int TYPE_TWOIMG = 2;
@@ -44,7 +46,7 @@ public class CommunityAllAdapter extends RecyclerView.Adapter<CommunityAllAdapte
         }
     }
 
-    public CommunityAllAdapter(List<CommunityAllBean.DataEntity> list, Context context) {
+    public CommunityAllAdapter(List<ForumTop_Bean.DataBean> list, Context context) {
         this.list = list;
         this.context = context;
     }
@@ -99,7 +101,15 @@ public class CommunityAllAdapter extends RecyclerView.Adapter<CommunityAllAdapte
 
 
     @Override
-    public void onBindViewHolder(CommunityAllHolder holder, int position) {
+    public void onBindViewHolder(CommunityAllHolder holder, final int position) {
+        holder.all_autoll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (onClickListener != null) {
+                    onClickListener.onItemClick(position);
+                }
+            }
+        });
         int itemViewType = getItemViewType(position);
         if (list.get(position).getUserName() != null) {
             holder.community_name.setText(list.get(position).getUserName());
@@ -165,6 +175,7 @@ public class CommunityAllAdapter extends RecyclerView.Adapter<CommunityAllAdapte
         }
         //开启动画
         startAnimation(holder.all_autoll, position);
+
     }
 
     @Override
@@ -177,6 +188,7 @@ public class CommunityAllAdapter extends RecyclerView.Adapter<CommunityAllAdapte
     public void onViewDetachedFromWindow(CommunityAllHolder holder) {
         super.onViewDetachedFromWindow(holder);
         holder.all_autoll.clearAnimation();
+
     }
 
 
@@ -206,5 +218,8 @@ public class CommunityAllAdapter extends RecyclerView.Adapter<CommunityAllAdapte
             two_img2 = (ImageView) itemView.findViewById(R.id.two_img2);
             two_img3 = (ImageView) itemView.findViewById(R.id.two_img3);
         }
+    }
+    public void setOnClickListener(OnItemClickListener onClickListener) {
+        this.onClickListener = onClickListener;
     }
 }

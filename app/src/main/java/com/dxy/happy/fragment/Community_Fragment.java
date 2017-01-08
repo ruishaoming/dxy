@@ -112,7 +112,7 @@ public class Community_Fragment extends BaseFragment implements RadioGroup.OnChe
         switch (v.getId()){
             case R.id.image_email:
 
-            break;
+                break;
         }
     }
 }

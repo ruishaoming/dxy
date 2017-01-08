@@ -14,6 +14,7 @@ import com.dxy.happy.Hoder.Holder_NoImage;
 import com.dxy.happy.Hoder.LoadMoreHolder;
 import com.dxy.happy.R;
 import com.dxy.happy.bean.ForumTop_Bean;
+import com.dxy.happy.interfaces.OnItemClickListener;
 import com.zhy.adapter.abslistview.CommonAdapter;
 import com.zhy.adapter.abslistview.ViewHolder;
 import com.zhy.autolayout.AutoLinearLayout;
@@ -38,6 +39,7 @@ public class ForumTop_Adapter extends RecyclerView.Adapter<BaseHolder> {
     private List<ForumTop_Bean.DataBean> bean_list;
 
     int lastPosition = -1;
+    private OnItemClickListener onClickListener;
 
     public ForumTop_Adapter(Context context, List<ForumTop_Bean.DataBean> list, List<ForumTop_Bean.DataBean> bean_list) {
         this.context = context;
@@ -51,6 +53,7 @@ public class ForumTop_Adapter extends RecyclerView.Adapter<BaseHolder> {
 
 
     View view = null;
+
     @Override
     public BaseHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         BaseHolder holder = null;
@@ -76,7 +79,6 @@ public class ForumTop_Adapter extends RecyclerView.Adapter<BaseHolder> {
     }
 
 
-
     @Override
     public void onViewDetachedFromWindow(BaseHolder holder) {
         super.onViewDetachedFromWindow(holder);
@@ -99,9 +101,16 @@ public class ForumTop_Adapter extends RecyclerView.Adapter<BaseHolder> {
                         ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(lin_all, View.TRANSLATION_Y, 300, 0);
                         objectAnimator.setDuration(300);
                         objectAnimator.start();
+                        lin_all.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                if (onClickListener != null) {
+                                    onClickListener.onItemClick(position);
+                                }
+                            }
+                        });
                     }
                     lastPosition = position;
-//                    startAnimation(lin_all, position);
                     break;
                 case LISTVIEWZS:
                     ForumTop_Holder holder4 = (ForumTop_Holder) holder;
@@ -135,10 +144,14 @@ public class ForumTop_Adapter extends RecyclerView.Adapter<BaseHolder> {
             } else if (bean_list.get(position).getImgs().size() == 3) {
                 return THREEIMAGE;
             }
-           }else if (position == (bean_list.size() + 2)) {
-                  return TYPE_LOAD_MORE;
+        } else if (position == (bean_list.size() + 2)) {
+            return TYPE_LOAD_MORE;
         }
         return NOIMAGE;
+    }
+
+    public void setOnClickListener(OnItemClickListener onClickListener) {
+        this.onClickListener = onClickListener;
     }
 
 

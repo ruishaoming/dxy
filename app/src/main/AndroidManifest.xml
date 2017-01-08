@@ -99,7 +99,6 @@
             android:name=".activity.DialogActivity"
             android:theme="@style/Theme.AppCompat.Dialog" />
         <activity android:name=".activity.HomeFestivalActivity" />
-        <activity android:name=".activity.HomeCommunityActivity" />
         <activity android:name=".activity.KnowActivity" />
         <activity android:name=".activity.LoveGasActivity"></activity>
         <service
@@ -114,6 +113,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.HomeMoreActivity"></activity>
+        <activity android:name=".activity.Froum_Xq_Activity"></activity>
     </application>
 
 </manifest>
