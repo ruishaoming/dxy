@@ -43,23 +43,23 @@ public class ChooseCareerActivity extends AppCompatActivity implements View.OnCl
     }
 
     private void initData() {
-       BaseData baseData = new BaseData() {
+        BaseData baseData = new BaseData() {
             @Override
             public void setResultData(String reresponse) {
                 Gson gson = new Gson();
-              chooseCareerBean = gson.fromJson(reresponse, ChooseCareerBean.class);
+                chooseCareerBean = gson.fromJson(reresponse, ChooseCareerBean.class);
 
-                        recyclerView.setLayoutManager(new LinearLayoutManager(ChooseCareerActivity.this));
-                        adapter = new MyChooseCareerAdapter(ChooseCareerActivity.this, chooseCareerBean.getData());
-                        recyclerView.setAdapter(adapter);
-                        adapter.setOnItemClickListener(new OnItemClickListener() {
-                            @Override
-                            public void onItemClick(int position) {
-                                Intent intent = new Intent(ChooseCareerActivity.this,BasicInformationActivity.class);
-                                intent.putExtra("title",chooseCareerBean.getData().get(position).getTitle());
-                                startActivity(intent);
-                            }
-                        });
+                recyclerView.setLayoutManager(new LinearLayoutManager(ChooseCareerActivity.this));
+                adapter = new MyChooseCareerAdapter(ChooseCareerActivity.this, chooseCareerBean.getData());
+                recyclerView.setAdapter(adapter);
+                adapter.setOnItemClickListener(new OnItemClickListener() {
+                    @Override
+                    public void onItemClick(int position) {
+                        Intent intent = new Intent(ChooseCareerActivity.this,BasicInformationActivity.class);
+                        intent.putExtra("title",chooseCareerBean.getData().get(position).getTitle());
+                        startActivity(intent);
+                    }
+                });
 
             }
 

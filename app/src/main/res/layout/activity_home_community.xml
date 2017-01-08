@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_home_community"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_margin="15px"
+            android:drawableLeft="@mipmap/return_back"
+            android:textSize="60px"
+            android:textColor="@color/black"
+            android:text="帖子详情"
+            android:layout_width="0px"
+            android:layout_weight="7"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_margin="15px"
+            android:background="@mipmap/community_detail_navbar_menu_pressed"
+            android:layout_width="0px"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <TextView
+        android:background="@color/gray"
+        android:layout_width="match_parent"
+        android:layout_height="4px" />
+
+</LinearLayout>

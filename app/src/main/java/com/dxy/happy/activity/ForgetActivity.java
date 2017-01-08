@@ -15,6 +15,10 @@ import android.widget.Toast;
 
 import com.dxy.happy.R;
 import com.dxy.happy.base.BaseActivity;
+import com.dxy.happy.base.BaseData;
+import com.dxy.happy.bean.User;
+import com.dxy.happy.bean.Zhuce;
+import com.google.gson.Gson;
 
 import java.util.Timer;
 
@@ -41,8 +45,6 @@ public class ForgetActivity extends BaseActivity implements View.OnClickListener
             if (msg.arg1==0 ) {
                 Toast.makeText(ForgetActivity.this, "验证码已发送，注意查收", Toast.LENGTH_SHORT).show();
                 yan.setText("获取验证码");
-
-
             }else {
                 setTime();
             }
@@ -51,7 +53,9 @@ public class ForgetActivity extends BaseActivity implements View.OnClickListener
 
 
     };
-
+    private User user;
+    private Zhuce zhuce1;
+    private EditText for_zhuce;
 
 
     @Override
@@ -65,6 +69,7 @@ public class ForgetActivity extends BaseActivity implements View.OnClickListener
         yan.setOnClickListener(this);
         button = (Button) findViewById(R.id.tijiao);
         button.setOnClickListener(this);
+        for_zhuce = (EditText) findViewById(R.id.yanzheng);
         phone = (EditText) findViewById(R.id.phone);
         pwd = (EditText) findViewById(R.id.for_pwd);
         pwd.setTransformationMethod(PasswordTransformationMethod.getInstance());
@@ -87,26 +92,71 @@ public class ForgetActivity extends BaseActivity implements View.OnClickListener
       switch (v.getId())
      {
          case R.id.tijiao:
-             if(phone.getText().toString().trim().length()<=11
-                     || pwd.getText().toString().trim().length()==0)
+             if ( pwd.length()<6)
              {
-                 Toast.makeText(ForgetActivity.this,"手机号码或密码格式不正确",Toast.LENGTH_SHORT).show();
+                 Toast.makeText(ForgetActivity.this,"密码格式不对",Toast.LENGTH_SHORT).show();
              }else {
+                 yanzheng1();
+
 
              }
              break;
          case R.id.yan1:
-             if(phone.getText().toString().trim().length()<11
-                     )
+
+             if(phone.length()<11)
              {
-                 Toast.makeText(ForgetActivity.this,"手机号码格式不正确",Toast.LENGTH_SHORT).show();
+                 Toast.makeText(ForgetActivity.this,"手机号格式不对",Toast.LENGTH_SHORT).show();
              }else {
                  setTime();
+                 new BaseData() {
+
+                     @Override
+                     public void setResultData(String reresponse) {
+                         Gson gson = new Gson();
+                         user = gson.fromJson(reresponse, User.class);
+                         if (user.getStatus().equals("ok")) {
+                             Toast.makeText(ForgetActivity.this, "验证码发送成功", Toast.LENGTH_SHORT).show();
+                         }
+
+                     }
+                 }.getData("http://114.112.104.151:8203/LvScore_Service/visit/user_getverificationcode.do?telNum="+phone.getText().toString().trim()+"", BaseData.NOTIME);
              }
+
 
              break;
      }
     }
+
+    private void yanzheng1() {
+        new BaseData() {
+            @Override
+            public void setResultData(String reresponse) {
+                Gson gson = new Gson();
+                user = gson.fromJson(reresponse, User.class);
+                if (user.getStatus().equals("ok")) {
+                    //执行提交
+                    gotoZhuce();
+                }
+            }
+        }.getData("http://114.112.104.151:8203/LvScore_Service/visit/user_checkVerificationCode.do?telNum="+phone.getText().toString()+"&verCode="+for_zhuce.getText().toString()+"" ,BaseData.NOTIME);
+    }
+
+    private void gotoZhuce() {
+        new BaseData() {
+            @Override
+            public void setResultData(String reresponse) {
+                Gson gson = new Gson();
+                zhuce1 = gson.fromJson(reresponse, Zhuce.class);
+                if (zhuce1.getStatus().equals("ok")) {
+
+                    Toast.makeText(ForgetActivity.this,"提交成功",Toast.LENGTH_SHORT).show();
+
+                }
+
+            }
+        }.getData("http://114.112.104.151:8203/LvScore_Service/visit/user_register.do?telNum="+phone.getText().toString()+"&name=godboy&password="+pwd.getText().toString()+"", BaseData.NOTIME);
+    }
+
     //跳转
     public void intentclass(Class v)
     {

@@ -4,13 +4,14 @@
     android:layout_height="match_parent"
     android:background="@color/search_backcolor"
     android:orientation="vertical">
-   <ListView
-       android:id="@+id/listView_Forum"
-       android:layout_margin="10px"
-       android:listSelector="@color/search_backcolor"
-       android:layout_width="match_parent"
-       android:layout_height="match_parent">
 
-   </ListView>
+    <ListView
+        android:id="@+id/listView_Forum"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10px"
+        android:listSelector="@color/search_backcolor">
+
+    </ListView>
 
 </LinearLayout>

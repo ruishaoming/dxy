@@ -9,7 +9,6 @@ import com.dxy.happy.R;
 import com.dxy.happy.Hoder.BaseHolder;
 import com.dxy.happy.Hoder.Holder_Know;
 import com.dxy.happy.Hoder.Holder_Love_Community;
-import com.dxy.happy.Hoder.Holder_Love_Gas;
 import com.dxy.happy.Hoder.Holder_ViewPager;
 import com.dxy.happy.Hoder.Holder_festival;
 import com.dxy.happy.utils.CommonUtils;
@@ -23,7 +22,7 @@ import java.util.ArrayList;
  */
 public class Home_RecycleViewAdapter extends RecyclerView.Adapter<BaseHolder> {
 
-    private final ArrayList<String> urlList;
+    private final String[] url;
     int Type = -1;
     int Type0 = 0;
     int Type1 = 1;
@@ -32,9 +31,9 @@ public class Home_RecycleViewAdapter extends RecyclerView.Adapter<BaseHolder> {
     int Type4 = 4;
     private final Context context;
 
-    public Home_RecycleViewAdapter(Context context, ArrayList<String> urlList) {
+    public Home_RecycleViewAdapter(Context context, String[] url) {
         this.context = context;
-        this.urlList = urlList;
+        this.url = url;
 
     }
 
@@ -57,7 +56,7 @@ public class Home_RecycleViewAdapter extends RecyclerView.Adapter<BaseHolder> {
             holder = new Holder_Know(view);
         } else if (Type == Type4) {
             View view = CommonUtils.inflate(R.layout.holder_love_gas);
-            holder = new Holder_Love_Gas(view);
+            holder = new com.dxy.happy.Hoder.Holder_Love_Gas(view);
         }
         return holder;
     }
@@ -67,12 +66,12 @@ public class Home_RecycleViewAdapter extends RecyclerView.Adapter<BaseHolder> {
     public void onBindViewHolder(BaseHolder holder, int position) {
 
         //调用抽象类里的抽象方法 直接传条目 在抽象类里面展示数据
-        holder.getHolder(context, urlList.get(position));
+        holder.getHolder(context, url[position]);
     }
 
     @Override
     public int getItemCount() {
-        return urlList.size();
+        return url.length;
     }
 
     //多条目展示  额外重写的一个方法

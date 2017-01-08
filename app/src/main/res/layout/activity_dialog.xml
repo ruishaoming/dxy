@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_dialog"
+    android:layout_width="600px"
+    android:layout_height="600px"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="100px"
+        android:gravity="center"
+        android:text="您选择处于"
+        android:textColor="@color/gray" />
+
+    <LinearLayout
+        android:id="@+id/home_ll"
+        android:layout_width="match_parent"
+        android:layout_height="300px"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/img_loving"
+                    android:layout_width="150px"
+                    android:layout_height="150px"
+                    android:background="@mipmap/forum_section_five_logo"
+                    android:checked="true" />
+
+                <CheckBox
+                    android:id="@+id/home_cb1"
+                    android:layout_width="50px"
+                    android:layout_height="50px"
+                    android:layout_alignEnd="@+id/img_loving"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignRight="@+id/img_loving"
+                    android:background="@drawable/loving"
+                    android:button="@null" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="恋爱期"
+                android:textColor="@color/gray" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/img_alone"
+                    android:layout_width="150px"
+                    android:layout_height="150px"
+                    android:background="@mipmap/forum_section_six_logo" />
+
+                <CheckBox
+                    android:id="@+id/home_cb2"
+                    android:layout_width="50px"
+                    android:layout_height="50px"
+                    android:layout_alignEnd="@+id/img_alone"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignRight="@+id/img_alone"
+                    android:background="@drawable/loving"
+                    android:button="@null" />
+            </RelativeLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="单身期"
+                android:textColor="@color/gray" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/home_bt"
+        android:layout_width="350px"
+        android:layout_height="60px"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/main_bottom_tv_check"
+        android:text="确定" />
+
+
+</LinearLayout>
