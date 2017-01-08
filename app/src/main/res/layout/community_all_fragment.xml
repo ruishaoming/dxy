@@ -30,6 +30,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignTop="@+id/recyclerView"
         android:layout_marginBottom="60px"
+        app:fabSize="normal"
         android:layout_marginRight="40px"
         android:src="@mipmap/forum_post_btn" />
 

@@ -11,7 +11,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.dxy.happy.R;
 import com.dxy.happy.adapter.ForumTop_Adapter;
@@ -20,6 +19,7 @@ import com.dxy.happy.base.BaseData;
 import com.dxy.happy.bean.ForumTop_Bean;
 import com.dxy.happy.interfaces.OnItemClickListener;
 import com.dxy.happy.listen.OnLoadMoreListener;
+import com.dxy.happy.utils.CommonUtils;
 import com.dxy.happy.utils.URLUtils;
 import com.google.gson.Gson;
 
@@ -169,11 +169,10 @@ public class Forum_Activity extends BaseActivity implements SwipeRefreshLayout.O
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.forum_back:
-               // finish();
-                Toast.makeText(this, "点击了", Toast.LENGTH_SHORT).show();
+                CommonUtils.finishActivity(this);
                 break;
             case R.id.forum_back2:
-                finish();
+                CommonUtils.finishActivity(this);
                 break;
         }
     }

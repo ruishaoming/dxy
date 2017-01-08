@@ -9,6 +9,8 @@
        android:layout_width="50px"
        android:layout_height="50px"
        android:layout_margin="10px"
+
+       android:layout_gravity="center_vertical"
        android:src="@mipmap/return_back"
        />
     <TextView
@@ -16,7 +18,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="返回"
+        android:layout_gravity="center_vertical"
         android:textColor="@color/black"
-        android:layout_margin="12px"
+        android:layout_margin="10px"
         android:textSize="18sp"/>
 </LinearLayout>

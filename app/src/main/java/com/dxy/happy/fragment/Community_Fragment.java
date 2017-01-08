@@ -1,5 +1,7 @@
 package com.dxy.happy.fragment;
 
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -44,8 +46,8 @@ public class Community_Fragment extends BaseFragment implements RadioGroup.OnChe
     }
 
     @Override
-    public void onResume() {
-        super.onResume();
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
         view_pager.setAdapter(new FragmentPagerAdapter(getChildFragmentManager()) {
             @Override
             public Fragment getItem(int position) {
@@ -71,6 +73,12 @@ public class Community_Fragment extends BaseFragment implements RadioGroup.OnChe
             }
         });
         view_pager.setCurrentItem(1);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
     }
 
     @Override
