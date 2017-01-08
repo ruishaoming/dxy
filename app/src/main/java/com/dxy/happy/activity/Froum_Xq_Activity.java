@@ -22,6 +22,7 @@ import com.dxy.happy.base.BaseActivity;
 import com.dxy.happy.base.BaseData;
 import com.dxy.happy.bean.ForumTop_Bean;
 import com.dxy.happy.bean.HomeCommunityBean;
+import com.dxy.happy.utils.CommonUtils;
 import com.google.gson.Gson;
 import com.zhy.autolayout.AutoRelativeLayout;
 
@@ -29,7 +30,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-public class Froum_Xq_Activity extends BaseActivity {
+public class Froum_Xq_Activity extends BaseActivity implements View.OnClickListener {
     private ForumTop_Bean.DataBean data1;
     private String url;
     private RecyclerView xq_recyclerView;
@@ -42,7 +43,9 @@ public class Froum_Xq_Activity extends BaseActivity {
     private ImageView hear5;
     private ImageView hear2;
     private boolean flag=true;
-
+    private HomeCommunityBean homeCommunityBean;
+    private TextView zan;
+    private int nice;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,7 +57,9 @@ public class Froum_Xq_Activity extends BaseActivity {
         new BaseData() {
             @Override
             public void setResultData(String reresponse) {
-                HomeCommunityBean homeCommunityBean = new Gson().fromJson(reresponse, HomeCommunityBean.class);
+                homeCommunityBean = new Gson().fromJson(reresponse, HomeCommunityBean.class);
+                TextView size = (TextView) findViewById(R.id._listViewsize);
+                size.setText("("+homeCommunityBean.getData().size()+")");
                 xq_recyclerView.setLayoutManager(new LinearLayoutManager(Froum_Xq_Activity.this));
                 List<HomeCommunityBean.DataBean> data = homeCommunityBean.getData();
                 if (data.size() > 0) {
@@ -84,6 +89,7 @@ public class Froum_Xq_Activity extends BaseActivity {
                 imageView_haed.setImageDrawable(circularBitmapDrawable);
             }
         });
+        findViewById(R.id.forum_back_xq2).setOnClickListener(this);
         button_xq = (Button) findViewById(R.id.button_xq);
         TextView textView_year = (TextView) findViewById(R.id.year_xq2);
         TextView textView_context = (TextView) findViewById(R.id.xq_context2);
@@ -91,16 +97,20 @@ public class Froum_Xq_Activity extends BaseActivity {
         imageView_xq = (ImageView) findViewById(R.id.ImageView_xq);
         xq_recyclerView = (RecyclerView) findViewById(R.id.xq_RecyclerView);
         xq_recyclerView.setFocusable(false);
+
         TextView text_time = (TextView) findViewById(R.id.time_xq2);
         textView_year.setText(data1.getUserName());
         Date d = new Date(data1.getTopTime());//"yyyy-MM-dd hh:mm:ss"
         SimpleDateFormat sdf = new SimpleDateFormat("MM月dd日 hh:mm");
         text_time.setText(sdf.format(d));
+        zan = (TextView) findViewById(R.id.count_zan);
+        zan.setText(data1.getNice()+"");
         CheckBox checkbox = (CheckBox) findViewById(R.id.xq_checkbox);
         hear3 = (ImageView) findViewById(R.id.hear3);
         hear4 = (ImageView) findViewById(R.id.hear4);
         hear5 = (ImageView) findViewById(R.id.hear5);
         hear2 = (ImageView) findViewById(R.id.hear2);
+        nice=data1.getNice();
         checkbox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -122,6 +132,8 @@ public class Froum_Xq_Activity extends BaseActivity {
                     ObjectAnimator objectAnimator4 = ObjectAnimator.ofFloat(hear2, View.TRANSLATION_X, 0, 80, 200, 500, 80, 60, 0);
                     objectAnimator4.setDuration(3000);
                     objectAnimator4.start();
+                    nice=data1.getNice()+1;
+                    zan.setText(nice+"");
                     flag=false;
                 } else
                 {
@@ -129,12 +141,23 @@ public class Froum_Xq_Activity extends BaseActivity {
                     hear3.setVisibility(View.GONE);
                     hear4.setVisibility(View.GONE);
                     hear5.setVisibility(View.GONE);
+                    nice=data1.getNice();
+                    zan.setText(nice+"");
                     flag=true;
                 }
             }
 
 
         });
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.forum_back_xq2:
+                CommonUtils.finishActivity(this);
+                break;
+        }
     }
 
     public class SpaceItemDecoration extends RecyclerView.ItemDecoration {

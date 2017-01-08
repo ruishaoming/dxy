@@ -42,7 +42,7 @@ public class Holder_Xq extends BaseHolder {
     @Override
     public void getHolder(final Context context, Object o) {
         HomeCommunityBean.DataBean data = (HomeCommunityBean.DataBean) o;
-        if (data!=null) {
+        if (data != null) {
             Glide.with(context).load(data.getHeadImg()).asBitmap().centerCrop().into(new BitmapImageViewTarget(imageView) {
                 @Override
                 protected void setResource(Bitmap resource) {
@@ -56,7 +56,6 @@ public class Holder_Xq extends BaseHolder {
             Date d = new Date(data.getCreateTime());//"yyyy-MM-dd hh:mm:ss"
             SimpleDateFormat sdf = new SimpleDateFormat("MM月dd日 hh:mm");
             textView2.setText(sdf.format(d));
-            textView2.setText(data.getCreateTime() + "");
             textView3.setText(data.getFloor());
             text_context.setText(data.getContent());
 
