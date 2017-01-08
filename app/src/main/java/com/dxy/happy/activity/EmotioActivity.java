@@ -2,17 +2,17 @@ package com.dxy.happy.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.dxy.happy.R;
+import com.dxy.happy.base.BaseActivity;
 import com.dxy.happy.utils.CommonUtils;
 import com.zhy.autolayout.AutoLinearLayout;
 import com.zhy.autolayout.AutoRelativeLayout;
 
-public class EmotioActivity extends AppCompatActivity implements View.OnClickListener {
+public class EmotioActivity extends BaseActivity implements View.OnClickListener {
 
     private TextView mine_text_title;
     private TextView mine_feedback_commit;

@@ -1,29 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
+
+
     <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/forum_top_xq"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80px"
         android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/forum_back_xq2"
             android:layout_width="50px"
-            android:layout_height="50px"
-            android:layout_margin="10px"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
             android:src="@mipmap/return_back" />
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="12px"
+            android:layout_height="match_parent"
             android:layout_toRightOf="@+id/forum_back_xq2"
             android:text="帖子详情"
-            android:textSize="18sp" />
+            android:layout_marginLeft="10px"
+            android:gravity="center_vertical"
+            android:textSize="15sp" />
 
         <ImageButton
             android:layout_width="wrap_content"
@@ -34,10 +39,62 @@
 
     </com.zhy.autolayout.AutoRelativeLayout>
 
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/autorelative1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gray1"
+        android:layout_alignParentBottom="true">
 
+        <ImageView
+            android:layout_width="60px"
+            android:layout_height="60px"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30px"
+            android:src="@mipmap/community_detail_comment_pic" />
+
+        <ImageView
+            android:layout_width="50px"
+            android:layout_height="50px"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="100px"
+            android:src="@mipmap/express" />
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="180px"
+            android:layout_marginRight="100px"
+            app:cardCornerRadius="16px">
+
+            <EditText
+                android:id="@+id/address_news_detail_edit"
+                android:layout_width="150dp"
+                android:layout_height="50px"
+                android:background="#fff"
+                android:hint="请输入标题（30字）"
+                android:textColorHint="#686868"
+                android:textSize="25px"
+
+                />
+        </android.support.v7.widget.CardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:text="发送"
+            android:textColor="@color/black"
+            android:textSize="30px" />
+    </com.zhy.autolayout.AutoRelativeLayout>
     <ScrollView
+        android:layout_above="@+id/autorelative1"
         android:layout_width="match_parent"
         android:scrollbars="none"
+        android:layout_below="@+id/forum_top_xq"
         android:layout_height="wrap_content">
 
         <com.zhy.autolayout.AutoLinearLayout
@@ -60,6 +117,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="20px"
                     android:layout_marginLeft="10px"
+                    android:textColor="@color/black"
                     android:layout_toRightOf="@+id/image_tou_xq2"
                     android:text="我来自1999@"
                     android:textSize="15sp" />
@@ -69,6 +127,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/year_xq2"
+                    android:textColor="@color/black"
                     android:layout_marginLeft="20px"
                     android:layout_toRightOf="@+id/image_tou_xq2"
                     android:text="今天 17:23" />
@@ -100,6 +159,7 @@
                 android:id="@+id/xq_context2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
                 android:text="IE和覅我好覅文化氛围防护无法水电费" />
 
             <com.zhy.autolayout.AutoRelativeLayout
@@ -207,5 +267,6 @@
     </ScrollView>
 
 
-</com.zhy.autolayout.AutoLinearLayout>
+
+</com.zhy.autolayout.AutoRelativeLayout>
 

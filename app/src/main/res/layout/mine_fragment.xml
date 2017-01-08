@@ -2,9 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/mine_background">
-
+    android:background="@color/mine_background"
+    android:orientation="vertical">
 
     <com.zhy.autolayout.AutoRelativeLayout
         android:layout_width="match_parent"
@@ -77,11 +76,13 @@
             android:id="@+id/mine_title_profile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:src="@mipmap/me_title_profile" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:layout_marginLeft="20px"
             android:layout_marginTop="8px"
             android:layout_toRightOf="@+id/mine_title_profile"
@@ -94,12 +95,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15px"
             android:layout_marginTop="10px"
             android:src="@mipmap/next_indicator" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:layout_marginRight="20px"
             android:layout_marginTop="10px"
             android:layout_toLeftOf="@+id/mine_next"
@@ -131,27 +135,32 @@
             android:id="@+id/mine_title_post"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/me_title_post"
-            android:layout_marginLeft="18px"/>
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="18px"
+            android:src="@mipmap/me_title_post" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:layout_marginLeft="20px"
             android:layout_marginTop="10px"
             android:layout_toRightOf="@+id/mine_title_post"
-            android:textColor="@color/main_bottom_tv_normal"
             android:text="我的帖子"
+            android:textColor="@color/main_bottom_tv_normal"
             android:textSize="@dimen/mine_text" />
+
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/next_indicator"
             android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
             android:layout_marginRight="15px"
-            android:layout_marginTop="10px"/>
+            android:layout_marginTop="10px"
+            android:src="@mipmap/next_indicator" />
 
     </com.zhy.autolayout.AutoRelativeLayout>
+
     <com.zhy.autolayout.AutoRelativeLayout
         android:id="@+id/mine_rela_feedback"
         android:layout_width="match_parent"
@@ -164,27 +173,32 @@
             android:id="@+id/mine_title_feedback"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/me_title_feedback"
-            android:layout_marginLeft="18px"/>
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="18px"
+            android:src="@mipmap/me_title_feedback" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:layout_marginLeft="20px"
             android:layout_marginTop="10px"
             android:layout_toRightOf="@+id/mine_title_feedback"
-            android:textColor="@color/main_bottom_tv_normal"
             android:text="意见反馈"
+            android:textColor="@color/main_bottom_tv_normal"
             android:textSize="@dimen/mine_text" />
+
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/next_indicator"
             android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
             android:layout_marginRight="15px"
-            android:layout_marginTop="10px"/>
+            android:layout_marginTop="10px"
+            android:src="@mipmap/next_indicator" />
 
     </com.zhy.autolayout.AutoRelativeLayout>
+
     <com.zhy.autolayout.AutoRelativeLayout
         android:id="@+id/mine_rela_setting"
         android:layout_width="match_parent"
@@ -197,25 +211,29 @@
             android:id="@+id/mine_setting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/me_setting"
-            android:layout_marginLeft="18px"/>
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="18px"
+            android:src="@mipmap/me_setting" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:layout_marginLeft="20px"
             android:layout_marginTop="10px"
             android:layout_toRightOf="@+id/mine_setting"
-            android:textColor="@color/main_bottom_tv_normal"
             android:text="设置"
+            android:textColor="@color/main_bottom_tv_normal"
             android:textSize="@dimen/mine_text" />
+
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/next_indicator"
             android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
             android:layout_marginRight="15px"
-            android:layout_marginTop="10px"/>
+            android:layout_marginTop="10px"
+            android:src="@mipmap/next_indicator" />
 
     </com.zhy.autolayout.AutoRelativeLayout>
 </LinearLayout>

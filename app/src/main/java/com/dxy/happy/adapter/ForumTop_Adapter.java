@@ -2,10 +2,12 @@ package com.dxy.happy.adapter;
 
 import android.animation.ObjectAnimator;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.TextView;
 
 import com.dxy.happy.Hoder.BaseHolder;
@@ -13,6 +15,7 @@ import com.dxy.happy.Hoder.ForumTop_Holder;
 import com.dxy.happy.Hoder.Holder_NoImage;
 import com.dxy.happy.Hoder.LoadMoreHolder;
 import com.dxy.happy.R;
+import com.dxy.happy.activity.Froum_Xq_Activity;
 import com.dxy.happy.bean.ForumTop_Bean;
 import com.dxy.happy.interfaces.OnItemClickListener;
 import com.zhy.adapter.abslistview.CommonAdapter;
@@ -114,11 +117,20 @@ public class ForumTop_Adapter extends RecyclerView.Adapter<BaseHolder> {
                     break;
                 case LISTVIEWZS:
                     ForumTop_Holder holder4 = (ForumTop_Holder) holder;
-                    holder4.listView.setAdapter(new CommonAdapter<String>(context, R.layout.layout_tiaomuyi_listitem, listTitle) {
+                    CommonAdapter<String> adapter = new CommonAdapter<String>(context, R.layout.layout_tiaomuyi_listitem, listTitle) {
                         @Override
                         protected void convert(ViewHolder viewHolder, String item, int itemposition) {
                             TextView textView = viewHolder.getView(R.id.tiaomuyi_listTextView);
                             textView.setText(listTitle.get(itemposition));
+                        }
+                    };
+                    holder4.listView.setAdapter(adapter);
+                    holder4.listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            Intent in=new Intent(context,Froum_Xq_Activity.class);
+                            in.putExtra("data2",list.get(position));
+                            context.startActivity(in);
                         }
                     });
                     break;
