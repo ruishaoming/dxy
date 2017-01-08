@@ -46,6 +46,12 @@ public class Community_Forum_Fragment extends BaseFragment {
         initData();
         return view;
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
+
     private void initInte() {
         list_text_tetile = new ArrayList<>();
         list_text_tetile.add("你的月亮我的心");
@@ -96,7 +102,7 @@ public class Community_Forum_Fragment extends BaseFragment {
                 in.putExtra("title_name",list_text_tetile.get(position));
                 in.putExtra("title_name2",list_text_tetile3.get(position));
                 in.putExtra("id",list_id.get(position));
-                startActivity(in);
+                getActivity().startActivity(in);
             }
         });
     }
