@@ -3,7 +3,11 @@ package com.dxy.happy.activity;
 import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Display;
+import android.view.Gravity;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -15,6 +19,8 @@ import com.dxy.happy.utils.StartUtils;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+
+import static com.umeng.socialize.Config.dialog;
 
 public class BasicInformationActivity extends BaseActivity implements View.OnClickListener {
 
@@ -71,7 +77,6 @@ public class BasicInformationActivity extends BaseActivity implements View.OnCli
             //生日
             case R.id.basic_information_rela__birthday:
                 showDatePickerDialog();
-                Log.e("TAG","********************");
                 break;
             //职业
             case R.id.basic_information_rela_profession:
@@ -94,12 +99,18 @@ public class BasicInformationActivity extends BaseActivity implements View.OnCli
             public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
                 mCalendar.set(i, i1, i2);
                 SimpleDateFormat format = new SimpleDateFormat("yyyy年MM月dd日");
-                //  Toast.makeText(getActivity(), "" + format.format(mCalendar.getTime()), Toast.LENGTH_SHORT).show();
                 basic_information_birthday.setText(i + "." + (i1 + 1) + "." + i2);
                 String starSeat = StartUtils.getStarSeat(i1 + 1, i2);
                 basic_information_star.setText(starSeat);
             }
         }, mCalendar.get(Calendar.YEAR), mCalendar.get(Calendar.MONTH), mCalendar.get(Calendar.DAY_OF_MONTH));
+        Window dialogWindow = datedialog.getWindow();
+        dialogWindow.setGravity( Gravity.BOTTOM);
+        WindowManager.LayoutParams lp = dialogWindow.getAttributes();
+        lp.y = 20;
+
+        dialogWindow.setAttributes(lp);
         datedialog.show();
+
     }
 }
