@@ -13,7 +13,7 @@
     <color name="main_bottom_tv_normal">#1a1918</color>
     <color name="setting_exit_btn">#EA0808</color>
     <color name="change_password_text">#0A6A3E</color>
-
+    <color name="gray1">#F7F7F7</color>
     <color name="yellow">#FFD700</color>
     <color name="gray">#c0c0c0</color>
     <color name="black">#000000</color>

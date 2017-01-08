@@ -180,7 +180,7 @@ public class Community_All_Fragment extends BaseFragment {
         floatingActionButton = (FloatingActionButton) view.findViewById(R.id.floatingActionButton);
         //为floatingActionButton和recyclerView设置关联
         floatingActionButton.attachToRecyclerView(recyclerView);
-        floatingActionButton.setType(FloatingActionButton.TYPE_MINI);
+        floatingActionButton.setType(FloatingActionButton.TYPE_NORMAL);
         return view;
     }
 
