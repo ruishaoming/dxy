@@ -111,13 +111,25 @@ public class Holder_Love_Community extends BaseHolder {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         //天成接收的详情页 集合bean和ID
-                        Intent intent=new Intent(context, Froum_Xq_Activity.class);
+                        final Intent intent=new Intent(context, Froum_Xq_Activity.class);
                         int id1 = fragment_loveCommunityBean.getData().get(position).getId();
-
                         intent.putExtra("id",id1);
                         List<ForumTop_Bean.DataBean> data = fragment_loveCommunityBean.getData();
                         intent.putExtra("data2",  data.get(position));
-                        context.startActivity(intent);
+                        new Thread(){
+                            @Override
+                            public void run() {
+                                super.run();
+                                try {
+                                    sleep(500);
+                                    context.startActivity(intent);
+                                } catch (InterruptedException e) {
+                                    e.printStackTrace();
+                                }
+
+                            }
+                        }.start();
+
                     }
                 });
                 return view;

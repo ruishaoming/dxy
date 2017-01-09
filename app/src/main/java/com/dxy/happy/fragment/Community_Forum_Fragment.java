@@ -97,12 +97,24 @@ public class Community_Forum_Fragment extends BaseFragment {
         listView_forum.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent in=new Intent(getActivity(), Forum_Activity.class);
+                final Intent in=new Intent(getActivity(), Forum_Activity.class);
                 in.putExtra("image",image_Forum[position]);
                 in.putExtra("title_name",list_text_tetile.get(position));
                 in.putExtra("title_name2",list_text_tetile3.get(position));
                 in.putExtra("id",list_id.get(position));
-                getActivity().startActivity(in);
+                new Thread(){
+                    @Override
+                    public void run() {
+                        super.run();
+                        try {
+                            sleep(500);
+                            getActivity().startActivity(in);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }.start();
+
             }
         });
     }

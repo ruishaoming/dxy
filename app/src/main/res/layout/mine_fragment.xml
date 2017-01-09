@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/mine_background"
@@ -66,7 +67,14 @@
         </LinearLayout>
 
     </com.zhy.autolayout.AutoRelativeLayout>
-
+    <com.andexert.library.RippleView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:rv_color="@color/gray"
+        android:id="@+id/rippleView1"
+        app:rv_type="rectangle"
+        app:rv_zoomDuration="@android:integer/config_mediumAnimTime">
     <com.zhy.autolayout.AutoRelativeLayout
         android:id="@+id/mine_rela_basedata"
         android:layout_width="750px"
@@ -113,6 +121,7 @@
             android:layout_toLeftOf="@+id/mine_next"
             android:text="修改资料点这里哦" />
     </com.zhy.autolayout.AutoRelativeLayout>
+    </com.andexert.library.RippleView>
 
     <com.zhy.autolayout.AutoLinearLayout
         android:id="@+id/mine_info"
@@ -126,7 +135,14 @@
 
 
     </com.zhy.autolayout.AutoLinearLayout>
-
+    <com.andexert.library.RippleView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:rv_color="@color/gray"
+        android:id="@+id/rippleView2"
+        app:rv_type="rectangle"
+        app:rv_zoomDuration="@android:integer/config_mediumAnimTime">
     <com.zhy.autolayout.AutoRelativeLayout
         android:id="@+id/mine_rela_mypost"
         android:layout_width="match_parent"
@@ -164,7 +180,15 @@
             android:src="@mipmap/next_indicator" />
 
     </com.zhy.autolayout.AutoRelativeLayout>
-
+    </com.andexert.library.RippleView>
+    <com.andexert.library.RippleView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:rv_color="@color/gray"
+        android:id="@+id/rippleView3"
+        app:rv_type="rectangle"
+        app:rv_zoomDuration="@android:integer/config_mediumAnimTime">
     <com.zhy.autolayout.AutoRelativeLayout
         android:id="@+id/mine_rela_feedback"
         android:layout_width="match_parent"
@@ -202,7 +226,15 @@
             android:src="@mipmap/next_indicator" />
 
     </com.zhy.autolayout.AutoRelativeLayout>
-
+    </com.andexert.library.RippleView>
+    <com.andexert.library.RippleView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:rv_color="@color/gray"
+        android:id="@+id/rippleView4"
+        app:rv_type="rectangle"
+        app:rv_zoomDuration="@android:integer/config_mediumAnimTime">
     <com.zhy.autolayout.AutoRelativeLayout
         android:id="@+id/mine_rela_setting"
         android:layout_width="match_parent"
@@ -240,4 +272,5 @@
             android:src="@mipmap/next_indicator" />
 
     </com.zhy.autolayout.AutoRelativeLayout>
-</LinearLayout>
+    </com.andexert.library.RippleView>
+</com.zhy.autolayout.AutoLinearLayout>

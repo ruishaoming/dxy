@@ -22,7 +22,7 @@ import com.dxy.happy.view.NoScrollViewPager;
 public class MainActivity extends BaseActivity {
 
     public static final String TAG = "TAG";
-    private RadioGroup radioGroup;
+    public RadioGroup radioGroup;
     private NoScrollViewPager vp;
 
     @Override

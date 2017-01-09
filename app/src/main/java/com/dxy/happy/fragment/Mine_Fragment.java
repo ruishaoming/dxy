@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
+import com.andexert.library.RippleView;
 import com.dxy.happy.R;
 import com.dxy.happy.activity.BasicInformationActivity;
 import com.dxy.happy.activity.FeedBackActivity;
@@ -16,7 +17,6 @@ import com.dxy.happy.activity.HeaderPhotoActivity;
 import com.dxy.happy.activity.MyPostActivity;
 import com.dxy.happy.activity.SettingActivity;
 import com.dxy.happy.utils.CommonUtils;
-import com.dxy.happy.utils.LogUtils;
 import com.zhy.autolayout.AutoLinearLayout;
 
 
@@ -32,6 +32,10 @@ public class Mine_Fragment extends Fragment implements View.OnClickListener {
     private View rootView;
     private AutoLinearLayout mine_info;
     private LinearLayout mine_line_name;
+    private RippleView rippleView1;
+    private RippleView rippleView2;
+    private RippleView rippleView3;
+    private RippleView rippleView4;
 
     @Nullable
     @Override
@@ -51,6 +55,10 @@ public class Mine_Fragment extends Fragment implements View.OnClickListener {
         rootView.findViewById(R.id.mine_rela_setting).setOnClickListener(this);
         mine_info = (AutoLinearLayout) rootView.findViewById(R.id.mine_info);
         mine_line_name = (LinearLayout) rootView.findViewById(R.id.mine_line_name);
+        rippleView1 = (RippleView) rootView.findViewById(R.id.rippleView1);
+        rippleView2 = (RippleView) rootView.findViewById(R.id.rippleView2);
+        rippleView3 = (RippleView) rootView.findViewById(R.id.rippleView3);
+        rippleView4 = (RippleView) rootView.findViewById(R.id.rippleView4);
 
     }
 
@@ -66,19 +74,43 @@ public class Mine_Fragment extends Fragment implements View.OnClickListener {
                 break;
             //基本资料
             case R.id.mine_rela_basedata:
-                CommonUtils.startActivity(getActivity(), BasicInformationActivity.class);
+                rippleView1.setOnRippleCompleteListener(new RippleView.OnRippleCompleteListener() {
+                    @Override
+                    public void onComplete(RippleView rippleView) {
+
+                        CommonUtils.startActivity(getActivity(), BasicInformationActivity.class);
+                    }
+                });
                 break;
             //我的帖子
             case R.id.mine_rela_mypost:
-                CommonUtils.startActivity(getActivity(), MyPostActivity.class);
+                rippleView2.setOnRippleCompleteListener(new RippleView.OnRippleCompleteListener() {
+                    @Override
+                    public void onComplete(RippleView rippleView) {
+
+                        CommonUtils.startActivity(getActivity(), MyPostActivity.class);
+                    }
+                });
                 break;
             //意见反馈
             case R.id.mine_rela_feedback:
-                CommonUtils.startActivity(getActivity(), FeedBackActivity.class);
+                rippleView3.setOnRippleCompleteListener(new RippleView.OnRippleCompleteListener() {
+                    @Override
+                    public void onComplete(RippleView rippleView) {
+                        CommonUtils.startActivity(getActivity(), FeedBackActivity.class);
+
+                    }
+                });
                 break;
             //设置
             case R.id.mine_rela_setting:
-                CommonUtils.startActivity(getActivity(), SettingActivity.class);
+                rippleView4.setOnRippleCompleteListener(new RippleView.OnRippleCompleteListener() {
+                    @Override
+                    public void onComplete(RippleView rippleView) {
+                        CommonUtils.startActivity(getActivity(), SettingActivity.class);
+
+                    }
+                });
                 break;
         }
     }

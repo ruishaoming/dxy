@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -24,6 +25,7 @@ import com.dxy.happy.bean.ForumTop_Bean;
 import com.dxy.happy.bean.HomeCommunityBean;
 import com.dxy.happy.utils.CommonUtils;
 import com.google.gson.Gson;
+import com.zhy.autolayout.AutoLinearLayout;
 import com.zhy.autolayout.AutoRelativeLayout;
 
 import java.text.SimpleDateFormat;
@@ -46,6 +48,8 @@ public class Froum_Xq_Activity extends BaseActivity implements View.OnClickListe
     private HomeCommunityBean homeCommunityBean;
     private TextView zan;
     private int nice;
+    private ImageView imageView_xq1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -89,6 +93,15 @@ public class Froum_Xq_Activity extends BaseActivity implements View.OnClickListe
                 imageView_haed.setImageDrawable(circularBitmapDrawable);
             }
         });
+        AutoLinearLayout imageView_xq1 =  (AutoLinearLayout) findViewById(R.id.linear_image_xq);
+        if (data1.getImgs() != null && data1.getImgs().size() > 0) {
+            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+            for (int i = 0; i < data1.getImgs().size(); i++) {
+                ImageView imageView = new ImageView(Froum_Xq_Activity.this);
+                Glide.with(Froum_Xq_Activity.this).load(data1.getImgs().get(i).getMiniImg()).into(imageView);
+                imageView_xq1.addView(imageView, layoutParams);
+            }
+        }
         findViewById(R.id.forum_back_xq2).setOnClickListener(this);
         button_xq = (Button) findViewById(R.id.button_xq);
         TextView textView_year = (TextView) findViewById(R.id.year_xq2);
