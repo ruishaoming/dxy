@@ -43,6 +43,7 @@ public class ForumTop_Adapter extends RecyclerView.Adapter<BaseHolder> {
 
     int lastPosition = -1;
     private OnItemClickListener onClickListener;
+    private Intent in;
 
     public ForumTop_Adapter(Context context, List<ForumTop_Bean.DataBean> list, List<ForumTop_Bean.DataBean> bean_list) {
         this.context = context;
@@ -128,9 +129,21 @@ public class ForumTop_Adapter extends RecyclerView.Adapter<BaseHolder> {
                     holder4.listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            Intent in=new Intent(context,Froum_Xq_Activity.class);
+                            in = new Intent(context,Froum_Xq_Activity.class);
                             in.putExtra("data2",list.get(position));
-                            context.startActivity(in);
+                            new Thread(){
+                                @Override
+                                public void run() {
+                                    super.run();
+                                    try {
+                                        sleep(500);
+                                        context.startActivity(in);
+                                    } catch (InterruptedException e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+                            }.start();
+
                         }
                     });
                     break;

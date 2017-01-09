@@ -2,16 +2,12 @@ package com.dxy.happy.activity;
 
 import android.app.DatePickerDialog;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Display;
-import android.view.Gravity;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.andexert.library.RippleView;
 import com.dxy.happy.R;
 import com.dxy.happy.base.BaseActivity;
 import com.dxy.happy.utils.CommonUtils;
@@ -19,8 +15,6 @@ import com.dxy.happy.utils.StartUtils;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-
-import static com.umeng.socialize.Config.dialog;
 
 public class BasicInformationActivity extends BaseActivity implements View.OnClickListener {
 
@@ -35,6 +29,12 @@ public class BasicInformationActivity extends BaseActivity implements View.OnCli
     public static final int NEW_NAME = 200;
     private String title;
     private String state;
+    private RippleView rippleView1;
+    private RippleView rippleView2;
+    private RippleView rippleView3;
+    private RippleView rippleView4;
+    private RippleView rippleView5;
+    private RippleView rippleView6;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +52,13 @@ public class BasicInformationActivity extends BaseActivity implements View.OnCli
         basic_information_profession.setText(title);
         basic_information_birthday = (TextView) findViewById(R.id.basic_information_birthday);
         basic_information_star = (TextView) findViewById(R.id.basic_information_star);
+        rippleView1 = (RippleView) findViewById(R.id.rippleView1);
+        rippleView2 = (RippleView) findViewById(R.id.rippleView2);
+        rippleView3 = (RippleView) findViewById(R.id.rippleView3);
+        rippleView4 = (RippleView) findViewById(R.id.rippleView4);
+        rippleView5 = (RippleView) findViewById(R.id.rippleView5);
+        rippleView6 = (RippleView) findViewById(R.id.rippleView6);
+        findViewById(R.id.constellation).setOnClickListener(this);
         findViewById(R.id.mine_return_back).setOnClickListener(this);
         findViewById(R.id.basic_information_rela_icon).setOnClickListener(this);
         findViewById(R.id.basic_information_rela_name).setOnClickListener(this);
@@ -71,25 +78,54 @@ public class BasicInformationActivity extends BaseActivity implements View.OnCli
                 break;
             //昵称
             case R.id.basic_information_rela_name:
-            CommonUtils.startActivity(BasicInformationActivity.this,ChangeNameActivity.class);
+                rippleView2.setOnRippleCompleteListener(new RippleView.OnRippleCompleteListener() {
+                    @Override
+                    public void onComplete(RippleView rippleView) {
+                        CommonUtils.startActivity(BasicInformationActivity.this, ChangeNameActivity.class);
+
+                    }
+                });
 
                 break;
             //生日
             case R.id.basic_information_rela__birthday:
-                showDatePickerDialog();
+                rippleView3.setOnRippleCompleteListener(new RippleView.OnRippleCompleteListener() {
+                    @Override
+                    public void onComplete(RippleView rippleView) {
+                        showDatePickerDialog();
+
+                    }
+                });
+                break;
+            //星座
+            case  R.id.constellation:
+
                 break;
             //职业
             case R.id.basic_information_rela_profession:
-                CommonUtils.startActivity(BasicInformationActivity.this,ChooseCareerActivity.class);
+                rippleView5.setOnRippleCompleteListener(new RippleView.OnRippleCompleteListener() {
+                    @Override
+                    public void onComplete(RippleView rippleView) {
+                        CommonUtils.startActivity(BasicInformationActivity.this, ChooseCareerActivity.class);
+
+                    }
+                });
                 break;
             //感情状况
             case R.id.basic_information_rela_relationship_status:
-                CommonUtils.startActivity(BasicInformationActivity.this,EmotioActivity.class);
+                rippleView6.setOnRippleCompleteListener(new RippleView.OnRippleCompleteListener() {
+                    @Override
+                    public void onComplete(RippleView rippleView) {
+                        CommonUtils.startActivity(BasicInformationActivity.this, EmotioActivity.class);
+
+                    }
+                });
                 break;
 
         }
 
     }
+
     private void showDatePickerDialog() {
         //获得日历的对象
         mCalendar = Calendar.getInstance();
@@ -99,18 +135,12 @@ public class BasicInformationActivity extends BaseActivity implements View.OnCli
             public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
                 mCalendar.set(i, i1, i2);
                 SimpleDateFormat format = new SimpleDateFormat("yyyy年MM月dd日");
+                //  Toast.makeText(getActivity(), "" + format.format(mCalendar.getTime()), Toast.LENGTH_SHORT).show();
                 basic_information_birthday.setText(i + "." + (i1 + 1) + "." + i2);
                 String starSeat = StartUtils.getStarSeat(i1 + 1, i2);
                 basic_information_star.setText(starSeat);
             }
         }, mCalendar.get(Calendar.YEAR), mCalendar.get(Calendar.MONTH), mCalendar.get(Calendar.DAY_OF_MONTH));
-        Window dialogWindow = datedialog.getWindow();
-        dialogWindow.setGravity( Gravity.BOTTOM);
-        WindowManager.LayoutParams lp = dialogWindow.getAttributes();
-        lp.y = 20;
-
-        dialogWindow.setAttributes(lp);
         datedialog.show();
-
     }
 }

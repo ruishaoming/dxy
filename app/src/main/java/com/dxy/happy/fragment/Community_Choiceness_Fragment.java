@@ -54,13 +54,26 @@ public class Community_Choiceness_Fragment extends BaseFragment {
             communityAllAdapter.setOnClickListener(new OnItemClickListener() {
                 @Override
                 public void onItemClick(int position) {
-                    Intent in=new Intent(getActivity(),Froum_Xq_Activity.class);
+                    in = new Intent(getActivity(),Froum_Xq_Activity.class);
                     in.putExtra("data2",listAll.get(position));
-                    startActivity(in);
+                    new Thread(){
+                        @Override
+                        public void run() {
+                            super.run();
+                            try {
+                                sleep(500);
+                              startActivity(in);
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }.start();
+
                 }
             });
         }
     };
+    private Intent in;
 
     @Override
     protected void onLoad() {

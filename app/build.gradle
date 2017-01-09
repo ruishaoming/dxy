@@ -38,8 +38,7 @@ dependencies {
     compile files('libs/umeng_social_tool.jar')
     compile 'com.squareup.okhttp:okhttp:2.4.0'
     compile 'com.squareup.okio:okio:1.5.0'
-
-
+    compile 'com.github.Hitta:RippleEffect:82cf00e551'
     compile 'com.github.zzz40500:android-shapeLoadingView:1.0.3.2'
     compile 'com.cjj.materialrefeshlayout:library:1.3.0'
     compile 'com.melnykov:floatingactionbutton:1.3.0'
