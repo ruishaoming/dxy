@@ -1,7 +1,6 @@
 package com.dxy.happy.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -37,11 +36,11 @@ public class FeedBackActivity extends BaseActivity implements View.OnClickListen
         mine_feedback_commit.setOnClickListener(this);
         feed_back_et_sugesst = (EditText) findViewById(R.id.feed_back_et_sugesst);
         feed_back_et_phone = (EditText) findViewById(R.id.feed_back_et_phone);
-         findViewById(R.id.feedback_rela1).setOnClickListener(this);
+        findViewById(R.id.feedback_rela1).setOnClickListener(this);
         findViewById(R.id.feedback_rela2).setOnClickListener(this);
-         findViewById(R.id.feedback_rela3).setOnClickListener(this);
-         findViewById(R.id.feedback_rela4).setOnClickListener(this);
-         findViewById(R.id.feedback_rela5).setOnClickListener(this);
+        findViewById(R.id.feedback_rela3).setOnClickListener(this);
+        findViewById(R.id.feedback_rela4).setOnClickListener(this);
+        findViewById(R.id.feedback_rela5).setOnClickListener(this);
         feedback_iv1 = (ImageView) findViewById(R.id.feedback_iv1);
         feedback_iv2 = (ImageView) findViewById(R.id.feedback_iv2);
         feedback_iv3 = (ImageView) findViewById(R.id.feedback_iv3);
@@ -51,18 +50,18 @@ public class FeedBackActivity extends BaseActivity implements View.OnClickListen
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.mine_return_back:
                 CommonUtils.finishActivity(FeedBackActivity.this);
                 break;
             case R.id.mine_feedback_commit:
-                if (feed_back_et_sugesst.getText().toString().equals("")){
+                if (feed_back_et_sugesst.getText().toString().equals("")) {
                     Toast.makeText(this, "还未填写任何意见或建议哦", Toast.LENGTH_SHORT).show();
-                }
-                if (feed_back_et_phone.getText().toString().equals("")){
+                } else if (feed_back_et_phone.getText().toString().equals("")) {
                     Toast.makeText(this, "手机号/微信号/QQ号,不能为空", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(this, "提交成功", Toast.LENGTH_SHORT).show();
                 }
-                Toast.makeText(this, "提交成功", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.feedback_rela1:
                 feedback_iv1.setVisibility(View.VISIBLE);

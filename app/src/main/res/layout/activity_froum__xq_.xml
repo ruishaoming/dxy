@@ -117,7 +117,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="20px"
                     android:layout_marginLeft="10px"
-                    android:textColor="@color/black"
+                    android:textColor="@color/textview_gray"
                     android:layout_toRightOf="@+id/image_tou_xq2"
                     android:text="我来自1999@"
                     android:textSize="15sp" />
@@ -127,7 +127,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/year_xq2"
-                    android:textColor="@color/black"
+                    android:textColor="@color/textview_gray"
                     android:layout_marginLeft="20px"
                     android:layout_toRightOf="@+id/image_tou_xq2"
                     android:text="今天 17:23" />
@@ -159,9 +159,15 @@
                 android:id="@+id/xq_context2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
+                android:textColor="@color/textview_gray"
                 android:text="IE和覅我好覅文化氛围防护无法水电费" />
+            <com.zhy.autolayout.AutoLinearLayout
+                android:id="@+id/linear_image_xq"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
+            </com.zhy.autolayout.AutoLinearLayout>
             <com.zhy.autolayout.AutoRelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="300px">

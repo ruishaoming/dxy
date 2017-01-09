@@ -49,12 +49,17 @@
             android:value="1280" />
 
         <activity android:name=".activity.MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".base.BaseActivity" />
         <activity android:name=".activity.LaunchActivity">
 
         </activity>
+
 
         <activity android:name=".activity.Forum_Activity"></activity>
 
@@ -99,21 +104,15 @@
             android:name=".activity.DialogActivity"
             android:theme="@style/Theme.AppCompat.Dialog" />
         <activity android:name=".activity.HomeFestivalActivity" />
+        <activity android:name=".activity.Froum_Xq_Activity" />
         <activity android:name=".activity.KnowActivity" />
         <activity android:name=".activity.LoveGasActivity"></activity>
         <service
             android:name=".service.MediaService"
             android:enabled="true"
             android:exported="true"></service>
-        <activity android:name=".activity.AnimActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".activity.AnimActivity" />
         <activity android:name=".activity.HomeMoreActivity"></activity>
-        <activity android:name=".activity.Froum_Xq_Activity"></activity>
     </application>
 
 </manifest>

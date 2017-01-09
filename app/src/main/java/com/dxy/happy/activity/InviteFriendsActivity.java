@@ -46,7 +46,7 @@ public class InviteFriendsActivity extends BaseActivity implements View.OnClickL
 
 
                 break;
-            case R.id.invite_qq:
+            case R.id.invite_rela_qq:
                 new ShareAction(InviteFriendsActivity.this).setPlatform(SHARE_MEDIA.QQ)
                         .withText("hello")
                         .setCallback(umShareListener)

@@ -7,6 +7,14 @@
     android:orientation="vertical">
 
     <include layout="@layout/mine_title"></include>
+    <com.andexert.library.RippleView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:rv_color="@color/gray"
+        android:id="@+id/rippleView1"
+        app:rv_type="rectangle"
+        app:rv_zoomDuration="@android:integer/config_mediumAnimTime">
 
     <com.zhy.autolayout.AutoRelativeLayout
         android:id="@+id/setting_change_password"
@@ -31,7 +39,15 @@
             android:layout_marginTop="5px"
             android:src="@mipmap/next_indicator" />
     </com.zhy.autolayout.AutoRelativeLayout>
-
+    </com.andexert.library.RippleView>
+    <com.andexert.library.RippleView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:rv_color="@color/gray"
+        android:id="@+id/rippleView2"
+        app:rv_type="rectangle"
+        app:rv_zoomDuration="@android:integer/config_mediumAnimTime">
     <com.zhy.autolayout.AutoRelativeLayout
         android:id="@+id/setting_invite_friends"
         android:layout_width="wrap_content"
@@ -55,12 +71,19 @@
             android:layout_marginTop="5px"
             android:src="@mipmap/next_indicator" />
     </com.zhy.autolayout.AutoRelativeLayout>
-
+    </com.andexert.library.RippleView>
     <TextView
         android:layout_width="680px"
         android:layout_height="2px"
         android:layout_gravity="center_horizontal" />
-
+    <com.andexert.library.RippleView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:rv_color="@color/gray"
+        android:id="@+id/rippleView3"
+        app:rv_type="rectangle"
+        app:rv_zoomDuration="@android:integer/config_mediumAnimTime">
     <com.zhy.autolayout.AutoRelativeLayout
         android:id="@+id/setting_about_us"
         android:layout_width="wrap_content"
@@ -83,12 +106,19 @@
             android:layout_marginTop="5px"
             android:src="@mipmap/next_indicator" />
     </com.zhy.autolayout.AutoRelativeLayout>
-
+    </com.andexert.library.RippleView>
     <TextView
         android:layout_width="680px"
         android:layout_height="2px"
         android:layout_gravity="center_horizontal" />
-
+    <com.andexert.library.RippleView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:rv_color="@color/gray"
+        android:id="@+id/rippleView4"
+        app:rv_type="rectangle"
+        app:rv_zoomDuration="@android:integer/config_mediumAnimTime">
     <com.zhy.autolayout.AutoRelativeLayout
         android:id="@+id/setting_version_updating"
         android:layout_width="wrap_content"
@@ -111,12 +141,19 @@
             android:layout_marginTop="5px"
             android:src="@mipmap/next_indicator" />
     </com.zhy.autolayout.AutoRelativeLayout>
-
+    </com.andexert.library.RippleView>
     <TextView
         android:layout_width="680px"
         android:layout_height="2px"
         android:layout_gravity="center_horizontal" />
-
+    <com.andexert.library.RippleView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:rv_color="@color/gray"
+        android:id="@+id/rippleView5"
+        app:rv_type="rectangle"
+        app:rv_zoomDuration="@android:integer/config_mediumAnimTime">
     <com.zhy.autolayout.AutoRelativeLayout
         android:id="@+id/setting_clear_cache"
         android:layout_width="wrap_content"
@@ -149,7 +186,14 @@
             android:layout_toLeftOf="@+id/setting_next"
             android:text="已缓存nM" />
     </com.zhy.autolayout.AutoRelativeLayout>
-
+    </com.andexert.library.RippleView>
+    <com.andexert.library.RippleView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:rv_color="@color/gray"
+        app:rv_type="rectangle"
+        app:rv_zoomDuration="@android:integer/config_mediumAnimTime">
     <Button
         android:id="@+id/setting_exit"
         android:layout_width="720px"
@@ -159,4 +203,5 @@
         android:background="@color/setting_exit_btn"
         android:text="退出登录"
         android:textColor="@color/white" />
+    </com.andexert.library.RippleView>
 </LinearLayout>
