@@ -46,7 +46,8 @@ public class InviteFriendsActivity extends BaseActivity implements View.OnClickL
 
 
                 break;
-            case R.id.invite_qq:
+            case R.id.invite_rela_qq:
+                Toast.makeText(this, "分享---", Toast.LENGTH_SHORT).show();
                 new ShareAction(InviteFriendsActivity.this).setPlatform(SHARE_MEDIA.QQ)
                         .withText("hello")
                         .setCallback(umShareListener)

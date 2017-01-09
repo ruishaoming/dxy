@@ -11,8 +11,11 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.dxy.happy.R;
+import com.dxy.happy.activity.MainActivity;
 import com.dxy.happy.base.BaseFragment;
 import com.dxy.happy.utils.CommonUtils;
+import com.dxy.happy.utils.LogUtils;
+import com.dxy.happy.view.LazyViewPager;
 import com.dxy.happy.view.ShowingPage;
 
 /**
@@ -41,8 +44,20 @@ public class Community_Fragment extends BaseFragment implements RadioGroup.OnChe
         image_email.setOnClickListener(this);
         rg_community.setOnCheckedChangeListener(this);
         view_pager.setOnPageChangeListener(this);
-
+        setCurrentPage();
         return rootView;
+    }
+
+    //设置当前页面
+    private void setCurrentPage() {
+        MainActivity mainActivity = (MainActivity) getActivity();
+        final RadioButton radioButton = (RadioButton) mainActivity.radioGroup.getChildAt(1);
+        radioButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                view_pager.setCurrentItem(1);
+            }
+        });
     }
 
     @Override
@@ -56,13 +71,12 @@ public class Community_Fragment extends BaseFragment implements RadioGroup.OnChe
                     case 0:
                         fragment = new Community_Forum_Fragment();
                         break;
-                    case 1:
-                        fragment = new Community_Choiceness_Fragment();
-                        break;
                     case 2:
                         fragment = new Community_All_Fragment();
                         break;
-
+                    default:
+                        fragment = new Community_Choiceness_Fragment();
+                        break;
                 }
                 return fragment;
             }
@@ -72,12 +86,6 @@ public class Community_Fragment extends BaseFragment implements RadioGroup.OnChe
                 return 3;
             }
         });
-        view_pager.setCurrentItem(1);
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
 
     }
 
@@ -85,10 +93,8 @@ public class Community_Fragment extends BaseFragment implements RadioGroup.OnChe
     public void onCheckedChanged(RadioGroup group, int checkedId) {
         for (int i = 0; i < 3; i++) {
             if (rg_community.getChildAt(i).getId() == checkedId) {
-
                 view_pager.setCurrentItem(i);
             }
-
         }
     }
 
@@ -117,7 +123,7 @@ public class Community_Fragment extends BaseFragment implements RadioGroup.OnChe
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.image_email:
 
                 break;
