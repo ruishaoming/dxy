@@ -15,7 +15,7 @@
             android:layout_width="200px"
             android:layout_height="200px"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="60px"
+            android:layout_marginTop="40px"
             android:src="@mipmap/header_photo" />
 
         <LinearLayout
@@ -23,20 +23,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/mine_header_photo"
-            android:layout_centerHorizontal="true">
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20px">
 
             <TextView
                 android:id="@+id/mine_user_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20px"
                 android:text="昵称"
-                android:textSize="@dimen/mine_text" />
+                android:textSize="@dimen/mine_text"
+                android:textColor="@color/white"/>
 
             <ImageView
                 android:id="@+id/mine_sex"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10px"/>
         </LinearLayout>
 
         <LinearLayout
@@ -51,14 +53,16 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="关注" />
+                android:text="关注"
+                android:textColor="@color/white"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20px"
-                android:layout_marginTop="10px"
-                android:text="0" />
+                android:layout_marginTop="5px"
+                android:text="0"
+                android:textColor="@color/white"/>
         </LinearLayout>
 
     </com.zhy.autolayout.AutoRelativeLayout>
