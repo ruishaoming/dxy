@@ -169,8 +169,6 @@ public class Forum_Activity extends BaseActivity implements SwipeRefreshLayout.O
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.forum_back:
-                CommonUtils.finishActivity(this);
-                break;
             case R.id.forum_back2:
                 CommonUtils.finishActivity(this);
                 break;

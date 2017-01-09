@@ -3,11 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <TextView
-        android:id="@+id/lg_date"
-        android:text="0000"
         android:textColor="@color/black"
-        android:gravity="bottom|center_horizontal"
+        android:text="正在加载。。。"
         android:layout_width="match_parent"
-        android:layout_height="100px" />
+        android:layout_height="wrap_content" />
 
 </LinearLayout>

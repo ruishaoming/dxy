@@ -1,10 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+
     <ImageView
         android:id="@+id/img_loveGas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_width="match_parent"
+        android:layout_height="500px"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    <com.zhy.autolayout.AutoLinearLayout
+        android:background="@color/gray"
+        android:layout_width="match_parent"
+        android:layout_height="120px"
+        android:orientation="vertical"
+        android:layout_alignBottom="@+id/tv_des">
 
-</LinearLayout>
+        <TextView
+            android:layout_marginTop="20px"
+            android:gravity="center_horizontal"
+            android:textColor="@color/white"
+            android:id="@+id/tv_title"
+            android:textSize="30px"
+            android:layout_width="match_parent"
+            android:layout_height="40px"
+            android:layout_alignBottom="@+id/img_loveGas"
+            android:layout_centerHorizontal="true"
+            />
+
+
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <TextView
+        android:gravity="center_horizontal"
+        android:textColor="@color/white"
+        android:id="@+id/tv_des"
+        android:textSize="15px"
+        android:layout_width="match_parent"
+        android:layout_height="40px"
+        android:layout_below="@+id/img_loveGas"
+        />
+
+
+</RelativeLayout>

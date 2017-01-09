@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.dxy.happy.R;
 import com.dxy.happy.activity.KnowActivity;
+import com.dxy.happy.base.BaseData;
 import com.dxy.happy.bean.Fragment_KnowBean;
 import com.google.gson.Gson;
 
@@ -26,10 +27,18 @@ public class Holder_Know extends BaseHolder {
 
     @Override
     public void getHolder(final Context context, Object o) {
-        String o1 = (String) o;
-        final Fragment_KnowBean fragment_knowBean = new Gson().fromJson(o1, Fragment_KnowBean.class);
+        String url = (String) o;
+        new BaseData() {
+            @Override
+            public void setResultData(String reresponse) {
+                initData(reresponse, context);
+            }
+        }.getData(url,BaseData.NORMALTIME);
+    }
+    private void initData(String reresponse, final Context context) {
+        final Fragment_KnowBean fragment_knowBean = new Gson().fromJson(reresponse, Fragment_KnowBean.class);
         Glide.with(context).load(fragment_knowBean.getData().get(0).getImg()).into(img_know);
-        img_know.setOnClickListener(new View.OnClickListener() {
+                img_know.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(context, KnowActivity.class);
@@ -37,5 +46,7 @@ public class Holder_Know extends BaseHolder {
                 context.startActivity(intent);
             }
         });
+
+
     }
 }

@@ -2,7 +2,6 @@ package com.dxy.happy.Hoder;
 
 import android.content.Context;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -14,8 +13,8 @@ import com.dxy.happy.base.BaseData;
 import com.dxy.happy.bean.Fragment_ViewPagerBean;
 import com.google.gson.Gson;
 
-import static com.dxy.happy.R.mipmap.zaker_content_praise;
-import static com.dxy.happy.R.mipmap.zaker_content_praise_press;
+import static com.dxy.happy.R.mipmap.navpoint_selected2x;
+import static com.dxy.happy.R.mipmap.navpoint_unselected2x;
 
 
 /**
@@ -65,12 +64,12 @@ public class Holder_ViewPager extends BaseHolder {
 
             img = new ImageView(context);
             if (i == 0) {
-                img.setImageResource(zaker_content_praise_press);
+                img.setImageResource(navpoint_selected2x);
             } else {
-                img.setImageResource(zaker_content_praise);
+                img.setImageResource(navpoint_unselected2x);
             }
             LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(FrameLayout.LayoutParams.WRAP_CONTENT, FrameLayout.LayoutParams.WRAP_CONTENT);
-            layoutParams.setMargins(0, 1, 0, 1);
+            layoutParams.setMargins(5, 10, 5, 10);
             home_fragment_ll.addView(img, layoutParams);
         }
         home_fragment_viewpager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -83,10 +82,10 @@ public class Holder_ViewPager extends BaseHolder {
                 for (int i = 0; i < home_fragment_ll.getChildCount(); i++) {
                     ImageView childAt = (ImageView) home_fragment_ll.getChildAt(i);
                     if (i == position % 5) {
-                        childAt.setImageResource(zaker_content_praise_press);
+                        childAt.setImageResource(navpoint_selected2x);
 
                     } else {
-                        childAt.setImageResource(zaker_content_praise);
+                        childAt.setImageResource(navpoint_unselected2x);
                     }
 
                 }
