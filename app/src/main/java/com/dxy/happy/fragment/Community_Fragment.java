@@ -103,7 +103,6 @@ public class Community_Fragment extends BaseFragment implements RadioGroup.OnChe
             RadioButton rb = (RadioButton) rg_community.getChildAt(i);
             if (i == position) {
                 rb.setChecked(true);
-
             } else {
                 rb.setChecked(false);
             }

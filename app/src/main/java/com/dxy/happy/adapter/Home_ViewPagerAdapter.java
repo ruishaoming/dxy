@@ -42,7 +42,6 @@ public class Home_ViewPagerAdapter extends PagerAdapter{
     public Object instantiateItem(ViewGroup container, final int position) {
         ImageView img=new ImageView(context);
         Glide.with(context).load(vpList.get(position%vpList.size()).getImg()).into(img);
-
         img.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,6 +52,7 @@ public class Home_ViewPagerAdapter extends PagerAdapter{
 //                context.overridePendingTransition(R.animator.xin_right, R.animator.xout_left);
             }
         });//图片的点击
+        img.setScaleType(ImageView.ScaleType.FIT_XY);
         container.addView(img);
         return img;
     }
