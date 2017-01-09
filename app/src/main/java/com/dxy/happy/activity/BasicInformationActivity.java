@@ -1,6 +1,7 @@
 package com.dxy.happy.activity;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.DatePicker;
@@ -75,6 +76,7 @@ public class BasicInformationActivity extends BaseActivity implements View.OnCli
                 break;
             //头像
             case R.id.basic_information_rela_icon:
+                startActivity(new Intent(BasicInformationActivity.this, HeaderPhotoActivity.class));
                 break;
             //昵称
             case R.id.basic_information_rela_name:
