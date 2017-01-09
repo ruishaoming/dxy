@@ -68,9 +68,21 @@ public class Forum_Activity extends BaseActivity implements SwipeRefreshLayout.O
                         adapter.setOnClickListener(new OnItemClickListener() {
                             @Override
                             public void onItemClick(int position) {
-                                Intent in=new Intent(Forum_Activity.this,Froum_Xq_Activity.class);
-                                in.putExtra("data2",listAll.get(position));
-                                startActivity(in);
+                                final Intent in=new Intent(Forum_Activity.this,Froum_Xq_Activity.class);
+                                in.putExtra("data2",listAll.get(position-1));
+
+                                new Thread(){
+                                    @Override
+                                    public void run() {
+                                        super.run();
+                                        try {
+                                            sleep(500);
+                                            startActivity(in);
+                                        } catch (InterruptedException e) {
+                                            e.printStackTrace();
+                                        }
+                                    }
+                                }.start();
                             }
                         });
 

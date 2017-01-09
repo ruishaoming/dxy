@@ -3,173 +3,244 @@
     android:id="@+id/activity_basic_information"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/mine_cardview_background"
-    >
-<include layout="@layout/mine_title"></include>
-    <com.zhy.autolayout.AutoRelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/basic_information_rela_icon"
-        android:layout_marginTop="30px"
-        android:background="@color/white"
-        android:padding="30px">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="头像"
-            android:textColor="@color/main_bottom_tv_normal"
-            android:textSize="@dimen/mine_text"
-            android:layout_marginLeft="20px"
-            android:layout_centerVertical="true"/>
-        <ImageView
-            android:id="@+id/icon_next"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/next_indicator"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"/>
-        <ImageView
-            android:id="@+id/basic_information_icon"
-            android:layout_width="140px"
-            android:layout_height="140px"
-            android:src="@mipmap/header_photo"
-            android:layout_toLeftOf="@+id/icon_next"
-            android:layout_marginRight="20px"/>
-    </com.zhy.autolayout.AutoRelativeLayout>
+    android:orientation="vertical">
 
-    <com.zhy.autolayout.AutoRelativeLayout
-        android:id="@+id/basic_information_rela_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="30px"
-        android:background="@color/white"
-        android:layout_marginTop="2px">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="昵称"
-            android:textSize="@dimen/mine_text"
-            android:textColor="@color/black"
-            android:layout_marginLeft="20px"/>
-        <ImageView
-            android:id="@+id/name_next"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/next_indicator"
-            android:layout_alignParentRight="true"/>
-        <TextView
-            android:id="@+id/basic_information_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toLeftOf="@+id/name_next"
-            android:layout_marginRight="20px"/>
-    </com.zhy.autolayout.AutoRelativeLayout>
-    <com.zhy.autolayout.AutoRelativeLayout
-        android:id="@+id/basic_information_rela__birthday"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="30px"
-        android:background="@color/white"
-        android:layout_marginTop="30px">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="生日"
-            android:textSize="@dimen/mine_text"
-            android:textColor="@color/black"
-            android:layout_marginLeft="20px"/>
-        <ImageView
-            android:id="@+id/age_next"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/next_indicator"
-            android:layout_alignParentRight="true"/>
-        <TextView
-            android:id="@+id/basic_information_birthday"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toLeftOf="@+id/age_next"
-            android:layout_marginRight="20px"/>
-    </com.zhy.autolayout.AutoRelativeLayout>
+    <include layout="@layout/mine_title"></include>
 
-    <com.zhy.autolayout.AutoRelativeLayout
+    <com.andexert.library.RippleView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/rippleView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="30px"
-        android:background="@color/white"
-        android:layout_marginTop="2px"
-        >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="星座"
-            android:textSize="@dimen/mine_text"
-            android:textColor="@color/black"
-            android:layout_marginLeft="20px"/>
-        <TextView
-            android:id="@+id/basic_information_star"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="50px"/>
-    </com.zhy.autolayout.AutoRelativeLayout>
+        app:rv_color="@color/gray"
+        app:rv_type="rectangle"
+        app:rv_zoomDuration="@android:integer/config_mediumAnimTime">
 
-    <com.zhy.autolayout.AutoRelativeLayout
-        android:id="@+id/basic_information_rela_profession"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="30px"
-        android:background="@color/white"
-        android:layout_marginTop="2px"
-       >
-        <TextView
-            android:layout_width="wrap_content"
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:id="@+id/basic_information_rela_icon"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="职业"
-            android:textSize="@dimen/mine_text"
-            android:textColor="@color/black"
-            android:layout_marginLeft="20px"/>
-        <ImageView
-            android:id="@+id/profession_next"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/next_indicator"
-            android:layout_alignParentRight="true"/>
-        <TextView
-            android:id="@+id/basic_information_profession"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toLeftOf="@+id/profession_next"
-            android:layout_marginRight="20px"/>
-    </com.zhy.autolayout.AutoRelativeLayout>
+            android:layout_marginTop="30px"
+            android:background="@color/white"
+            android:padding="30px">
 
-    <com.zhy.autolayout.AutoRelativeLayout
-        android:id="@+id/basic_information_rela_relationship_status"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20px"
+                android:text="头像"
+                android:textColor="@color/main_bottom_tv_normal"
+                android:textSize="@dimen/mine_text" />
+
+            <ImageView
+                android:id="@+id/icon_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/next_indicator" />
+
+            <ImageView
+                android:id="@+id/basic_information_icon"
+                android:layout_width="140px"
+                android:layout_height="140px"
+                android:layout_marginRight="20px"
+                android:layout_toLeftOf="@+id/icon_next"
+                android:src="@mipmap/header_photo" />
+        </com.zhy.autolayout.AutoRelativeLayout>
+    </com.andexert.library.RippleView>
+
+    <com.andexert.library.RippleView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/rippleView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="30px"
-        android:background="@color/white"
-        android:layout_marginTop="2px"
-        >
-        <TextView
-            android:layout_width="wrap_content"
+        app:rv_color="@color/gray"
+        app:rv_type="rectangle"
+        app:rv_zoomDuration="@android:integer/config_mediumAnimTime">
+
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:id="@+id/basic_information_rela_name"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="感情状况"
-            android:textSize="@dimen/mine_text"
-            android:textColor="@color/black"
-            android:layout_marginLeft="20px"/>
-        <ImageView
-            android:id="@+id/relationship_status_next"
-            android:layout_width="wrap_content"
+            android:layout_marginTop="2px"
+            android:background="@color/white"
+            android:padding="30px">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20px"
+                android:text="昵称"
+                android:textColor="@color/black"
+                android:textSize="@dimen/mine_text" />
+
+            <ImageView
+                android:id="@+id/name_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:src="@mipmap/next_indicator" />
+
+            <TextView
+                android:id="@+id/basic_information_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20px"
+                android:layout_toLeftOf="@+id/name_next" />
+        </com.zhy.autolayout.AutoRelativeLayout>
+    </com.andexert.library.RippleView>
+
+    <com.andexert.library.RippleView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/rippleView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:rv_color="@color/gray"
+        app:rv_type="rectangle"
+        app:rv_zoomDuration="@android:integer/config_mediumAnimTime">
+
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:id="@+id/basic_information_rela__birthday"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@mipmap/next_indicator"
-            android:layout_alignParentRight="true"/>
-        <TextView
-            android:id="@+id/basic_information_relationship_status"
-            android:layout_width="wrap_content"
+            android:layout_marginTop="30px"
+            android:background="@color/white"
+            android:padding="30px">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20px"
+                android:text="生日"
+                android:textColor="@color/black"
+                android:textSize="@dimen/mine_text" />
+
+            <ImageView
+                android:id="@+id/age_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:src="@mipmap/next_indicator" />
+
+            <TextView
+                android:id="@+id/basic_information_birthday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20px"
+                android:layout_toLeftOf="@+id/age_next" />
+        </com.zhy.autolayout.AutoRelativeLayout>
+    </com.andexert.library.RippleView>
+
+    <com.andexert.library.RippleView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/rippleView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:rv_color="@color/gray"
+        app:rv_type="rectangle"
+        app:rv_zoomDuration="@android:integer/config_mediumAnimTime">
+
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:id="@+id/constellation"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_toLeftOf="@+id/relationship_status_next"
-            android:layout_marginRight="20px"/>
-    </com.zhy.autolayout.AutoRelativeLayout>
+            android:layout_marginTop="2px"
+            android:background="@color/white"
+            android:padding="30px">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20px"
+                android:text="星座"
+                android:textColor="@color/black"
+                android:textSize="@dimen/mine_text" />
+
+            <TextView
+                android:id="@+id/basic_information_star"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="50px" />
+        </com.zhy.autolayout.AutoRelativeLayout>
+    </com.andexert.library.RippleView>
+
+    <com.andexert.library.RippleView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/rippleView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:rv_color="@color/gray"
+        app:rv_type="rectangle"
+        app:rv_zoomDuration="@android:integer/config_mediumAnimTime">
+
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:id="@+id/basic_information_rela_profession"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2px"
+            android:background="@color/white"
+            android:padding="30px">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20px"
+                android:text="职业"
+                android:textColor="@color/black"
+                android:textSize="@dimen/mine_text" />
+
+            <ImageView
+                android:id="@+id/profession_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:src="@mipmap/next_indicator" />
+
+            <TextView
+                android:id="@+id/basic_information_profession"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20px"
+                android:layout_toLeftOf="@+id/profession_next" />
+        </com.zhy.autolayout.AutoRelativeLayout>
+    </com.andexert.library.RippleView>
+
+    <com.andexert.library.RippleView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/rippleView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:rv_color="@color/gray"
+        app:rv_type="rectangle"
+        app:rv_zoomDuration="@android:integer/config_mediumAnimTime">
+
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:id="@+id/basic_information_rela_relationship_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2px"
+            android:background="@color/white"
+            android:padding="30px">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20px"
+                android:text="感情状况"
+                android:textColor="@color/black"
+                android:textSize="@dimen/mine_text" />
+
+            <ImageView
+                android:id="@+id/relationship_status_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:src="@mipmap/next_indicator" />
+
+            <TextView
+                android:id="@+id/basic_information_relationship_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20px"
+                android:layout_toLeftOf="@+id/relationship_status_next" />
+        </com.zhy.autolayout.AutoRelativeLayout>
+    </com.andexert.library.RippleView>
 </LinearLayout>
